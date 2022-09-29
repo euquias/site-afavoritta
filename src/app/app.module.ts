@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageComponent } from './page/page.component';
 import { CardapioComponent } from './page/cardapio/cardapio.component';
+import { CarrosselComponent } from './page/carrossel/carrossel.component';
+import { NavComponent } from './page/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageComponent,
-    CardapioComponent
+    CardapioComponent,
+    CarrosselComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

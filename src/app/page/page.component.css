@@ -50,93 +50,8 @@ ul.compartilhar li {
   margin-top: 10px;
 }
 
-h2 {
-  display: flex;
-  margin-top: 10px;
-  justify-content: center;
-  color: red;
-}
-
-
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 15px 300px;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all .2s;
-  margin-top: 5px;
-
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(212, 28, 28, 0.2);
-  color: #fff;
-}
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-
-}
-
-.btn-white {
-  background-color: #fff;
-  color: #777;
-}
-
-.btn::after {
-  content: "";
-  display: inline-block;
-
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all -1s;
-}
-
-.btn-white::after {
-  background-color: #fff;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-.btn-animated {
-  animation: moveInBottom 5s ease-out;
-  animation-fill-mode: backwards;
-}
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-.googlemap {
-  display: flex;
-  justify-content: center;
-
-}
-
-/* ==========================================================================
-     5.0 - FOOTER SECTION 
-     ========================================================================== */
-
 .fn-footer {
-
+  
   color: #fff;
 }
 
@@ -157,20 +72,3 @@ ul.social-network li {
   display: inline;
   margin: 0 5px;
 }
-
-@media (max-width: 900px) {
-
-  .btn:link,
-  .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 15px 100px;
-    display: inline-block;
-    border-radius: 100px;
-    transition: all .2s;
-    margin-top: 5px;
-
-  }
-}
-
-

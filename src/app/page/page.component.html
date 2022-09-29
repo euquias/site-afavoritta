@@ -5,60 +5,28 @@
   integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
 <body>
   <div class="container-X-Large d-flex justify-content-end">
     <div class="compartilhar">
       <a href="" data-placement="top" title="Linkedin"><i class="fa fa-share-alt-square"></i></a>
-    </div> 
-  </div>
-  <div class="container-X-Large">
-    <div class="d-flex justify-content-center">
-        <a>
-          <img  class="logo" src="../../assets/logo.png" alt="logo">
-        </a>
-    </div>
-    <h2>Pizzaria delivery</h2>
-    <div class="d-flex justify-content-center">
-      <div class="links"> 
-        <div class="text-box">
-          <a  class="btn btn-white btn- animate" routerLink="cardapio">Cardápio</a>
-        </div>
-        <section id="conteudo"></section>
-        <div class="text-box">
-          <a href="https://api.whatsapp.com/send?phone=5561995037896" class="btn btn-white btn-	animate">whatsapp</a>
-        </div>
-        <div class="text-box">
-          <a href="#" class="btn btn-white btn-	 animate">instagram</a>
-        </div>
-      </div>
     </div>
   </div>
-  <div class="googlemap p-3">
-    <!-- https://codesandbox.io/s/2vp3t3?file=/src/app/app.component.ts -->
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide1">
-          <div class="card" style="width: 18rem;">
-            <img src="../../assets/frango.jpeg" class="card-img-top" alt="...">
-            <a href="#" class="btn btn-primary">Peça ja </a>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
+  <div class="d-flex justify-content-center">
+    <a>
+      <img class="logo" src="../../assets/logo.png" alt="logo">
+    </a>
+  </div>
+  <router-outlet></router-outlet>
 
-    <!-- Swiper JS -->
-  </div>
   <!-- FOOTER SECTION START -->
   <section class="fn-footer">
     <!-- FOOTER BOTTOM -->
     <div class="d-flex flex-row justify-content-end">
       <div class="d-flex justify-content-start">
         <p>
-          <span>&copy; euquias </span><a href="https://api.whatsapp.com/send?phone=5561991631462" target="_blank">Serviços
+          <span>&copy; euquias </span><a href="https://api.whatsapp.com/send?phone=5561991631462"
+            target="_blank">Serviços
             de
             tecnologia</a>
         </p>
@@ -81,8 +49,6 @@
 </body>
 
 <footer>
-
-
+  
 </footer>
-
 </html>
