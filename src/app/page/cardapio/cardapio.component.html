@@ -11,17 +11,16 @@
 
 <!-- <div class="container"> -->
 
-  <ul class="nav nav-tabs p-2">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Pizzas</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Bebidas</a>
-    </li>
-  </ul>
-    <div class="d-flex justify-content-center">
-      <div class="card" style="width: 23rem;">
-        <img src="../../../assets/cardapio.png" class="card-img-top" alt="...">
-      </div>
-    </div>
+<ul class="nav nav-tabs p-2">
+  <li class="nav-item">
+    <a class="nav-link "  routerLinkActive="active" aria-current="page" [routerLink]="['menu1']">Pizzas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " routerLinkActive="active"  aria-current="page" [routerLink]="['menu2']">Bebidas</a>
+  </li>
+</ul>
+<div class="d-flex justify-content-center">
+  <router-outlet></router-outlet>
+
+</div>
 <!-- </div> -->

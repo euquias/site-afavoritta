@@ -7,6 +7,9 @@ import { PageComponent } from './page/page.component';
 import { CardapioComponent } from './page/cardapio/cardapio.component';
 import { CarrosselComponent } from './page/carrossel/carrossel.component';
 import { NavComponent } from './page/nav/nav.component';
+import { Menu1Component } from './page/cardapio/menu1/menu1.component';
+import { Menu2Component } from './page/cardapio/menu2/menu2.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { NavComponent } from './page/nav/nav.component';
     PageComponent,
     CardapioComponent,
     CarrosselComponent,
-    NavComponent
+    NavComponent,
+    Menu1Component,
+    Menu2Component
+   
   ],
   imports: [
     BrowserModule,
