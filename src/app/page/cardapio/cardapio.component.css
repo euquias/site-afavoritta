@@ -11,8 +11,13 @@
     border-radius: 50%;
     margin-left: 10px;
 }
-.menu{
+
+.menu {
     display: flex;
     align-items: center;
     color: rgb(226, 43, 49);
-} 
+}
+
+.infor {
+    margin-left: 200px;
+}

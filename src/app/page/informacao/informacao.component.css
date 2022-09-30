@@ -1,0 +1,40 @@
+.social-network a {
+    color: #fff;
+}
+
+.social-network a:hover {
+    color: red;
+}
+a{
+    text-decoration: none;
+    margin-left: 10px;   
+}
+.social-network a:hover {
+    text-decoration: none;
+}
+
+ul.social-network li {
+    display: inline;
+    margin: 0 5px;
+}
+
+.social-network i {
+    margin-top: 25px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+
+ul.social-network li {
+    display: inline;
+    margin: 0 5px;
+}
+.i{
+ margin: 10px;
+}

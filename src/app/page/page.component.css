@@ -2,8 +2,6 @@ body {
   background-image: url(../../assets/plano-fundo.jpg);
   background-repeat: no-repeat;
   background-size: auto;
-  /*    background-size: cover;
-    background-position: center center; */
 }
 
 .compartilhar a {
@@ -30,8 +28,6 @@ ul.compartilhar li {
   font-size: 35px;
   margin-right: 30px;
 }
-
-
 
 .links {
   display: flex;
