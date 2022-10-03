@@ -7,7 +7,7 @@
 }
 a{
     text-decoration: none;
-    margin-left: 10px;   
+      
 }
 .social-network a:hover {
     text-decoration: none;
@@ -30,11 +30,10 @@ ul.social-network li {
     margin-top: 10px;
 }
 
-
-ul.social-network li {
-    display: inline;
-    margin: 0 5px;
-}
-.i{
+.fa-money{
+    
  margin: 10px;
+}
+.fa-credit-card-alt{
+    margin: 10px;
 }
