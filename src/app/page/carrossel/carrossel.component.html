@@ -1,19 +1,68 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <!-- https://codesandbox.io/s/2vp3t3?file=/src/app/app.component.ts -->
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide1">
-            <div class="card" style="width: 15rem;">
-              <img src="../../assets/pizza-frango.jpeg" class="card-img-top" alt="pizza">
-              <a href="https://wa.me/5561995037896?text=Ola boa noite! gostaria pedir essa promoção: pizza calabreza mais refrigerante por R$:35,00" target="_blank" class="btn btn-primary">Peça já </a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-  
-      <!-- Swiper JS -->
-    
+<swiper [slidesPerView]="3" [spaceBetween]="10" [slidesPerGroup]="3" [loop]="true" [loopFillGroupWithBlank]="true"
+  [pagination]="{
+      clickable: true
+    }" [navigation]="true" class="mySwiper">
+  <ng-template swiperSlide>
+    <div class="card" style="width: 15rem;">
+      <img src="../../assets/pizza-frango.jpeg" class="card-img-top" alt="pizza">
+      <a href="https://wa.me/5561995037896?text=Ola boa noite! gostaria pedir essa promoção: pizza calabreza mais refrigerante por R$:35,00"
+        target="_blank" class="btn btn-primary">Peça já </a>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide>
+    <div class="card" style="width: 15rem;">
+      <img src="../../assets/pizza-frango.jpeg" class="card-img-top" alt="pizza">
+      <a href="https://wa.me/5561995037896?text=Ola boa noite! gostaria pedir essa promoção: pizza calabreza mais refrigerante por R$:35,00"
+        target="_blank" class="btn btn-primary">Peça já </a>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide>
+    <div class="card" style="width: 15rem;">
+      <img src="../../assets/pizza-frango.jpeg" class="card-img-top" alt="pizza">
+      <a href="https://wa.me/5561995037896?text=Ola boa noite! gostaria pedir essa promoção: pizza calabreza mais refrigerante por R$:35,00"
+        target="_blank" class="btn btn-primary">Peça já </a>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide>
+    <div class="card" style="width: 15rem;">
+      <img src="../../assets/pizza-frango.jpeg" class="card-img-top" alt="pizza">
+      <a href="https://wa.me/5561995037896?text=Ola boa noite! gostaria pedir essa promoção: pizza calabreza mais refrigerante por R$:35,00"
+        target="_blank" class="btn btn-primary">Peça já </a>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide>
+    <div class="card" style="width: 15rem;">
+      <img src="../../assets/pizza-frango.jpeg" class="card-img-top" alt="pizza">
+      <a href="https://wa.me/5561995037896?text=Ola boa noite! gostaria pedir essa promoção: pizza calabreza mais refrigerante por R$:35,00"
+        target="_blank" class="btn btn-primary">Peça já </a>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide>
+    <div class="card" style="width: 15rem;">
+      <img src="../../assets/pizza-frango.jpeg" class="card-img-top" alt="pizza">
+      <a href="https://wa.me/5561995037896?text=Ola boa noite! gostaria pedir essa promoção: pizza calabreza mais refrigerante por R$:35,00"
+        target="_blank" class="btn btn-primary">Peça já </a>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide>
+    <div class="card" style="width: 15rem;">
+      <img src="../../assets/pizza-frango.jpeg" class="card-img-top" alt="pizza">
+      <a href="https://wa.me/5561995037896?text=Ola boa noite! gostaria pedir essa promoção: pizza calabreza mais refrigerante por R$:35,00"
+        target="_blank" class="btn btn-primary">Peça já </a>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide>
+    <div class="card" style="width: 15rem;">
+      <img src="../../assets/pizza-frango.jpeg" class="card-img-top" alt="pizza">
+      <a href="https://wa.me/5561995037896?text=Ola boa noite! gostaria pedir essa promoção: pizza calabreza mais refrigerante por R$:35,00"
+        target="_blank" class="btn btn-primary">Peça já </a>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide>
+    <div class="card" style="width: 15rem;">
+      <img src="../../assets/pizza-frango.jpeg" class="card-img-top" alt="pizza">
+      <a href="https://wa.me/5561995037896?text=Ola boa noite! gostaria pedir essa promoção: pizza calabreza mais refrigerante por R$:35,00"
+        target="_blank" class="btn btn-primary">Peça já </a>
+    </div>
+  </ng-template>
+</swiper>
