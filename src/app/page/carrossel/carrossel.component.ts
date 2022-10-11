@@ -6,7 +6,7 @@ SwiperCore.use([Navigation, Pagination]);
 @Component({
   selector: 'app-carrossel',
   templateUrl: './carrossel.component.html',
-  styleUrls: ['./carrossel.component.scss'],
+  styleUrls: ['./carrossel.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class CarrosselComponent implements OnInit {
