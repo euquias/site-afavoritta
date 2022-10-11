@@ -38,10 +38,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Pagamentos aceito na entrega</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>  
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>   
             </div>
             <div class="modal-body">
-                <a class="pix" *ngIf="testandoifelse; then thenblock; else elseblock">
+                <a  *ngIf="testandoifelse; then thenblock; else elseblock">
                 </a>
                 <i class="fa fa-money " aria-hidden="true">
                     <p>Dinheiro</p>
@@ -76,7 +76,7 @@
 
 <ng-template #thenblock>
     <p>CPF: 05554768121
-        <a>
+        <a >
             <i class="fa fa-files-o" (click)="copyMessage('05554768121')" value="click to copy " alt="copiar">
             </i>
         </a>
@@ -86,5 +86,5 @@
     <p class="copiado">Copiado com sucesso
         <i class="fa fa-check-square-o" aria-hidden="true">
         </i>
-    </p>
+    </p>class="pix"
 </ng-template>

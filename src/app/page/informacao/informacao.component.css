@@ -5,10 +5,12 @@
 .social-network a:hover {
     color: red;
 }
-a{
+
+a {
     text-decoration: none;
-      
+
 }
+
 .social-network a:hover {
     text-decoration: none;
 }
@@ -30,16 +32,28 @@ ul.social-network li {
     margin-top: 10px;
 }
 
-.fa-money{
-    
- margin: 10px;
-}
-.fa-credit-card-alt{
+.fa-money {
+
     margin: 10px;
 }
-.fa-check-square-o{
+
+.fa-credit-card-alt {
+    margin: 10px;
+}
+
+.fa-files-o {
+    pointer-events: fill;
+}
+
+.fa-files-o:hover {
+    color:blue;
+    
+}
+
+.fa-check-square-o {
     color: greenyellow;
 }
-.copiado{
+
+.copiado {
     color: greenyellow;
 }
