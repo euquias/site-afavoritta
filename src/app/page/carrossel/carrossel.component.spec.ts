@@ -10,7 +10,7 @@ describe('CarrosselComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ CarrosselComponent ]
     })
-    .compileComponents();
+    .compileComponents(); 
 
     fixture = TestBed.createComponent(CarrosselComponent);
     component = fixture.componentInstance;
