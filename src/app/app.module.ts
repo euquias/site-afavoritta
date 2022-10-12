@@ -11,8 +11,7 @@ import { Menu1Component } from './page/cardapio/menu1/menu1.component';
 import { Menu2Component } from './page/cardapio/menu2/menu2.component';
 import { InforComponent } from './page/cardapio/infor/infor.component';
 import { InformacaoComponent } from './page/informacao/informacao.component';
-import { SwiperModule } from 'swiper/angular';
-import SwiperCore, { Pagination, Navigation } from "swiper";
+
 
 
 @NgModule({
@@ -31,8 +30,8 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    SwiperModule
+    AppRoutingModule
+    
 
 
   ],
