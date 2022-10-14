@@ -31,6 +31,8 @@ import { InformacaoComponent } from './page/informacao/informacao.component';
   imports: [
     BrowserModule,
     AppRoutingModule
+ 
+   
     
 
 

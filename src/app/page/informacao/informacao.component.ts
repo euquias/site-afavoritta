@@ -26,7 +26,7 @@ export class InformacaoComponent implements OnInit {
     selBox.focus();
     selBox.select();
     document.execCommand('copy');
-    document.body.removeChild(selBox)
+    document.body.removeChild(selBox) 
   }
 
 
