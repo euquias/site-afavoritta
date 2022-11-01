@@ -4,6 +4,7 @@ import { CardapioComponent } from './page/cardapio/cardapio.component';
 import { Menu1Component } from './page/cardapio/menu1/menu1.component';
 import { Menu2Component } from './page/cardapio/menu2/menu2.component';
 import { NavComponent } from './page/nav/nav.component';
+import { SistemaComponent } from './sistema/sistema.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,10 @@ const routes: Routes = [
       {
         path:'menu2',
         component:Menu2Component
+      },
+      {
+        path:'sistema',
+        component:SistemaComponent
       }
     ]
   }
