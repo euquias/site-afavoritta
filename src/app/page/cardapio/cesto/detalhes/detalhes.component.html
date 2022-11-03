@@ -1,0 +1,159 @@
+<div class="container p-5">
+  <div class="card ">
+    <div class="card-header">
+      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+      Finalizar Pedido
+    </div>
+    <div class="card-body">
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">Endereço de entrega</label>
+          <input type="text" class="form-control" id="validationCustom01" value="Rua" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-2">
+          <label for="validationCustom02" class="form-label">Numero</label>
+          <input type="text" class="form-control" id="validationCustom02" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustomUsername" class="form-label">Nome</label>
+          <div class="input-group has-validation">
+            <input type="text" class="form-control" id="validationCustom01" required>
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="card-text">
+        Intes do Pedido
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Quantidade</th>
+              <th scope="col">Itens</th>
+              <th scope="col">Observação</th>
+              <th scope="col">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Pizza calabresa</td>
+              <td>Sem Oregano</td>
+              <td>R$:29,00</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Pizza Catupiry</td>
+              <td></td>
+              <td>R$:32,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card-text col-sm-6 col-md-4">
+          <strong>Intes do Pedido</strong>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Pix
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              dinheiro
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              cartão
+            </label>
+          </div>
+        </div>
+        <div class="card-text col-sm-6 col-md-4">
+          <strong>Frete</strong>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Local de entrega
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Mesquita</a></li>
+              <li><a class="dropdown-item" href="#">Jardim Edite</a></li>
+              <li><a class="dropdown-item" href="#">Jardim Abc</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-text col-sm-6 col-md-4">
+          <strong>Total:</strong>
+          <div class="row">
+            <p class="card-text col-8">itens</p>
+            <p class="card-text col-4">R$:29,00</p>
+
+            <p class="card-text col-8">Frete</p>
+            <p class="card-text col-4">R$:5,00</p>
+
+            <h3 class="card-text col-6">Total:</h3>
+            <h3 class="card-text col-6"><strong>R$:200,00</strong></h3>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <a class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#sstaticBackdrop">
+                <i class="fa fa-trash m-1" aria-hidden="true"></i>Cancelar Pedido</a>
+            </div>
+            <div class="col-md-6">
+              <a class="btn btn-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+                  class="fa fa-money m-1" aria-hidden="true"></i>finalizar Pedido</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Forma de envio: comanda</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <i class="fa fa-print " aria-hidden="true"></i>
+        <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+        <i class="fa fa-whatsapp" aria-hidden="true"></i> 
+        <i class="fa fa-ban" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="sstaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">AVISO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza que deseja cancelar seu pedido?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+        <button type="button" class="btn btn-primary" >Sim</button>
+      </div>
+    </div>
+  </div>
+</div>

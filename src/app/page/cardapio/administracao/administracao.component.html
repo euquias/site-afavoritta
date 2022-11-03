@@ -1,0 +1,37 @@
+<div class="conteiner">
+    <div class="card">
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p> <i class="fa fa-cogs" aria-hidden="true"> </i> Administração do sitema</p>
+                <footer class="blockquote-footer">Cadastros<cite title="Source Title"> & Cia</cite></footer>
+            </blockquote>
+        </div>
+    </div>
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link"  routerLinkActive="active" aria-current="true" [routerLink]="['categoria']">Categoria</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  routerLinkActive="active" aria-current="true" [routerLink]="['menu']">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  routerLinkActive="active" aria-current="true" [routerLink]="['promocao']">Promoção</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  routerLinkActive="active" aria-current="true" [routerLink]="['usuario']">Usuario</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  routerLinkActive="active" aria-current="true" [routerLink]="['adicional']">Adicional</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  routerLinkActive="active" aria-current="true" [routerLink]="['dashboard']">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
