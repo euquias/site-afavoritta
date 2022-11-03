@@ -72,7 +72,7 @@ const routes: Routes = [
       },
       {
         path:'usuario',
-        component:UsuarioComponent
+        component:UsuarioComponent 
       },
       {
         path:'adicional',
