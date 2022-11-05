@@ -22,6 +22,7 @@ import { PromocaoComponent } from './page/cardapio/administracao/promocao/promoc
 import { UsuarioComponent } from './page/cardapio/administracao/usuario/usuario.component';
 import { AdicionalComponent } from './page/cardapio/administracao/adicional/adicional.component';
 import { DashboardComponent } from './page/cardapio/administracao/dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -52,7 +53,8 @@ import { DashboardComponent } from './page/cardapio/administracao/dashboard/dash
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
  
    
     

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CestoService } from '../cesto.service';
 
 @Component({
   selector: 'app-pedido',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PedidoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cestoservice:CestoService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+  }
+  items(item:any){
+    return this.cestoservice.additem(item)
+  }
+  total():number{ 
+    return this.cestoservice.total()
   }
 
 }
