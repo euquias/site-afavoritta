@@ -1,8 +1,7 @@
 <div class="container"> 
   <div class="grid">
     <div class="row">
-        <div class="card m-3 col-sm-6 col-md-4 col-lg-3" *ngFor="let menu of menus"
-          >
+        <div class="card m-3 col-sm-6 col-md-4 col-lg-3" >
           <img src="../../../../assets/pizzacalabresa.jfif" class="card-img-top" alt="..." style="width: 5rem;"
             style="height: 5rem;">
           <div class="card-body">
@@ -11,7 +10,7 @@
             <a (click)="emitaddevent()" class="btn btn-primary"   >Adicionar</a>
           </div>
         </div>
-    </div>
-    <app-pedido></app-pedido>
+    </div> 
+    <app-pedido></app-pedido>  
   </div>
-</div>
+</div> 

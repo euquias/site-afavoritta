@@ -17,4 +17,4 @@ export class CardapioService {
   read():Observable<Menu[]> {
     return this.http.get<Menu[]>(this.api);
   }
-}
+} 

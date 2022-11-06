@@ -8,24 +8,18 @@ import { Menu } from '../menu.model';
   styleUrls: ['./menu1.component.css']
 })
 export class Menu1Component implements OnInit {
-  @Input() menus!: Menu[]
+  @Input() menu!: Menu
   @Output() add = new EventEmitter()
 
   constructor(private cardapioservice: CardapioService) { }
 
   ngOnInit(): void {
-    this.cardapioservice.read().subscribe(menus => {
-      this.menus = menus
-      console.log(menus)
-    })
+   
   }
-  emitaddevent() {
-    this.add.emit(this.menus)
+   emitaddevent() {
+    this.add.emit(this.menu)
 
-  }
-  addmenuitem(item: Menu) {
-    console.log(item)  
-  }
+  } 
 
 
 

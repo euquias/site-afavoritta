@@ -33,8 +33,9 @@
 
   <div class="grid col">
     <div class="row">
-      <div class="col-md-8">
-        <router-outlet ></router-outlet>
+      <div class="col-md-8"  *ngFor="let menu of menus">
+        <!-- <router-outlet ></router-outlet> -->
+        <app-menu1 [menu]="menu"  (add)="addmeuitem($event)" ></app-menu1>
       </div>
       <div class="carrinho col-md-4 p-3">
         <div class="card text-center">
