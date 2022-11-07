@@ -8,14 +8,18 @@ import { CestoService } from '../cesto.service';
 })
 export class PedidoComponent implements OnInit {
 
-  constructor(private cestoservice:CestoService) { }
+  constructor(private cestoservice: CestoService) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
   }
-  items(item:any){
-    return this.cestoservice.additem(item)
+     additem(item:any){
+      return this.cestoservice.additem(item)
+    }  
+
+  items(): any[] {
+    return this.cestoservice.items
   }
-  total():number{ 
+  total(): number {
     return this.cestoservice.total()
   }
 

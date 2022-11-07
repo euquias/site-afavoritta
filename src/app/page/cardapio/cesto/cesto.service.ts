@@ -7,28 +7,29 @@ import { Menu } from '../menu.model';
   providedIn: 'root'
 })
 export class CestoService {
-  itens: Cesto[]=[]
+  items: Cesto[] = [] 
   constructor() { }
 
   clear() {
-    this.itens = []      
+    this.items = []
   }
   additem(item: Menu) {
-    let foudintem = this.itens.find((mitem) => mitem.meu.id === item.id)
+    let foudintem = this.items.find((mitem) => mitem.menu.id === item.id)
     if (foudintem) {
       foudintem.quantity = foudintem.quantity + 1
     } else {
-      this.itens.push(new Cesto(item))
+      this.items.push(new Cesto(item))
     }
   }
-  remover(iten: Cesto) {
-    this.itens.splice(this.itens.indexOf(iten), 1)
+  remover(item: Cesto) {
+    this.items.splice(this.items.indexOf(item), 1)
   }
 
   total(): number {
-    return this.itens
-      .map(iten => iten.value())
+    return this.items
+      .map(items => items.value())
       .reduce((prev, value) => prev + value, 0)
   }
+
 
 }
