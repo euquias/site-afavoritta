@@ -1,7 +1,6 @@
 
-<div class="card m-1">
-  <img src="../../../../assets/pizzacalabresa.jfif" class="card-img-top img-fluid" alt="..." style="width: 5rem;"
-    style="height: 5rem;">
+<div class="card m-1"  style="width: 10rem;">
+  <img [src]="menu.imagePath" class="card-img-top" width="50" height="100">
   <div class="card-body">
     <h5 class="card-title">{{menu.name}}</h5>
     <p class="card-text">{{ menu.price | currency: "BRL":"symbol" }}</p>

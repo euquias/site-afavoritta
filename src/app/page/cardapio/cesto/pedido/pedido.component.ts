@@ -12,13 +12,22 @@ export class PedidoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-     additem(item:any){
-      return this.cestoservice.additem(item)
-    }  
+  additem(item: any) {
+    return this.cestoservice.additem(item)
+  }
+
+  clear(){
+    this.cestoservice.clear()
+  }
 
   items(): any[] {
     return this.cestoservice.items
   }
+
+    removeritem(item:any){
+      this.cestoservice.remover(item)
+    }
+
   total(): number {
     return this.cestoservice.total()
   }
