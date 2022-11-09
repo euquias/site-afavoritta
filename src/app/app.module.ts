@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageComponent } from './page/page.component';
@@ -23,6 +24,7 @@ import { UsuarioComponent } from './page/cardapio/administracao/usuario/usuario.
 import { AdicionalComponent } from './page/cardapio/administracao/adicional/adicional.component';
 import { DashboardComponent } from './page/cardapio/administracao/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InputsComponent } from './page/cardapio/cesto/detalhes/inputs/inputs.component';
 
 
 
@@ -48,13 +50,15 @@ import { HttpClientModule } from '@angular/common/http';
     UsuarioComponent,
     AdicionalComponent,
     DashboardComponent,
+    InputsComponent,
       
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
  
    
     

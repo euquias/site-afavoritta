@@ -5,31 +5,7 @@
       Finalizar Pedido
     </div>
     <div class="card-body">
-      <form class="row g-3 needs-validation" novalidate>
-        <div class="col-md-6">
-          <label for="validationCustom01" class="form-label">Endereço de entrega</label>
-          <input type="text" class="form-control" id="validationCustom01" value="Rua" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-2">
-          <label for="validationCustom02" class="form-label">Numero</label>
-          <input type="text" class="form-control" id="validationCustom02" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-3">
-          <label for="validationCustomUsername" class="form-label">Nome</label>
-          <div class="input-group has-validation">
-            <input type="text" class="form-control" id="validationCustom01" required>
-            <div class="invalid-feedback">
-              Please choose a username.
-            </div>
-          </div>
-        </div>
-      </form>
+    <app-inputs></app-inputs>
       <div class="card-text">
         Intes do Pedido
         <table class="table">
@@ -131,9 +107,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-         <i class="fa fa-print " aria-hidden="true"></i>
+        <i class="fa fa-print " aria-hidden="true"></i>
         <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-        <i class="fa fa-whatsapp" aria-hidden="true"></i> 
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
         <i class="fa fa-ban" aria-hidden="true"></i>
       </div>
     </div>
@@ -152,7 +128,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-primary" >Sim</button>
+        <button type="button" class="btn btn-primary">Sim</button>
       </div>
     </div>
   </div>
