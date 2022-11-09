@@ -25,6 +25,7 @@ import { AdicionalComponent } from './page/cardapio/administracao/adicional/adic
 import { DashboardComponent } from './page/cardapio/administracao/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InputsComponent } from './page/cardapio/cesto/detalhes/inputs/inputs.component';
+import { RadioComponent } from './page/cardapio/cesto/detalhes/radio/radio.component';
 
 
 
@@ -51,6 +52,7 @@ import { InputsComponent } from './page/cardapio/cesto/detalhes/inputs/inputs.co
     AdicionalComponent,
     DashboardComponent,
     InputsComponent,
+    RadioComponent,
       
    
   ],
