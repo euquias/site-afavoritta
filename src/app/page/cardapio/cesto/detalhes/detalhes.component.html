@@ -5,34 +5,49 @@
       Finalizar Pedido
     </div>
     <div class="card-body">
-    <app-inputs></app-inputs>
-      <div class="card-text">
-        Intes do Pedido
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Quantidade</th>
-              <th scope="col">Itens</th>
-              <th scope="col">Observação</th>
-              <th scope="col">Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Pizza calabresa</td>
-              <td>Sem Oregano</td>
-              <td>R$:29,00</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Pizza Catupiry</td>
-              <td></td>
-              <td>R$:32,00</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <form #form="ngForm" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <app-inputs errormessage label="Endereço De Entrega:">
+            <input class="form-control" placeholder="Endereço" name="address" ngModel required minlength="10">
+          </app-inputs>
+        </div>
+        <div class="col-md-2">
+          <app-inputs label="Numero">
+            <input type="text" class="form-control" name="number" placeholder="Numero" errormessage 
+              label="Endereço" ngModel required minlength="4">
+          </app-inputs>
+        </div>
+        <div class="col-md-3">
+          <app-inputs>
+            <input type="text" class="form-control" name="name" placeholder="Nome">
+          </app-inputs>
+        </div>
+      </form>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Itens</th>
+            <th scope="col">Observação</th>
+            <th scope="col">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Pizza calabresa</td>
+            <td>Sem Oregano</td>
+            <td>R$:29,00</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Pizza Catupiry</td>
+            <td></td>
+            <td>R$:32,00</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
     <div class="container">
       <div class="row">

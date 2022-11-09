@@ -1,32 +1,12 @@
-<form #form="ngForm" class="row g-3 needs-validation" novalidate>
-    <div class="col-md-6">
-      <div class="form-group" [class.has-success]="iptaddress.valid && (iptaddress.dirty || iptaddress.touched)"
-        [class.has-error]="!iptaddress.valid && (iptaddress.dirty || iptaddress.touched)">
-        <label for="validationCustom01" class="form-label">Endereço de entrega</label>
-        <input type="text" class="form-control" name="address" ngModel id="validationCustom01" value="Rua" required
-          minlength="10">
-      </div>
-    </div>
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-    <div class="col-md-2">
-      <div class="form-group">
-        <label for="validationCustom02" class="form-label">Numero</label>
-        <input type="text" class="form-control" name="number" #iptaddress="ngModel" ngModel id="validationCustom02"
-          required minlength="10">
-      </div>
-      <div class="valid-feedback ">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-3">
-      <label for="validationCustomUsername" class="form-label">Nome</label>
-      <div class="input-group has-validation">
-        <input type="text" class="form-control" name="name" ngModel id="validationCustom01" required minlength="5">
-        <div class="invalid-feedback has-error">
-          Please choose a username.
-        </div>
-      </div>
-    </div>
-  </form>
+<div class="form-group" [class.has-success]="input.valid && (input.dirty || input.touched)"
+  [class.has-error]="!input.valid && (input.dirty || input.touched)">
+  <label class="control-label se -only" for="inputsuccess">{{label}}</label>
+  <ng-content>
+  </ng-content>
+</div>
+<div class="help-block ok" *ngIf="input.valid && (input.dirty || input.touched)">
+  ok!
+</div>
+<div class="help-block error" *ngIf="!input.valid && (input.dirty || input.touched)">
+  Campo obrigatorío
+</div>
