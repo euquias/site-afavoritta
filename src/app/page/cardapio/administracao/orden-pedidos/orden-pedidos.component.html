@@ -1,0 +1,50 @@
+<p>
+    {{ordems | json}}
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Numero do pedido</th>
+            <th scope="col">Nome </th>
+            <th scope="col">Endereço</th>
+            <th scope="col">numero</th>
+            <th scope="col">Produtos</th>
+            <th scope="col">Forma de pagamento</th>
+            <th scope="col">valot</th>
+            <th scope="col">Compartilhar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ordem of ordems">
+            <th scope="row">{{ordem.id}}</th>
+            <td>{{ordem.name}}</td>
+            <td>{{ordem.address}}</td>
+            <td>{{ordem.number}}</td>
+            <td> {{ordem.detalheitems}}</td>
+            <td>{{ordem.test}}</td>
+            <td>25,00</td>
+            <td>
+            <a data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <i class="fa fa-print " aria-hidden="true"></i>
+                <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Forma de envio: comanda</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <i class="fa fa-print " aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,20 +1,26 @@
-
-.fa-print{
-   margin-right: 30px;
+.fa-print {
+    margin-right: 30px;
     font-size: 50px;
     color: rgb(35, 48, 143);
 }
-.fa-file-pdf-o{
+
+.fa-file-pdf-o {
     margin-right: 30px;
     font-size: 50px;
-    color: rgb(255, 47, 47); 
+    color: rgb(255, 47, 47);
 }
-.fa-whatsapp{
-      margin-right: 30px;  
+
+.fa-whatsapp {
+    margin-right: 30px;
     font-size: 50px;
     color: greenyellow;
 }
-.fa-ban{
+
+.fa-ban {
     font-size: 50px;
-    color: rgb(255, 47, 47); 
+    color: rgb(255, 47, 47);
+}
+
+.fa-ban:hover {
+    color: black;
 }

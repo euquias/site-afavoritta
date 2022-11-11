@@ -26,6 +26,11 @@ import { DashboardComponent } from './page/cardapio/administracao/dashboard/dash
 import { HttpClientModule } from '@angular/common/http';
 import { InputsComponent } from './page/cardapio/cesto/detalhes/inputs/inputs.component';
 import { RadioComponent } from './page/cardapio/cesto/detalhes/radio/radio.component';
+import { DetalhesItemComponent } from './page/cardapio/cesto/detalhes/detalhes-item/detalhes-item.component';
+import { DetalhesTotalComponent } from './page/cardapio/cesto/detalhes/detalhes-total/detalhes-total.component';
+import { DetalhesFreteComponent } from './page/cardapio/cesto/detalhes/detalhes-frete/detalhes-frete.component';
+import { OrdenPedidosComponent } from './page/cardapio/administracao/orden-pedidos/orden-pedidos.component';
+import { FreteComponent } from './page/cardapio/administracao/frete/frete.component';
 
 
 
@@ -53,6 +58,11 @@ import { RadioComponent } from './page/cardapio/cesto/detalhes/radio/radio.compo
     DashboardComponent,
     InputsComponent,
     RadioComponent,
+    DetalhesItemComponent,
+    DetalhesTotalComponent,
+    DetalhesFreteComponent,
+    OrdenPedidosComponent,
+    FreteComponent,
       
    
   ],

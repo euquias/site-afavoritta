@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RadioOption } from './radio/radio-option.model';
+import { Router } from '@angular/router';
+import { DetalhesItemService } from './detalhes-item/detalhes-item.service';
+import { Cesto } from '../cesto.model';
+import { Detalhe, DetalheItem } from './detalhes.model';
 
 
 @Component({
@@ -8,13 +12,45 @@ import { RadioOption } from './radio/radio-option.model';
   styleUrls: ['./detalhes.component.css']
 })
 export class DetalhesComponent implements OnInit {
-  tests:RadioOption[]=[
-    {label:'dinheiro', value:'mon'},
-    {label:'cartão', value:'deb'}
+
+ 
+
+  delivery: number = 5
+  tests: RadioOption[] = [
+    { label: 'dinheiro', value: 'mon' },
+    { label: 'cartão', value: 'deb&cre' },
+    { label: 'pix', value: 'pix' }
   ]
-  constructor() { }
+
+  constructor(private router: Router, private detalhesitemservice: DetalhesItemService) { }
 
   ngOnInit(): void {
   }
+
+  finalizarpedido(detalhe: Detalhe) {
+     detalhe.detalheitems = this.detalhesitemservice.cestoitems() 
+      .map((item: Cesto) => new DetalheItem(item.quantity, item.menu.name, item.menu.price))
+     this.detalhesitemservice.finalizarpedido(detalhe)
+     .subscribe((detalhid:string)=>{
+      console.log(`compra comcluida:${detalhid}`) 
+      this.detalhesitemservice.clear()
+      
+     }) 
+     
+  }
+  
+  cancel(){
+    this.detalhesitemservice.clear()
+    this.router.navigate(['cardapio'])
+  }
+
+  detalhesitem(): Cesto[] {
+    return this.detalhesitemservice.cestoitems()
+  }
+
+  itemsvalue(): number {
+    return this.detalhesitemservice.itemsvalue()
+  }
+
 
 }

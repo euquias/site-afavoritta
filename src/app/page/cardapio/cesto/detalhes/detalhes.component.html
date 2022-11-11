@@ -1,9 +1,11 @@
 <div class="container p-5">
-  <div class="card ">
+  <div class="card">
     <div class="card-header">
       <i class="fa fa-shopping-basket" aria-hidden="true"></i>
       Finalizar Pedido
     </div>
+   <!--  {{form.valid}}
+    {{form.value | json}} -->
     <div class="card-body">
       <form #form="ngForm" class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
@@ -13,90 +15,40 @@
         </div>
         <div class="col-md-2">
           <app-inputs label="Numero">
-            <input type="text" class="form-control" name="number" placeholder="Numero" errormessage 
-              label="Endereço" ngModel required minlength="4">
+            <input type="text" class="form-control" name="number" placeholder="Numero" errormessage label="Endereço"
+              ngModel required minlength="4">
           </app-inputs>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3"> 
           <app-inputs>
-            <input type="text" class="form-control" name="name" placeholder="Nome">
+            <input type="text" class="form-control" name="name" placeholder="Nome" ngModel>
           </app-inputs>
+        </div>
+        <div class=" col-md-12">
+          <app-detalhes-item [items]="detalhesitem()"></app-detalhes-item>
+
+        </div>
+        <div class=" col-md-4">
+          <p class="lead">Formas de Pagamento:</p>
+          <div class="form-group">
+            <app-radio [options]="tests" name="test" ngModel></app-radio>
+          </div>
+        </div>
+        <div class="card-text col-sm-6 col-md-3">
+          <app-detalhes-frete></app-detalhes-frete>
+        </div>
+        <div class="card-text col-sm-6 col-md-5">
+          <app-detalhes-total [delivery]="delivery" [itemsvalue]="itemsvalue()"></app-detalhes-total>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <a  class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#sstaticBackdrop">
+              <i class="fa fa-trash m-1" aria-hidden="true"></i>Cancelar Pedido</a>
+              <a  (click)=" finalizarpedido(form.value)" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+                class="fa fa-money m-1" aria-hidden="true"></i>finalizar Pedido</a>
+          </div>
         </div>
       </form>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Quantidade</th>
-            <th scope="col">Itens</th>
-            <th scope="col">Observação</th>
-            <th scope="col">Subtotal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Pizza calabresa</td>
-            <td>Sem Oregano</td>
-            <td>R$:29,00</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Pizza Catupiry</td>
-            <td></td>
-            <td>R$:32,00</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-xs-12">
-          <p class="lead">Formas de Pagamento:</p>
-
-            <div class="form-group">
-               <app-radio [options]="tests"></app-radio>
-                         
-          </div>
-        </div>
-        <div class="card-text col-sm-6 col-md-4">
-          <strong>Frete</strong>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Local de entrega
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Mesquita</a></li>
-              <li><a class="dropdown-item" href="#">Jardim Edite</a></li>
-              <li><a class="dropdown-item" href="#">Jardim Abc</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="card-text col-sm-6 col-md-4">
-          <strong>Total:</strong>
-          <div class="row">
-            <p class="card-text col-8">itens</p>
-            <p class="card-text col-4">R$:29,00</p>
-
-            <p class="card-text col-8">Frete</p>
-            <p class="card-text col-4">R$:5,00</p>
-
-            <h3 class="card-text col-6">Total:</h3>
-            <h3 class="card-text col-6"><strong>R$:200,00</strong></h3>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <a class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#sstaticBackdrop">
-                <i class="fa fa-trash m-1" aria-hidden="true"></i>Cancelar Pedido</a>
-            </div>
-            <div class="col-md-6">
-              <a class="btn btn-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
-                  class="fa fa-money m-1" aria-hidden="true"></i>finalizar Pedido</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -112,7 +64,10 @@
         <i class="fa fa-print " aria-hidden="true"></i>
         <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
         <i class="fa fa-whatsapp" aria-hidden="true"></i>
-        <i class="fa fa-ban" aria-hidden="true"></i>
+        <a (click)=" cancel()">
+          <i class="fa fa-ban" aria-hidden="true"></i>
+        </a>
+        
       </div>
     </div>
   </div>
@@ -130,7 +85,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-primary">Sim</button>
+        <button  (click)=" cancel()" type="button" class="btn btn-primary">Sim</button>
       </div>
     </div>
   </div>

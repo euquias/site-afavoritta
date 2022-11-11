@@ -1,0 +1,12 @@
+<strong>Total:</strong>
+          <div class="row">
+            <p class="card-text col-8">itens:</p>
+            <p class="card-text col-4">{{itemsvalue | currency: "BRL":"symbol"}}</p>
+
+            <p class="card-text col-8">Frete</p>
+            <p class="card-text col-4">{{delivery | currency: "BRL":"symbol"}}</p>
+
+            <h3 class="card-text col-6">Total:</h3>
+            <h3 class="card-text col-6"><strong>{{total() | currency: "BRL":"symbol"}}</strong></h3>
+          </div>
+           

@@ -4,7 +4,9 @@ import { AdicionalComponent } from './page/cardapio/administracao/adicional/adic
 import { AdministracaoComponent } from './page/cardapio/administracao/administracao.component';
 import { CategoriaComponent } from './page/cardapio/administracao/categoria/categoria.component';
 import { DashboardComponent } from './page/cardapio/administracao/dashboard/dashboard.component';
+import { FreteComponent } from './page/cardapio/administracao/frete/frete.component';
 import { MenuComponent } from './page/cardapio/administracao/menu/menu.component';
+import { OrdenPedidosComponent } from './page/cardapio/administracao/orden-pedidos/orden-pedidos.component';
 import { PromocaoComponent } from './page/cardapio/administracao/promocao/promocao.component';
 import { UsuarioComponent } from './page/cardapio/administracao/usuario/usuario.component';
 import { CardapioComponent } from './page/cardapio/cardapio.component';
@@ -23,21 +25,9 @@ const routes: Routes = [
     component: NavComponent
   },
   {
-    path: 'cardapio',
-    component: CardapioComponent,
-    children: [
-      {
-        path: '', redirectTo: 'menu1', pathMatch: 'full'
-      },
-      {
-        path: 'menu1',
-        component: Menu1Component
-      },
-      {
-        path: 'menu2',
-        component: Menu2Component
-      }
-    ]
+    path: 'cardapio', 
+    component: CardapioComponent
+ 
   },
   {
     path: 'pedido',
@@ -64,7 +54,7 @@ const routes: Routes = [
       },
       {
         path:'menu',
-        component:MenuComponent
+        component:MenuComponent 
       },
       {
         path:'promocao',
@@ -81,6 +71,14 @@ const routes: Routes = [
       {
         path:'dashboard',
         component:DashboardComponent
+      },
+      {
+        path:'ordem',
+        component:OrdenPedidosComponent
+      },
+      {
+        path:'frete',
+        component:FreteComponent
       }
     ]
   }

@@ -7,7 +7,7 @@ import { Menu } from '../menu.model';
   providedIn: 'root'
 })
 export class CestoService {
-  items: Cesto[] = [] 
+  items: Cesto[] = []
   constructor() { }
 
   clear() {
@@ -23,6 +23,9 @@ export class CestoService {
   }
   remover(item: Cesto) {
     this.items.splice(this.items.indexOf(item), 1)
+  }
+  increaseqty(item: Cesto) {
+    item.quantity = item.quantity + 1
   }
 
   total(): number {
