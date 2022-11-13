@@ -20,7 +20,7 @@ export class RadioComponent implements OnInit, ControlValueAccessor  {
   @Input() options!:RadioOption[]
   value:any
 
-  constructor() { }
+  constructor() { } 
   registerOnTouched(fn: any): void {
    
   }

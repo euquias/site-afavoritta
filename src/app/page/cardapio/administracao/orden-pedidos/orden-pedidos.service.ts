@@ -19,5 +19,11 @@ export class OrdenPedidosService {
   read():Observable<Ordem[]> {
     return this.http.get<Ordem[]>(this.api);
   }
+  readById(id: string): Observable<Ordem> {
+    const url = `${this.api}/${id}`;
+    return this.http.get<Ordem>(url);
+  }
+
+ 
 }
  

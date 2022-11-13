@@ -1,8 +1,14 @@
-<strong>Frete</strong>
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Buscar no local </option>
-            <option value="1">Mesquita</option>
-            <option value="2">Jardim Edite</option>
-            <option value="3">Jardim Abc</option>
+<div *ngFor="let option of options">
+
+  <strong >Frete</strong>
+  <select class="form-select"  aria-label="Default select example">
+      <option (click)="setvalue(option. delivery)" [class.selected]="option.delivery === delivery">escolha: </option> 
+            <option value="1">{{option.label}} </option>
+            <option value="2">{{option.label}} </option>
+            <option value="3">{{option.label}} </option>     
+         
           </select>
- 
+    
+
+         
+  </div>

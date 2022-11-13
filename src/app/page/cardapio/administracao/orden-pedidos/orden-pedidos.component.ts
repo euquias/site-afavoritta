@@ -19,6 +19,7 @@ export class OrdenPedidosComponent implements OnInit {
         console.log(ordems)
       })
 
+      
   }
  
   
