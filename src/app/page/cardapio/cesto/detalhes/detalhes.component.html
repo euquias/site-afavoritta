@@ -35,10 +35,10 @@
           </div>
         </div>
         <div class="card-text col-sm-6 col-md-3">
-          <app-detalhes-frete [options]="deliverys" name="deliverys" ngModel></app-detalhes-frete>
+          <app-detalhes-frete [options]="deliverys"  name="deliverys" ngModel></app-detalhes-frete>
         </div>
         <div class="card-text col-sm-6 col-md-5"> <!-- [deliverys]="deliverys"   [itemsvalue]="itemsvalue()"-->
-          <app-detalhes-total  [itemsvalue]="itemsvalue()" ></app-detalhes-total>
+          <app-detalhes-total  [delivery]="delivery"    [itemsvalue]="itemsvalue()" ></app-detalhes-total>
         </div>
         <div class="row">
           <div class="col-md-6">
