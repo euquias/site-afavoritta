@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root'   
 })
 export class DetalhesItemService {
   api = 'http://localhost:3001'

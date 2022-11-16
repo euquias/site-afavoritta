@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Ordem } from './ordem.model';
+import { DetalheItem } from '../../cesto/detalhes/detalhes.model';
+import {  Ordem} from './ordem.model';
 import { OrdenPedidosService } from './orden-pedidos.service';
 
 @Component({
@@ -9,7 +10,13 @@ import { OrdenPedidosService } from './orden-pedidos.service';
 })
 export class OrdenPedidosComponent implements OnInit {
 
-  ordems!:Ordem[]
+  ordems:Ordem[] =[]
+    detalheitems!:DetalheItem[]
+   
+  
+  
+  
+
   constructor(private  ordenpedidosservice: OrdenPedidosService ) { }
 
   ngOnInit(): void {
@@ -17,10 +24,17 @@ export class OrdenPedidosComponent implements OnInit {
       this.ordenpedidosservice.read().subscribe( ordems => {
         this.ordems = ordems
         console.log(ordems)
-      })
-
-      
+       
+   
+        })
+  /*      
+      this.ordenpedidosservice.read1().subscribe( items => {
+        this.items = items
+        console.log(items)
+      }) */ 
+          
   }
+
  
   
 }

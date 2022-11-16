@@ -16,14 +16,14 @@ export class DetalhesComponent implements OnInit {
 
 
 
-     delivery: number = 5  
+   delivery: number = 0  
 
-    deliverys: RadioDelivery[] = [
+  deliverys: RadioDelivery[] = [
     { label: 'Buscar no local', delivery: 0 },
     { label: 'Mesquita', delivery: 5 },
     { label: 'jardim Edite', delivery: 3 },
     { label: 'jardim Abc', delivery: 12 }
-  ]   
+  ]
 
   tests: RadioOption[] = [
     { label: 'dinheiro', value: 'mon' },
@@ -43,9 +43,7 @@ export class DetalhesComponent implements OnInit {
       .subscribe((detalhid: string) => {
         console.log(`compra comcluida:${detalhid}`)
         this.detalhesitemservice.clear()
-        
-
-      })
+      }) 
 
   }
 

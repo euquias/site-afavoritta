@@ -38,14 +38,14 @@
           <app-detalhes-frete [options]="deliverys"  name="deliverys" ngModel></app-detalhes-frete>
         </div>
         <div class="card-text col-sm-6 col-md-5"> <!-- [deliverys]="deliverys"   [itemsvalue]="itemsvalue()"-->
-          <app-detalhes-total  [delivery]="delivery"    [itemsvalue]="itemsvalue()" ></app-detalhes-total>
+          <app-detalhes-total  [delivery]="delivery"     [itemsvalue]="itemsvalue()" ></app-detalhes-total>
         </div>
         <div class="row">
           <div class="col-md-6">
             <a  class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#sstaticBackdrop">
               <i class="fa fa-trash m-1" aria-hidden="true"></i>Cancelar Pedido</a>
               <a  (click)=" finalizarpedido(form.value)" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
-                class="fa fa-money m-1" aria-hidden="true"></i>finalizar Pedido</a>
+                class="fa fa-money m-1"   aria-hidden="true"></i>finalizar Pedido</a>
           </div>
         </div>
       </form>
