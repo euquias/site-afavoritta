@@ -1,4 +1,4 @@
-  export interface  Ordem{
+/*   export interface  Ordem{
 
     address: string,
     number: string,
@@ -12,22 +12,22 @@
      
     ],
     id: number
-} 
+}  */
    
 
-/*  class Ordem {
+  class Ordem {
   constructor(
     public address: string,
     public number: number,
     public name: string,
     public test: string,
-    public detalheitems: DetalheItem[],
+    public detalheitems:[],
     public id: number
   ) { }
 } 
 
  class DetalheItem {
   constructor(public quantity: number, public menuid: string, public value: number) { }
-}
-export { Ordem, DetalheItem }
-  */
+} 
+export { Ordem, DetalheItem  }
+  

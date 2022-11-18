@@ -7,6 +7,8 @@ import { Detalhe, DetalheItem } from './detalhes.model';
 import { RadioDelivery } from './detalhes-frete/detalhe-delivery.model';
 
 
+
+
 @Component({
   selector: 'app-detalhes',
   templateUrl: './detalhes.component.html',
@@ -16,7 +18,8 @@ export class DetalhesComponent implements OnInit {
 
 
 
-   delivery: number = 0  
+  itemsvalues: Detalhe[]=[]
+  delivery: number = 5
 
   deliverys: RadioDelivery[] = [
     { label: 'Buscar no local', delivery: 0 },
@@ -31,9 +34,12 @@ export class DetalhesComponent implements OnInit {
     { label: 'pix', value: 'pix' }
   ]
 
-  constructor(private router: Router, private detalhesitemservice: DetalhesItemService) { }
+  constructor(private router: Router, public detalhesitemservice: DetalhesItemService) { }
 
   ngOnInit(): void {
+      const itemsvalues = this.detalhesitemservice.itemsvalue()
+    console.log('teste', itemsvalues)
+  
   }
 
   finalizarpedido(detalhe: Detalhe) {
@@ -43,7 +49,8 @@ export class DetalhesComponent implements OnInit {
       .subscribe((detalhid: string) => {
         console.log(`compra comcluida:${detalhid}`)
         this.detalhesitemservice.clear()
-      }) 
+        this.router.navigate(['cardapio'])
+      })
 
   }
 
@@ -58,7 +65,10 @@ export class DetalhesComponent implements OnInit {
 
   itemsvalue(): number {
     return this.detalhesitemservice.itemsvalue()
+
   }
+
+
 
 
 }

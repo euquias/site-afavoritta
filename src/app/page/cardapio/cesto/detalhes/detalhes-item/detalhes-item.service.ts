@@ -23,14 +23,10 @@ export class DetalhesItemService {
   }
   itemsvalue(): number {
     return this.cestoservice.total()
-  }
-  /*   finalizarpedido(detalhe: Detalhe){
-      return this.http.post(`${api}`, JSON.stringify(detalhe)
-     console.log(detalhe)
-   }  */
-
+  } 
+  
   clear() {
-    this.cestoservice.clear
+    this.cestoservice.clear()
   }
 
   finalizarpedido(detalhe: Detalhe): Observable<string> {

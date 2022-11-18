@@ -11,7 +11,7 @@ export class OrdenPedidosService {
   api = 'http://localhost:3001/orders';
 
   ordems: Ordem[] = []
-/*   detalheitems!: DetalheItem[]  */
+   detalheitems!: string
   constructor(private http: HttpClient) { }
 
 

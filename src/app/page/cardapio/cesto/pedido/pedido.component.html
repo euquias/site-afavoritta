@@ -1,37 +1,41 @@
-<div class="card col-sm-12">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="nav-link " aria-current="true">
-          <i class="cesto fa fa-shopping-basket" aria-hidden="true"></i>
-          Pedido 
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="card-body">
-    <div class="row" *ngFor="let item of items()">
-      <p class="card-text col-8">({{item.quantity}}x) {{item.menu.name}}</p>
-      <p class="card-text col-3">{{item.value() | currency: "BRL":"symbol"}}</p>
-      <p class="card-text col-1">
-        <a (click)=" removeritem(item)">
-          <i class="fa fa-times"  aria-hidden="true"></i>
-        </a>
-      </p>
+<div class="conteiner">
+  <div class="card col-sm-12">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="true">
+            <i class="cesto fa fa-shopping-basket" aria-hidden="true"></i>
+            Pedido
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="card-footer">
-      <div class="row">
-        <h3 class="card-text col-md-6">Total:</h3>
-        <h3 class="card-text col-md-6"><strong>{{ total() | currency: "BRL":"symbol" }} </strong></h3>
+    <div class="card-body">
+      <div class="row" *ngFor="let item of items()">
+        <p class="card-text col-6">({{item.quantity}}x) {{item.menu.name}}</p>
+        <p class="card-text col-4">{{item.value() | currency: "BRL":"symbol"}}</p>
+        <p class="card-text col-2">
+          <a (click)=" removeritem(item)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </a>
+        </p>
+      </div>
+      <div class="card-footer">
+        <div class="row ">
+          <h3 class="card-text  col-md-6 col-sm-1">Total:</h3>
+          <h3 class="card-text total col-md-6 col-sm-11"><strong>{{ total() | currency: "BRL":"symbol" }} </strong></h3>
+          <div class=" col-sm-12 m-1">
+            <a class="btn btn-danger  col-sm-6" (click)="clear()">
+              <i class="fa fa-times" aria-hidden="true"></i>
+              Cancelar
+            </a>
+            <a class="btn btn-primary col-sm-6" [routerLink]="['/detalhes']">
+              <i class="fa fa-credit-card" aria-hidden="true"></i>
+              Fechar 
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-    <a class="btn btn-danger m-2" (click)="clear()" >
-      <i class="fa fa-times"  aria-hidden="true"></i>
-      Cancelar
-      </a>
-    <a class="btn btn-primary" [routerLink]="['/detalhes']">
-      <i class="fa fa-credit-card" aria-hidden="true"></i>
-      Fechar compra
-    </a>
   </div>
 </div>

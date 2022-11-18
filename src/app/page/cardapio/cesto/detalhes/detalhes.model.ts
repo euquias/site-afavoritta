@@ -6,7 +6,8 @@ class Detalhe {
         public number: number,
         public name: string,
         public test: string,
-        public detalheitems: DetalheItem[] = []
+        public detalheitems: DetalheItem[] = [],
+        public itemsvalues:number
     ) { }
 }
 

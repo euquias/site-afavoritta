@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Detalhe } from '../detalhes.model';
+
+
 
 @Component({
   selector: 'app-detalhes-total',
@@ -7,16 +10,25 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DetalhesTotalComponent implements OnInit {
 
+  
+ 
   @Input() delivery!:number
-  @Input() itemsvalue!:number
+  /* @Input() itemsvalue!:number */
+  @Input() itemsvalues!:number
 
-  constructor() { }
+  constructor(  ) { }
 
   ngOnInit(): void {
+  
+  } 
+/* 
+  total():number{
+    return this.delivery + this.itemsvalue
+  } */
+
+  total():number{
+    return  this.itemsvalues + this.delivery
   } 
 
-  total(): number{
-    return this.delivery + this.itemsvalue
-  }
-
 }
+ 

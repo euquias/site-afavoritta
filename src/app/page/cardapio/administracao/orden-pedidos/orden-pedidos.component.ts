@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DetalheItem } from '../../cesto/detalhes/detalhes.model';
+import {  DetalheItem } from '../../cesto/detalhes/detalhes.model';
 import {  Ordem} from './ordem.model';
 import { OrdenPedidosService } from './orden-pedidos.service';
 
@@ -10,9 +10,12 @@ import { OrdenPedidosService } from './orden-pedidos.service';
 })
 export class OrdenPedidosComponent implements OnInit {
 
-  ordems:Ordem[] =[]
-    detalheitems!:DetalheItem[]
+  ordems:Ordem[]=[] 
+    detalheitems:DetalheItem[]=[]
+  
    
+   
+  
   
   
   
@@ -21,12 +24,21 @@ export class OrdenPedidosComponent implements OnInit {
 
   ngOnInit(): void {
    
+     /*   this.ordenpedidosservice.read().subscribe( ordems => {
+        this.ordems = ordems
+        const detalheitems = ordems.find(detalheitems=>detalheitems.detalheitems)?.detalheitems.find(menuid=>menuid.menuid)?.value 
+        console.log('teste',detalheitems)          
+      }) */
       this.ordenpedidosservice.read().subscribe( ordems => {
         this.ordems = ordems
-        console.log(ordems)
+        this.ordems.find(detalheitems=>detalheitems.detalheitems)?.detalheitems.map((detalheitems: DetalheItem[])=>{
+          console.log('teste',detalheitems)           
+          return detalheitems
+        })
+      })
        
    
-        })
+   
   /*      
       this.ordenpedidosservice.read1().subscribe( items => {
         this.items = items
@@ -34,8 +46,11 @@ export class OrdenPedidosComponent implements OnInit {
       }) */ 
           
   }
+ 
+   
+ }
 
  
   
-}
+
  

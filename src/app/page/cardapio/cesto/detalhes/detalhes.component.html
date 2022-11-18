@@ -1,13 +1,13 @@
-<div class="container p-5">
+<div class="container-fluid">
   <div class="card">
     <div class="card-header">
       <i class="fa fa-shopping-basket" aria-hidden="true"></i>
       Finalizar Pedido
     </div>
-   <!--  {{form.valid}}
-    {{form.value | json}} -->
+     {{form.valid}}
+    {{form.value | json}} 
     <div class="card-body">
-      <form #form="ngForm" class="row g-3 needs-validation" novalidate>
+      <form #form="ngForm" class="row g-3 needs-validation" novalidate >
         <div class="col-md-6">
           <app-inputs errormessage label="Endereço De Entrega:">
             <input class="form-control" placeholder="Endereço" name="address" ngModel required minlength="10">
@@ -25,50 +25,31 @@
           </app-inputs>
         </div>
         <div class=" col-md-12">
-          <app-detalhes-item [items]="detalhesitem()"></app-detalhes-item>
+          <app-detalhes-item [items]="detalhesitem()" ></app-detalhes-item>
 
         </div>
         <div class=" col-md-4">
           <p class="lead">Formas de Pagamento:</p>
           <div class="form-group"> 
-            <app-radio [options]="tests" name="test" ngModel></app-radio>
+            <app-radio [options]="tests" name="test"  ngModel></app-radio> 
           </div>
         </div>
+       
         <div class="card-text col-sm-6 col-md-3">
-          <app-detalhes-frete [options]="deliverys"  name="deliverys" ngModel></app-detalhes-frete>
+          <app-detalhes-frete [options]="deliverys"   name="deliverys" ngModel></app-detalhes-frete>
         </div>
         <div class="card-text col-sm-6 col-md-5"> <!-- [deliverys]="deliverys"   [itemsvalue]="itemsvalue()"-->
-          <app-detalhes-total  [delivery]="delivery"     [itemsvalue]="itemsvalue()" ></app-detalhes-total>
+          <app-detalhes-total   [delivery]="delivery"></app-detalhes-total>
         </div>
         <div class="row">
           <div class="col-md-6">
             <a  class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#sstaticBackdrop">
               <i class="fa fa-trash m-1" aria-hidden="true"></i>Cancelar Pedido</a>
               <a  (click)=" finalizarpedido(form.value)" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
-                class="fa fa-money m-1"   aria-hidden="true"></i>finalizar Pedido</a>
+                class="fa fa-money m-1" aria-hidden="true"></i>finalizar Pedido</a>
           </div>
         </div>
       </form>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Forma de envio: comanda</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <i class="fa fa-print " aria-hidden="true"></i>
-        <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-        <i class="fa fa-whatsapp" aria-hidden="true"></i>
-        <a (click)=" cancel()">
-          <i class="fa fa-ban" aria-hidden="true"></i>
-        </a>
-        
-      </div>
     </div>
   </div>
 </div>
@@ -84,8 +65,8 @@
         <p>Tem certeza que deseja cancelar seu pedido?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-        <button  (click)=" cancel()" type="button" class="btn btn-primary">Sim</button>
+        <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Não</button>
+        <button  (click)="cancel()" type="button" class="btn btn-primary ">Sim</button>
       </div>
     </div>
   </div>

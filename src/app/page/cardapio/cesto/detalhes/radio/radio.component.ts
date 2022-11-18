@@ -17,8 +17,10 @@ import {NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 })
 export class RadioComponent implements OnInit, ControlValueAccessor  {
 
+
   @Input() options!:RadioOption[]
   value:any
+
 
   constructor() { } 
   registerOnTouched(fn: any): void {
