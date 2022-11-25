@@ -8,14 +8,14 @@ import { Menu } from '../menu.model';
   styleUrls: ['./menu2.component.css']
 })
 export class Menu2Component implements OnInit {
-  @Input() menu!: Menu
+  @Input() menu2!: Menu
   @Output() add = new EventEmitter()
   constructor(private cardapioservice: CardapioService) { }
 
   ngOnInit(): void {
   }
   emitaddevent() {
-    this.add.emit(this.menu)
+    this.add.emit(this.menu2)
 
   }  
   

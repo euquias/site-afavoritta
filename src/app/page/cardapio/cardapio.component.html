@@ -35,12 +35,16 @@
       <div class=" col-md-7 col-sm-9">
         <div class="container text-center">
           <div class="row">
-             <div id="scrollspyHeading1" class="col-md-4 col-sm-8" *ngFor="let menu of menus ">
-              <app-menu1 [menu]="menu" (add)="test.additem($event)"></app-menu1>
-            </div> 
-            <div id="scrollspyHeading1" class="col-md-4 col-sm-8" *ngFor="let menu of menus ">
-              <app-menu2 [menu]="menu" (add)="test.additem($event)"></app-menu2>
+              <div  class="col-md-4 col-sm-8" *ngFor="let menu of menus ">
+                
+               <app-menu1 [menu]="menu" (add)="test.additem($event)"></app-menu1> 
+            </div>  
+            <div>
+              <h3>Bebidas</h3>
             </div>
+             <div  class="col-md-4 col-sm-8" *ngFor="let menu of menus2 ">
+              <app-menu2 [menu2]="menu" (add)="test.additem($event)"></app-menu2>
+            </div> 
           </div>
         </div>
       </div>

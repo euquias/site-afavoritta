@@ -11,10 +11,14 @@ export class CardapioService {
 
 
   api = "http://localhost:3001/menu"
+  api2 = "http://localhost:3001/menu2"
 
   constructor(public http: HttpClient) { }
 
   read():Observable<Menu[]> {
     return this.http.get<Menu[]>(this.api);
+  }
+  read2():Observable<Menu[]> {
+    return this.http.get<Menu[]>(this.api2);
   }
 } 

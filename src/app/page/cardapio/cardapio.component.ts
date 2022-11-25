@@ -9,12 +9,16 @@ import { Menu } from './menu.model';
 export class CardapioComponent implements OnInit {
 
   menus!: Menu[]
+  menus2!:Menu[]
   constructor(private cardapioservice: CardapioService) { }
 
   ngOnInit(): void {
     this.cardapioservice.read().subscribe(menus => {
       this.menus = menus
     })
+     this.cardapioservice.read2().subscribe(menus2 => {
+      this.menus2 = menus2
+    }) 
   }
   addmeuitem(item: Menu) {
     console.log(item)
