@@ -24,7 +24,7 @@
       <a class="nav-link active " href="#scrollspyHeading1" aria-current="page">Pizzas</a>
     </li>
     <li class="nav-item m-1">
-      <a class="nav-link dropdown-item " href="#scrollspyHeading5" aria-current="page">Bebidas</a>
+      <a class="nav-link dropdown-item " aria-current="page">Bebidas</a>
     </li>
     <li class="nav-item m-1">
       <a class="nav-link "  [routerLink]="['/adm/ordem']" aria-current="page"> Lista de pedidos</a>
@@ -35,11 +35,11 @@
       <div class=" col-md-7 col-sm-9">
         <div class="container text-center">
           <div class="row">
-            <div id="scrollspyHeading1" class="col-md-4 col-sm-8" *ngFor="let menu of menus ">
+             <div id="scrollspyHeading1" class="col-md-4 col-sm-8" *ngFor="let menu of menus ">
               <app-menu1 [menu]="menu" (add)="test.additem($event)"></app-menu1>
-            </div>
+            </div> 
             <div id="scrollspyHeading1" class="col-md-4 col-sm-8" *ngFor="let menu of menus ">
-              <app-menu2></app-menu2>
+              <app-menu2 [menu]="menu" (add)="test.additem($event)"></app-menu2>
             </div>
           </div>
         </div>

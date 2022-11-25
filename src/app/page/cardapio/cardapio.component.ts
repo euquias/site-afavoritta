@@ -14,7 +14,6 @@ export class CardapioComponent implements OnInit {
   ngOnInit(): void {
     this.cardapioservice.read().subscribe(menus => {
       this.menus = menus
-      console.log(menus)
     })
   }
   addmeuitem(item: Menu) {

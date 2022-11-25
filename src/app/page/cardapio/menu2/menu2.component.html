@@ -1,0 +1,9 @@
+<div class="card m-1 col-sm-12" >
+    <img [src]="menu.imagePath" class="card-img-top" width="50" height="50">
+    <div class="card-body">
+      <h5 class="card-title">{{menu.name}}</h5>
+      <p class="card-text">{{ menu.price | currency: "BRL":"symbol" }}</p>
+      <a (click)="emitaddevent()" class="btn btn-primary">Adicionar</a>
+    </div>
+  </div>
+   

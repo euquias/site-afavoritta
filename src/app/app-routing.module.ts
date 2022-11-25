@@ -26,9 +26,17 @@ const routes: Routes = [
     component: NavComponent
   },
   {
-    path: 'cardapio', 
+    path: 'cardapio',
     component: CardapioComponent
- 
+
+  },
+  {
+    path: 'menu1',
+    component: Menu1Component
+  },
+  {
+    path: 'menu2',
+    component: Menu2Component
   },
   {
     path: 'pedido',
@@ -43,50 +51,50 @@ const routes: Routes = [
     component: SistemaComponent
   },
   {
-    path:'adm',
-    component:AdministracaoComponent,
+    path: 'adm',
+    component: AdministracaoComponent,
     children: [
       {
         path: '', redirectTo: 'categoria', pathMatch: 'full'
       },
       {
-        path:'categoria',
-        component:CategoriaComponent
+        path: 'categoria',
+        component: CategoriaComponent
       },
       {
-        path:'menu',
-        component:MenuComponent 
+        path: 'menu',
+        component: MenuComponent
       },
       {
-        path:'promocao',
-        component:PromocaoComponent
+        path: 'promocao',
+        component: PromocaoComponent
       },
       {
-        path:'usuario',
-        component:UsuarioComponent 
+        path: 'usuario',
+        component: UsuarioComponent
       },
       {
-        path:'adicional',
-        component:AdicionalComponent
+        path: 'adicional',
+        component: AdicionalComponent
       },
       {
-        path:'dashboard',
-        component:DashboardComponent
+        path: 'dashboard',
+        component: DashboardComponent
       },
       {
-        path:'ordem',
-        component:OrdenPedidosComponent
+        path: 'ordem',
+        component: OrdenPedidosComponent
       },
       {
-        path:'frete',
-        component:FreteComponent
+        path: 'frete',
+        component: FreteComponent
       },
-      
+
     ]
   },
   {
-    path:'ordemodel/:id',
-    component:OrdenModelComponent
+    path: 'ordemodel/:id',
+    component: OrdenModelComponent
   }
 ];
 

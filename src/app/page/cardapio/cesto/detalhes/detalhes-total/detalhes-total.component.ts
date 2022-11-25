@@ -10,25 +10,16 @@ import { Detalhe } from '../detalhes.model';
 })
 export class DetalhesTotalComponent implements OnInit {
 
-  
- 
-  @Input() delivery!:number
-  /* @Input() itemsvalue!:number */
-  @Input() itemsvalues!:number
+  @Input() delivery!: number
+  @Input() itemsvalue!: number
 
-  constructor(  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-  
-  } 
-/* 
-  total():number{
+
+  }
+
+  total(): number {
     return this.delivery + this.itemsvalue
-  } */
-
-  total():number{
-    return  this.itemsvalues + this.delivery
-  } 
-
+  }
 }
- 

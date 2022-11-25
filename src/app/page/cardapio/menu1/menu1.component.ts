@@ -19,7 +19,7 @@ export class Menu1Component implements OnInit {
    emitaddevent() {
     this.add.emit(this.menu)
 
-  } 
+  }  
 
 
 
