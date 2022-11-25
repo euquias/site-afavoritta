@@ -31,6 +31,7 @@ import { DetalhesTotalComponent } from './page/cardapio/cesto/detalhes/detalhes-
 import { DetalhesFreteComponent } from './page/cardapio/cesto/detalhes/detalhes-frete/detalhes-frete.component';
 import { OrdenPedidosComponent } from './page/cardapio/administracao/orden-pedidos/orden-pedidos.component';
 import { FreteComponent } from './page/cardapio/administracao/frete/frete.component';
+import { OrdenModelComponent } from './page/cardapio/administracao/orden-pedidos/orden-model/orden-model.component';
 
 
 
@@ -63,6 +64,7 @@ import { FreteComponent } from './page/cardapio/administracao/frete/frete.compon
     DetalhesFreteComponent,
     OrdenPedidosComponent,
     FreteComponent,
+    OrdenModelComponent,
       
    
   ],

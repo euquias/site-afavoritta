@@ -6,6 +6,7 @@ import { CategoriaComponent } from './page/cardapio/administracao/categoria/cate
 import { DashboardComponent } from './page/cardapio/administracao/dashboard/dashboard.component';
 import { FreteComponent } from './page/cardapio/administracao/frete/frete.component';
 import { MenuComponent } from './page/cardapio/administracao/menu/menu.component';
+import { OrdenModelComponent } from './page/cardapio/administracao/orden-pedidos/orden-model/orden-model.component';
 import { OrdenPedidosComponent } from './page/cardapio/administracao/orden-pedidos/orden-pedidos.component';
 import { PromocaoComponent } from './page/cardapio/administracao/promocao/promocao.component';
 import { UsuarioComponent } from './page/cardapio/administracao/usuario/usuario.component';
@@ -79,8 +80,13 @@ const routes: Routes = [
       {
         path:'frete',
         component:FreteComponent
-      }
+      },
+      
     ]
+  },
+  {
+    path:'ordemodel/:id',
+    component:OrdenModelComponent
   }
 ];
 
