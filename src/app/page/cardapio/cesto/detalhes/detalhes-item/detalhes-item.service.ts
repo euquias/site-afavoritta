@@ -6,13 +6,16 @@ import { Detalhe, DetalheItem } from '../detalhes.model';
 import { CestoService } from '../../cesto.service';
 import { Cesto } from '../../cesto.model';
 import { Observable } from 'rxjs';
+import { Delivery } from '../detalhes-frete/detalhe-delivery.model';
 
 
 @Injectable({
-  providedIn: 'root'   
+  providedIn: 'root'
 })
 export class DetalhesItemService {
   api = 'http://localhost:3001'
+  api2 = "http://localhost:3001/frete"
+
   constructor(private cestoservice: CestoService, private http: HttpClient) { }
   cestoitems(): Cesto[] {
     return this.cestoservice.items
@@ -23,8 +26,8 @@ export class DetalhesItemService {
   }
   itemsvalue(): number {
     return this.cestoservice.total()
-  } 
-  
+  }
+
   clear() {
     this.cestoservice.clear()
   }
@@ -35,6 +38,9 @@ export class DetalhesItemService {
     return this.http.post<string>(`${this.api}/orders`,
       JSON.stringify(detalhe),
       { headers })
+  }
+  read():Observable<Delivery[]> {
+    return this.http.get<Delivery[]>(this.api2);
   }
 
 }

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { DetalhesItemService } from './detalhes-item/detalhes-item.service';
 import { Cesto } from '../cesto.model';
 import { Detalhe, DetalheItem } from './detalhes.model';
-import { RadioDelivery } from './detalhes-frete/detalhe-delivery.model';
+import { Delivery } from './detalhes-frete/detalhe-delivery.model';
 
 
 
@@ -18,15 +18,15 @@ export class DetalhesComponent implements OnInit {
 
 
 
-  itemsvalues: Detalhe[]=[]
-  delivery: number = 5
+  itemsvalues: Detalhe[] = []
+  deliverys!: Delivery[]
 
-  deliverys: RadioDelivery[] = [
-    { label: 'Buscar no local', delivery: 0 },
-    { label: 'Mesquita', delivery: 5 },
-    { label: 'jardim Edite', delivery: 3 },
-    { label: 'jardim Abc', delivery: 12 }
-  ]
+  /*  delivery: RadioDelivery[] = [
+      { label: 'Buscar no local', delivery: 0 },
+      { label: 'Mesquita', delivery: 5 },
+      { label: 'jardim Edite', delivery: 3 },
+      { label: 'jardim Abc', delivery: 12 }
+    ] */
 
   tests: RadioOption[] = [
     { label: 'dinheiro', value: 'mon' },
@@ -37,9 +37,14 @@ export class DetalhesComponent implements OnInit {
   constructor(private router: Router, public detalhesitemservice: DetalhesItemService) { }
 
   ngOnInit(): void {
-      const itemsvalues = this.detalhesitemservice.itemsvalue()
+    const itemsvalues = this.detalhesitemservice.itemsvalue()
     console.log('teste', itemsvalues)
-  
+
+    this.detalhesitemservice.read().subscribe(deliverys => {
+      this.deliverys = deliverys
+      console.log(deliverys)
+    })
+
   }
 
   finalizarpedido(detalhe: Detalhe) {

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Detalhe } from '../detalhes.model';
+
 
 
 
@@ -19,7 +19,8 @@ export class DetalhesTotalComponent implements OnInit {
 
   }
 
-  total(): number {
+   total(): number {
     return this.delivery + this.itemsvalue
-  }
-}
+  }  
+
+}   

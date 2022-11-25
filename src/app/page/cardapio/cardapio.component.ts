@@ -21,7 +21,7 @@ export class CardapioComponent implements OnInit {
     }) 
   }
   addmeuitem(item: Menu) {
-    console.log(item)
+    console.log(item)  
   }
 
 
