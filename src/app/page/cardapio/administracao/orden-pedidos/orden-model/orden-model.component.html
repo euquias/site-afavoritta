@@ -1,78 +1,67 @@
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <h5 class="modal-title" id="staticBackdropLabel"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div> 
-            <div class="card" ><!-- cad temporariamente modal-body *ngFor="let orden of ordems"-->
-                <table class="printer-ticket" >
-                    <thead>
-                        <tr>
-                            <th class="title" colspan="3">Pizzaria Afavoritta</th>
-                        </tr>
-                        <tr>
-                            <th colspan="3"></th>
-                        </tr>
-                        <tr>
-                            <th colspan="3">
-                                Lanches e Salgados<br />
-
-                            </th>
-                        </tr>
-                        <tr>
-                            <th class="ttu" colspan="3">
-                                <b>Cupom não fiscal</b>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="top">
-                            <td>Nome:</td>
-                            <td colspan="3">{{ordems.name}}</td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Endereço:</td>
-                            <td>{{ordems.address}}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">Numero</td>
-                            <td colspan="3" [(ngModel)]="ordems.number" >{{ordems.number}}</td>
-                        </tr>
-                        <tr class="sup">
-                            <td colspan="3" align="center">
-                                <b>Pedido:</b>
-                            </td>
-                            <td>Nome:</td>
-                            <td colspan="3"> {{ordems.detalheitems}} </td>
-                        </tr>
-                        
-                    </tbody>
-                    <tfoot>
-                        <tr class="sup ttu p--0">
-                            <td colspan="3">
-                                <b>Total</b>
-                            </td>
-                        </tr>
-
-
-                        <tr class="ttu">
-
-                            <td colspan="2"></td>
-                            <td align="right">R$50,oo</td>
-                        </tr>
-
-                        <tr class="sup">
-                            <td colspan="3" align="center">
-                                www.afavorittapizzaria.com.br
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
+<div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="card">
+            <div class="grid">
+                <div class="container text-center col-12 col-md-12">
+                    <div class="row">
+                        <div class="col-6 col-md-12">
+                            <div class="dados">Pizzaria Afavoritta<br>
+                                Mesquita<br>
+                                72870028-Cidade Ocidental-GO<br>
+                                <strong> Lanches e Salgados</strong><br>
+                                <strong> Cupom não fiscal</strong>
+                            </div>
+                            <div class="text-start">
+                                <div class="col-12 col-md-12 dados">
+                                    <div class="col-md-12">Nome: {{ordems.name}}</div>
+                                    <div class="col-md-12">Endereço: {{ordems.address}}</div>
+                                    <div class="col-md-12" [(ngModel)]="ordems.number">Numero: {{ordems.number}}</div>
+                                </div>
+                                <table class="table dados">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col-md-1">qtd</th>
+                                            <th scope="col-md-8">descrid</th>
+                                            <th scope="col-md-4">valor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Pizza calabresa</td>
+                                            <td>R$:29,00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="col-12 col-md-12 dados">
+                                    <div class="row">
+                                        <div class="col-sm-8"><strong>Total</strong></div>
+                                        <div class="col-sm-4"><strong>R$:29,00</strong></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-12 dados">
+                                    <div class="row">
+                                        <div class="col-sm-8"><strong>Forma de pagamento</strong></div>
+                                        <div class="col-sm-4">{{ordems.test}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-12 text-center dados">
+                                    <div class="row">
+                                        <div class="col-sm-12"><strong>www.afavorittapizzaria.com.br </strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 text-center dados">
                 <i class="fa fa-copy" style="font-size:36px;"></i>
             </div>
-       </div>
+        </div>
     </div>
-
-
+</div>
