@@ -19,7 +19,7 @@ export class DetalhesComponent implements OnInit {
 
 
   itemsvalues: Detalhe[] = []
-  deliverys!: Delivery[]
+  deliverys: Delivery[] =[]
 
   /*  delivery: RadioDelivery[] = [
       { label: 'Buscar no local', delivery: 0 },

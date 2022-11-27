@@ -3,7 +3,7 @@ export class Delivery {
         public id: string,
         public imagePath: string,
         public local: string,
-        public estimativa: number,
+        public estimativa: string,
         public price: number,
         public restaurantId: string
     ) { }

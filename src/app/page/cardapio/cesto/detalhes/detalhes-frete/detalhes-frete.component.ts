@@ -1,4 +1,4 @@
-import { Component,  Input,  OnInit} from '@angular/core';
+import { Component,  EventEmitter,  Input,  OnInit, Output} from '@angular/core';
 import { Delivery } from './detalhe-delivery.model';
 
 
@@ -12,13 +12,17 @@ export class DetalhesFreteComponent implements OnInit {
 
   
 
-  @Input()  deliverys!:Delivery[]
-  
+  @Input()  deliverys:Delivery[] =[]
+  @Output() add = new EventEmitter()
 
   constructor() { }
 
   ngOnInit(): void { 
   }
+  emitaddevent() {
+    this.add.emit(this.deliverys)
+
+  } 
  
 }
   
