@@ -19,7 +19,7 @@ export class RadioComponent implements OnInit, ControlValueAccessor  {
 
 
   @Input() options!:RadioOption[]
-  value:any
+  value:any 
 
 
   constructor() { } 
@@ -35,6 +35,7 @@ export class RadioComponent implements OnInit, ControlValueAccessor  {
   setvalue(value:any){
     this.value = value
     this.registerOnChange(this.value)
+    console.log(value)
   }  
   writeValue(obj:any): void{
     this.value = obj

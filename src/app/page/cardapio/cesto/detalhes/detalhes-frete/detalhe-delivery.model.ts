@@ -1,10 +1,7 @@
 export class Delivery {
-    constructor(
-        public id: string,
-        public imagePath: string,
+    constructor(       
         public local: string,
-        public estimativa: string,
-        public price: number,
-        public restaurantId: string
+        public price: number
+
     ) { }
 } 

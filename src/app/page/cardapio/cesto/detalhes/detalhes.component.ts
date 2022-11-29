@@ -19,14 +19,7 @@ export class DetalhesComponent implements OnInit {
 
 
   itemsvalues: Detalhe[] = []
-  deliverys: Delivery[] =[]
-
-  /*  delivery: RadioDelivery[] = [
-      { label: 'Buscar no local', delivery: 0 },
-      { label: 'Mesquita', delivery: 5 },
-      { label: 'jardim Edite', delivery: 3 },
-      { label: 'jardim Abc', delivery: 12 }
-    ] */
+  deliverys: Delivery[] =[ ]
 
   tests: RadioOption[] = [
     { label: 'dinheiro', value: 'mon' },
@@ -43,7 +36,7 @@ export class DetalhesComponent implements OnInit {
     this.detalhesitemservice.read().subscribe(deliverys => {
       this.deliverys = deliverys
       console.log(deliverys)
-    })
+    }) 
 
   }
 

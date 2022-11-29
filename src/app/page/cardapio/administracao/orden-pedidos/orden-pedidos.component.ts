@@ -27,7 +27,9 @@ export class OrdenPedidosComponent implements OnInit {
      }) */
     this.ordenpedidosservice.read().subscribe(ordems => {
       this.ordems = ordems
-    })
+    }) 
+ 
+    
 
   }
   onedit(id: any): void {
