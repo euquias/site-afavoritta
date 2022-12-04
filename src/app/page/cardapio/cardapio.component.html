@@ -1,4 +1,4 @@
- <div class="container">
+<div class="container">
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <!--  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -16,45 +16,51 @@
   </nav>
   <ul class="nav nav-tabs ">
     <li class=" nav-item m-1">
-      <a routerLink=""  class="nav-link "  >
-        <img class="logo" src="../../assets/logo.png" alt="logo" style="width: 3rem;" style="height: 3rem;">
+      <a class="nav-link " routerLink="">
+        <img alt="logo" class="logo" src="../../assets/logo.png" style="width: 3rem;" style="height: 3rem;">
       </a>
     </li>
     <li class="nav-item m-1">
-      <a class="nav-link active " href="#scrollspyHeading1" aria-current="page">Pizzas</a>
+      <a aria-current="page" class="nav-link active " href="#scrollspyHeading1">Pizzas</a>
     </li>
     <li class="nav-item m-1">
-      <a class="nav-link dropdown-item " aria-current="page">Bebidas</a>
+      <a aria-current="page" class="nav-link dropdown-item ">Bebidas</a>
     </li>
     <li class="nav-item m-1">
-      <a class="nav-link "  [routerLink]="['/adm/ordem']" aria-current="page"> Lista de pedidos</a>
+      <a aria-current="page" class="nav-link dropdown-item ">Pizza metade/metade</a>
+    </li>
+    <li class="nav-item m-1">
+      <a aria-current="page" class="nav-link dropdown-item ">Adicionais</a>
+    </li>
+    <li class="nav-item m-1">
+      <a [routerLink]="['/adm/ordem']" aria-current="page" class="nav-link "> Lista de pedidos</a>
     </li>
   </ul>
-  <div class="container"> 
+  <div class="container">
     <div class="row">
       <div class=" col-md-7 col-sm-9">
         <div class="container text-center">
           <div class="row">
-              <div  class="col-md-4 col-sm-8" *ngFor="let menu of menus ">
-                 
-               <app-menu1 [menu]="menu" (add)="test.additem($event)"></app-menu1> 
-            </div>  
+            <div *ngFor="let menu of menus " class="col-md-4 col-sm-8">
+
+              <app-menu1 (add)="test.additem($event)" [menu]="menu"></app-menu1>
+            </div>
             <div>
               <h3>Bebidas</h3>
             </div>
-             <div  class="col-md-4 col-sm-8" *ngFor="let menu of menus2 ">
-              <app-menu2 [menu2]="menu" (add)="test.additem($event)"></app-menu2>
-            </div>   
+            <div *ngFor="let menu of menus2 " class="col-md-4 col-sm-8">
+              <app-menu2 (add)="test.additem($event)" [menu2]="menu"></app-menu2>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-5 col-sm-4">     
+      <div class="col-md-5 col-sm-4">
         <app-pedido #test></app-pedido>
       </div>
     </div>
   </div>
 
-</div> 
+</div>
 
 
 

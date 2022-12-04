@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpRequest } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { Ordem } from './ordem.model';
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {Ordem} from './ordem.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,10 @@ export class OrdenPedidosService {
 
   ordems: Ordem[] = []
   detalheitems!: string
-  constructor(private http: HttpClient) { }
 
+
+  constructor(private http: HttpClient) {
+  }
 
 
   read(): Observable<Ordem[]> {
@@ -21,13 +23,14 @@ export class OrdenPedidosService {
   }
 
 
-
-
-  readById(id:any): Observable<Ordem> {
+  readById(id: any): Observable<Ordem> {
     const url = `${this.api}/${id}`;
     return this.http.get<Ordem>(url);
   }
+  deletar(id: number): Observable<Ordem> {
+    const url = `${this.api}/${id}`;
+    return this.http.delete<Ordem>(url); 
+  }
 
- 
 
 }

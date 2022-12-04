@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CestoComponent } from './cesto.component';
+import {CestoComponent} from './cesto.component';
 
 describe('CestoComponent', () => {
   let component: CestoComponent;
@@ -8,9 +8,9 @@ describe('CestoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CestoComponent ]
+      declarations: [CestoComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CestoComponent);
     component = fixture.componentInstance;

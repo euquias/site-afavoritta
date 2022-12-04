@@ -1,8 +1,21 @@
-   <strong>Frete</strong>
-<select class="form-select" aria-label="Default select example">
-  <option *ngFor="let delivery of deliverys"  
-    [class.selected]="delivery.price === price" (click)="setvelue(delivery.price)" >{{delivery.local}} </option>
-</select>  
-  
+ <strong>Observaçao</strong>
+<!-- <select aria-label="Default select example" class="form-select">
+  <option (click)="setvalue(delivery.price)"
+          *ngFor="let delivery of deliverys" [class.selected]="delivery.price === price">{{delivery.local}} </option>
+</select>  --> 
 
-   
+<!--  <div *ngFor="let delivery of deliverys">
+  <div class="form-check">
+    <input (click)="setvalue(delivery.price)" [class.checked]="delivery.price === price" class="form-check-input"
+      id="flexRadioDefault2" name="flexRadioDefault" type="radio">
+    <label class="form-check-label" for="flexRadioDefault2">
+      {{delivery.local}}
+    </label>
+  </div>
+
+</div>  -->
+<div class="form-group">
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="number" ngModel  placeholder="troco pra/, metade dinheiro/cartao..."></textarea>
+ 
+</div>
+

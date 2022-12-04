@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sistema',
@@ -8,12 +8,13 @@ import { Router } from '@angular/router';
 })
 export class SistemaComponent implements OnInit {
 
-  constructor(public router:Router) { }
+  constructor(public router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
-  login(){
+  login() {
     this.router.navigate(['adm'])
   }
 }

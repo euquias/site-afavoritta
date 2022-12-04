@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -8,12 +8,14 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
 
-  constructor( public router:Router) { }
+  constructor(public router: Router) {
+  }
 
   ngOnInit(): void {
   }
-  login(){
-this.router.navigate(['sistema'])
+
+  login() {
+    this.router.navigate(['sistema'])
   }
 
 }

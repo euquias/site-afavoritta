@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DetalheItem } from '../../cesto/detalhes/detalhes.model';
 import { Ordem } from './ordem.model';
 import { OrdenPedidosService } from './orden-pedidos.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,39 +6,44 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-orden-pedidos',
   templateUrl: './orden-pedidos.component.html',
-  styleUrls: ['./orden-pedidos.component.css']
+  styleUrls: ['./orden-pedidos.component.css'],
 })
 export class OrdenPedidosComponent implements OnInit {
+  public ordems: Ordem[] = [];
+  status: boolean = false
 
-  ordems: Ordem[] = []
-  detalheitems: DetalheItem[] = []
 
-  constructor(private ordenpedidosservice: OrdenPedidosService,
+  constructor(
+    private ordenpedidosservice: OrdenPedidosService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+  ) {
+  }
 
   ngOnInit(): void {
+    this.ordenpedidosservice.read().subscribe((ordems) => {
 
-    /*   this.ordenpedidosservice.read().subscribe( ordems => {
-       this.ordems = ordems
-       const detalheitems = ordems.find(detalheitems=>detalheitems.detalheitems)?.detalheitems.find(menuid=>menuid.menuid)?.value 
-       console.log('teste',detalheitems)          
-     }) */
-    this.ordenpedidosservice.read().subscribe(ordems => {
-      this.ordems = ordems
-    }) 
- 
-    
+      ordems.forEach((ordem) => {
+        console.log(typeof ordem.detalheitems);
+        ordem.detalheitems.forEach((r) => {
+        });
+      });
+      this.ordems = ordems;
+      this.status = false
+      console.log('teste', this.status)
+    });
 
   }
+
   onedit(id: any): void {
     this.router.navigate(['/ordemodel', id], { relativeTo: this.route });
-    console.log(id);
+    
   }
-
- 
+   obs(id: any): void {
+    this.router.navigate(['/obs', id], { relativeTo: this.route });
+   
+  } 
+  valorTotal(): number {
+    return 333;
+  }
 }
-
-
-
-

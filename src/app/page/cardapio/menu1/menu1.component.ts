@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { CardapioService } from '../cardapio.service';
-import { Menu } from '../menu.model';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
+import {CardapioService} from '../cardapio.service';
+import {Menu} from '../menu.model';
 
 @Component({
   selector: 'app-menu1',
@@ -11,16 +11,17 @@ export class Menu1Component implements OnInit {
   @Input() menu!: Menu
   @Output() add = new EventEmitter()
 
-  constructor(private cardapioservice: CardapioService) { }
-
-  ngOnInit(): void {
-   
+  constructor(private cardapioservice: CardapioService) {
   }
-   emitaddevent() {
+
+  ngOnInit(): void { 
+
+  }
+
+  emitaddevent() {
     this.add.emit(this.menu)
 
-  }  
-
+  }
 
 
 }

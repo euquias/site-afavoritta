@@ -1,6 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-
+import {Component, Input, OnInit} from '@angular/core';
 
 
 @Component({
@@ -10,17 +8,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DetalhesTotalComponent implements OnInit {
 
-  @Input() delivery!: number
+  @Input() deliverys!: number
   @Input() itemsvalue!: number
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
 
   }
 
-   total(): number {
-    return this.delivery + this.itemsvalue
-  }  
+  total(): number {
+    return    this.itemsvalue
+  }
 
-}   
+}

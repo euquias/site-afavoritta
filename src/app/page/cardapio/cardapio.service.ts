@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Observable } from 'rxjs/internal/Observable';
-import { Menu } from './menu.model';
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from 'rxjs/internal/Observable';
+import {Menu} from './menu.model';
 
 
 @Injectable({
@@ -12,13 +12,19 @@ export class CardapioService {
 
   api = "http://localhost:3001/menu"
   api2 = "http://localhost:3001/menu2"
+  api3 = "http://localhost:3001/frete"
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) {
+  }
 
-  read():Observable<Menu[]> {
+  read(): Observable<Menu[]> {
     return this.http.get<Menu[]>(this.api);
   }
-  read2():Observable<Menu[]> {
+
+  read2(): Observable<Menu[]> {
     return this.http.get<Menu[]>(this.api2);
   }
-} 
+  read3(): Observable<Menu[]> {
+    return this.http.get<Menu[]>(this.api3);
+  }
+}

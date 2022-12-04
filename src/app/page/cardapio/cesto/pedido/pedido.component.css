@@ -1,13 +1,22 @@
-.fa-times{
-    color: rgb(245, 42, 42);
+.fa-times {
+  color: rgb(245, 42, 42);
 }
-.card-text{
-    font-size: smaller;
+
+.card-text {
+  font-size: smaller;
 }
-.total{
-    font-size: 20px;
+
+.total {
+  font-size: 20px;
 }
+
 .btn {
-   
-    font-size: smaller;
+
+  font-size: smaller;
 }
+.fa-shopping-cart{
+  font-size: 30px;
+  color: rgb(200, 17, 17);
+  margin: 5px;
+}
+

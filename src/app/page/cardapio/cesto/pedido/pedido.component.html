@@ -3,38 +3,68 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link " aria-current="true">
-            <i class="cesto fa fa-shopping-basket" aria-hidden="true"></i>
-            Pedido
+          <a aria-current="true" class="nav-link ">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <strong>Pedido</strong>
           </a>
         </li>
       </ul>
     </div>
-    <div class="card-body">
-      <div class="row" *ngFor="let item of items()">
+    <div *ngIf="!items().length">
+      <p class="text-center"><strong>Não a Pedidos!</strong></p>
+    </div>
+    <div class="card-body" *ngIf="items().length">
+
+      <div *ngFor="let item of items()" class="row">
         <p class="card-text col-6">({{item.quantity}}x) {{item.menu.name}}</p>
         <p class="card-text col-4">{{item.value() | currency: "BRL":"symbol"}}</p>
         <p class="card-text col-2">
           <a (click)=" removeritem(item)">
-            <i class="fa fa-times" aria-hidden="true"></i>
+            <i aria-hidden="true" class="fa fa-times"></i>
           </a>
         </p>
       </div>
-      <div class="card-footer">
+      <div class="card-footer" *ngIf="items().length">
         <div class="row ">
           <h3 class="card-text  col-md-6 col-sm-1">Total:</h3>
           <h3 class="card-text total col-md-6 col-sm-11"><strong>{{ total() | currency: "BRL":"symbol" }} </strong></h3>
           <div class=" col-sm-12 m-1">
-            <a class="btn btn-danger  col-sm-6" (click)="clear()">
-              <i class="fa fa-times" aria-hidden="true"></i>
+            <a (click)="clear()" class="btn btn-danger  col-sm-6">
+              <i aria-hidden="true" class="fa fa-times"></i>
               Cancelar
             </a>
-            <a class="btn btn-primary col-sm-6" [routerLink]="['/detalhes']">
-              <i class="fa fa-credit-card" aria-hidden="true"></i>
-              Fechar 
+            <a [routerLink]="['/detalhes']" class="btn btn-primary col-sm-6">
+              <i aria-hidden="true" class="fa fa-credit-card"></i>
+              Fechar
             </a>
+            <a class="btn btn-danger" data-bs-target="#sstaticBackdrop" data-bs-toggle="modal">
+              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              Adicionar Frete</a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static"
+  data-bs-keyboard="false" id="sstaticBackdrop" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Adicione o endereço de dentrega</h5>
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+      </div>
+      <div class="modal-body">
+        <div *ngFor="let menu of menus3 " class="col-md-12 col-sm-8">
+          <app-menu3 (add)="additem($event)" [menu3]="menu"></app-menu3>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">
+          Cancelar
+        </button>
       </div>
     </div>
   </div>

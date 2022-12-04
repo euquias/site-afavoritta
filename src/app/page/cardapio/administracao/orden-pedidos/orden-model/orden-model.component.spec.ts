@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { OrdenModelComponent } from './orden-model.component';
+import {OrdenModelComponent} from './orden-model.component';
 
 describe('OrdenModelComponent', () => {
   let component: OrdenModelComponent;
@@ -8,9 +8,9 @@ describe('OrdenModelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrdenModelComponent ]
+      declarations: [OrdenModelComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(OrdenModelComponent);
     component = fixture.componentInstance;

@@ -6,67 +6,68 @@ import { Cesto } from '../cesto.model';
 import { Detalhe, DetalheItem } from './detalhes.model';
 import { Delivery } from './detalhes-frete/detalhe-delivery.model';
 
-
-
-
 @Component({
   selector: 'app-detalhes',
   templateUrl: './detalhes.component.html',
-  styleUrls: ['./detalhes.component.css']
+  styleUrls: ['./detalhes.component.css'],
 })
 export class DetalhesComponent implements OnInit {
+  itemsvalues: Detalhe[] = [];
+  deliverys: Delivery[] = [];
+  /* deliverys:number = 5  */
 
 
-
-  itemsvalues: Detalhe[] = []
-  deliverys: Delivery[] =[ ]
 
   tests: RadioOption[] = [
     { label: 'dinheiro', value: 'mon' },
     { label: 'cartão', value: 'deb&cre' },
-    { label: 'pix', value: 'pix' }
-  ]
+    { label: 'pix', value: 'pix' },
+  ];
 
-  constructor(private router: Router, public detalhesitemservice: DetalhesItemService) { }
+  constructor(
+    private router: Router,
+    public detalhesitemservice: DetalhesItemService
+  ) {
+  }
 
   ngOnInit(): void {
-    const itemsvalues = this.detalhesitemservice.itemsvalue()
-    console.log('teste', itemsvalues)
+    const itemsvalues = this.detalhesitemservice.itemsvalue();
+    console.log('teste', itemsvalues);
 
-    this.detalhesitemservice.read().subscribe(deliverys => {
-      this.deliverys = deliverys
-      console.log(deliverys)
-    }) 
-
+    this.detalhesitemservice.read().subscribe((deliverys) => {
+      this.deliverys = deliverys;
+      console.log(deliverys);
+    });
   }
 
   finalizarpedido(detalhe: Detalhe) {
-    detalhe.detalheitems = this.detalhesitemservice.cestoitems()
-      .map((item: Cesto) => new DetalheItem(item.quantity, item.menu.name, item.menu.price))
-    this.detalhesitemservice.finalizarpedido(detalhe)
+    console.log('VALOR TOTAL ', this.itemsvalue());
+    const _detalhe = { ...detalhe, total: this.itemsvalue() };
+    _detalhe.detalheitems = this.detalhesitemservice
+      .cestoitems()
+      .map(
+        (item: Cesto) =>
+          new DetalheItem(item.quantity, item.menu.name, item.menu.price)
+      );
+    this.detalhesitemservice
+      .finalizarpedido(_detalhe)
       .subscribe((detalhid: string) => {
-        console.log(`compra comcluida:${detalhid}`)
-        this.detalhesitemservice.clear()
-        this.router.navigate(['cardapio'])
-      })
-
+        console.log(`compra comcluida:${detalhid}`);
+        this.detalhesitemservice.clear();
+        this.router.navigate(['cardapio']);
+      });
   }
 
   cancel() {
-    this.detalhesitemservice.clear()
-    this.router.navigate(['cardapio'])
+    this.detalhesitemservice.clear();
+    this.router.navigate(['cardapio']);
   }
 
   detalhesitem(): Cesto[] {
-    return this.detalhesitemservice.cestoitems()
+    return this.detalhesitemservice.cestoitems();
   }
 
   itemsvalue(): number {
-    return this.detalhesitemservice.itemsvalue()
-
+    return this.detalhesitemservice.itemsvalue();
   }
-
-
-
-
 }

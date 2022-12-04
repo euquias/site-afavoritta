@@ -1,65 +1,67 @@
 .social-network a {
-    color: #fff;
+  color: #fff;
 }
 
 .social-network a:hover {
-    color: red;
+  color: red;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 
 }
 
 .social-network a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 ul.social-network li {
-    display: inline;
-    margin: 0 5px;
+  display: inline;
+  margin: 0 5px;
 }
 
 .social-network i {
-    margin-top: 25px;
-    font-size: 20px;
-    margin-right: 10px;
+  margin-top: 25px;
+  font-size: 20px;
+  margin-right: 10px;
 }
 
 .links {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
 }
 
 .fa-money {
 
-    margin: 10px;
+  margin: 10px;
 }
 
 .fa-credit-card-alt {
-    margin: 10px;
+  margin: 10px;
 }
 
 .fa-files-o {
-    pointer-events: fill;
+  pointer-events: fill;
 }
 
 .fa-files-o:hover {
-    color:blue;
-    
+  color: blue;
+
 }
 
 .fa-check-square-o {
-    color: greenyellow;
+  color: greenyellow;
 }
 
 .copiado {
-    color: greenyellow;
+  color: greenyellow;
 }
-.local{
-    font-size: 15px;
+
+.local {
+  font-size: 15px;
 }
-p{
-    font-size: 10px;
+
+p {
+  font-size: 10px;
 }

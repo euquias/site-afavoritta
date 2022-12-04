@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Cesto } from '../../cesto.model';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Cesto} from '../../cesto.model';
 
 @Component({
   selector: 'app-detalhes-item',
@@ -8,23 +8,27 @@ import { Cesto } from '../../cesto.model';
 })
 export class DetalhesItemComponent implements OnInit {
 
-  @Input() items!:Cesto[]
+  @Input() items!: Cesto[]
 
-  @Output()increment = new EventEmitter<Cesto>()
-  @Output()decreseqty = new EventEmitter<Cesto>()
-  @Output()remove = new EventEmitter<Cesto>()
+  @Output() increment = new EventEmitter<Cesto>()
+  @Output() decreseqty = new EventEmitter<Cesto>()
+  @Output() remove = new EventEmitter<Cesto>()
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
-  incrementqty(item:Cesto){
+
+  incrementqty(item: Cesto) {
     this.increment.emit(item)
   }
-  decreseqtys(item:Cesto){
+
+  decreseqtys(item: Cesto) {
     this.decreseqty.emit(item)
   }
-  remover(item:Cesto){
+
+  remover(item: Cesto) {
     this.remove.emit(item)
   }
 

@@ -1,37 +1,76 @@
-<p>
-    {{detalheitems | json}}
-</p>
 <table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Numero do pedido</th>
-            <th scope="col">Nome </th>
-            <th scope="col">Endereço</th>
-            <th scope="col">numero</th>
-            <th scope="col">Produtos</th>
-            <th scope="col">Forma de pagamento</th>
-            <th scope="col">valor</th>
-            <th scope="col">Compartilhar</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let ordem of ordems">
-            <th scope="row">{{ordem.id}}</th> 
-            <td>{{ordem.name}}</td>
-            <td>{{ordem.address}}</td>
-            <td>{{ordem.number}}</td>
-            <td>{{ordem.detalheitems}}</td>
-            <td>{{ordem.test}}</td>
-            <td>50,00</td>
-            <td>
-                <a ><!-- data-bs-toggle="modal" data-bs-target="#staticBackdrop" -->
-                    <i class="fa fa-print " aria-hidden="true" (click)="onedit(ordem.id)"></i>
-                </a>
-            </td>
-        </tr>
-    </tbody> 
+  <thead>
+    <tr>
+      <th scope="col">status</th>
+      <th scope="col">Numero do pedidos</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">numero</th>
+      <th scope="col">Pedido</th>
+      <th scope="col">Forma de pagamento</th>
+      <th scope="col">valor</th>
+      <th scope="col">Açoes</th>
+      <th scope="col">Obs...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ordem of ordems">
+      <th scope="row">
+        <app-orden-status></app-orden-status>
+      </th>
+      <td>{{ ordem.id }}</td>
+      <td>{{ ordem.name }}</td>
+      <td>{{ ordem.address }}</td>
+      <td>{{ ordem.number }}</td>
+      
+      <td>
+    <tr class="item" *ngFor="let item of ordem.detalheitems">
+      <td>({{item.quantity}}x) {{ item.menuid }} </td>
+      <td>{{ item.value | currency: "BRL":"symbol" }}</td>
+      <td  *ngIf="!ordem.detalheitems.length" class="no-item">
+        Nenhum item adicionado
+      </td>
+    </tr>
+    </td>
+    <td>{{ ordem.test }}</td>
+    <td> {{ ordem?.total | currency: "BRL":"symbol" }}</td>
+    <td>
+      <a>
+        <i (click)="onedit(ordem.id)" aria-hidden="true" class="fa fa-print"></i>
+        <i class="fa fa-trash" aria-hidden="true">
+         
+        </i>
+      </a>
+    </td>
+    <td>
+      <a>  <!-- data-bs-target="#sstaticBackdrop" data-bs-toggle="modal" -->
+        <i (click)="obs(ordem.id)" class="fa fa-commenting-o" aria-hidden="true"></i>
+      </a>
+    </td>
+    
+    </tr>
+
+  </tbody>
 </table>
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <app-orden-model></app-orden-model>
-</div> 
+<div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static"
+  data-bs-keyboard="false" id="staticBackdrop" tabindex="-1">
+  <app-orden-model>
+  </app-orden-model>
+</div>
+
+<div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static"
+  data-bs-keyboard="false" id="sstaticBackdrop" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">AVISO</h5>
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+      </div>
+      <div class="modal-body" *ngModel="ordems" >
+        <app-orden-obs name="ordems" ngModel></app-orden-obs>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>

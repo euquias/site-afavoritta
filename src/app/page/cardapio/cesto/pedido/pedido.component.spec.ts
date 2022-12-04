@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PedidoComponent } from './pedido.component';
+import {PedidoComponent} from './pedido.component';
 
 describe('PedidoComponent', () => {
   let component: PedidoComponent;
@@ -8,9 +8,9 @@ describe('PedidoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PedidoComponent ]
+      declarations: [PedidoComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PedidoComponent);
     component = fixture.componentInstance;

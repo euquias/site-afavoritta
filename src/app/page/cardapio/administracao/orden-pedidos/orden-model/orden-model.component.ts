@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Ordem } from '../ordem.model';
-import { OrdenPedidosService } from '../orden-pedidos.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Ordem} from '../ordem.model';
+import {OrdenPedidosService} from '../orden-pedidos.service';
 
 
 @Component({
@@ -16,7 +16,10 @@ export class OrdenModelComponent implements OnInit {
     number: '',
     name: '',
     test: '',
+    obs:'',
     detalheitems: [],
+    total:''
+   
 
   };
 
@@ -24,7 +27,8 @@ export class OrdenModelComponent implements OnInit {
     private ordenpedidosservice: OrdenPedidosService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get("id");

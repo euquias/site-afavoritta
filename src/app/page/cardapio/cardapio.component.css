@@ -1,33 +1,38 @@
 
-
 .menu {
-   
-    align-items: center;
-    color: rgb(226, 43, 49);
+
+  align-items: center;
+  color: rgb(226, 43, 49);
 }
 
 .infor {
-    margin-left: 200px;
+  margin-left: 200px;
 }
-i{
-    color: red;
+
+i {
+  color: red;
 }
-.fa-shopping-basket{
-    font-size: 35px;
+
+.fa-shopping-basket {
+  font-size: 35px;
 }
-.cesto{
-    color: red;
-    font-size: 20px;
+
+.cesto {
+  color: red;
+  font-size: 20px;
 }
-.fa-minus{
-    color: black;
+
+.fa-minus {
+  color: black;
 }
-.fa-plus{
-    color: black; 
+
+.fa-plus {
+  color: black;
 }
+
 @media only screen and (max-width: 350px) {
-    .carrinho {
-      display: none;
-    }
-  
+  .carrinho {
+    display: none;
   }
+
+}

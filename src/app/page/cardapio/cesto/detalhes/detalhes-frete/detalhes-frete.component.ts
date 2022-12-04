@@ -1,9 +1,6 @@
-
-
-
-import { Component, Input, OnInit, forwardRef } from '@angular/core';
-import { Delivery } from './detalhe-delivery.model';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import {Component, Input, OnInit, forwardRef} from '@angular/core';
+import {Delivery} from './detalhe-delivery.model';
+import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
 
 @Component({
   selector: 'app-detalhes-frete',
@@ -16,35 +13,40 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
       multi: true
     }
   ]
-
-})
+ 
+}) 
 export class DetalhesFreteComponent implements OnInit, ControlValueAccessor {
 
 
   @Input() deliverys!: Delivery[]
-
   price: any
+
   /*    OnChange: any  */
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
   }
   registerOnTouched(fn: any): void {
 
   }
+
   setDisabledState?(isDisabled: boolean): void {
 
   }
+  ngOnInit(): void {
+  }
 
-  setvelue(price: any) {
+
+
+  setvalue(price: any) {
     this.price = price
     this.registerOnChange(this.price)
     console.log(price)
   }
+
   writeValue(obj: any): void {
     this.price = obj
   }
+
   registerOnChange(fn: any): void {
     this.registerOnChange = fn
   }

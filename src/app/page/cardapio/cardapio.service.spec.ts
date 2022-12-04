@@ -1,11 +1,11 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { CardapioService } from './cardapio.service';
+import {CardapioService} from './cardapio.service';
 
 describe('CardapioService', () => {
   let service: CardapioService;
 
-  beforeEach(() => { 
+  beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(CardapioService);
   });
