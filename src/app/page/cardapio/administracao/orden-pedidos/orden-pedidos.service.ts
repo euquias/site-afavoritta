@@ -27,6 +27,11 @@ export class OrdenPedidosService {
     const url = `${this.api}/${id}`;
     return this.http.get<Ordem>(url);
   }
+
+  update(ordems:Ordem): Observable<Ordem> {
+    const url = `${this.api}/${ordems.id}`;
+    return this.http.put<Ordem>(url, ordems);
+  }
   deletar(id: number): Observable<Ordem> {
     const url = `${this.api}/${id}`;
     return this.http.delete<Ordem>(url); 

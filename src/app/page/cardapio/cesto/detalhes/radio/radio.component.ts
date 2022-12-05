@@ -25,6 +25,9 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
   constructor() {
   }
 
+  ngOnInit(): void {
+  }
+
   registerOnTouched(fn: any): void {
 
   }
@@ -33,9 +36,7 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
 
   }
 
-  ngOnInit(): void {
-  }
-
+  
   setvalue(value: any) {
     this.value = value
     this.registerOnChange(this.value)

@@ -36,6 +36,7 @@ import { Menu3Component } from './page/cardapio/menu3/menu3.component';
 import { OrdenStatusComponent } from './page/cardapio/administracao/orden-pedidos/orden-status/orden-status.component';
 import { OrdenObsComponent } from './page/cardapio/administracao/orden-pedidos/orden-obs/orden-obs.component';
 import { OrdenDeliteComponent } from './page/cardapio/administracao/orden-pedidos/orden-delite/orden-delite.component';
+import { DetalhesStatusComponent } from './page/cardapio/cesto/detalhes/detalhes-status/detalhes-status.component';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { OrdenDeliteComponent } from './page/cardapio/administracao/orden-pedido
     OrdenStatusComponent,
     OrdenObsComponent,
     OrdenDeliteComponent,
+    DetalhesStatusComponent,
 
 
   ],

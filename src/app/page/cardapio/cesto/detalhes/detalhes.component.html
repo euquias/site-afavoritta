@@ -6,7 +6,7 @@
     </div>
     {{ form.valid }}
     {{ form.value | json }}
-    <div class="card-body">
+    <div class="card-body"> 
       <form #form="ngForm" class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
           <app-inputs errormessage label="Endereço De Entrega:">
@@ -30,7 +30,7 @@
         <div class="col-md-4">
           <p class="lead">Formas de Pagamento:</p>
           <div class="form-group">
-            <app-radio [options]="tests" name="test" ngModel></app-radio>
+            <app-radio [options]="tests" name="test" ngModel ></app-radio>
           </div>
         </div>
 
@@ -43,12 +43,13 @@
                        
           </app-detalhes-frete>  -->
         </div>
-        <div class="card-text col-sm-6 col-md-5">
+        <div class="card-text col-sm-6 col-md-5"  >
           <!-- [deliverys]="deliverys"   [itemsvalue]="itemsvalue()"-->
-          <app-detalhes-total [itemsvalue]="itemsvalue()">
-
+          <app-detalhes-total [itemsvalue]="itemsvalue()"  >
           </app-detalhes-total>
+          <app-detalhes-status  [status]="testes" name="status" ngModel></app-detalhes-status>
         </div>
+
         <div class="row">
           <div class="col-md-6">
             <a class="btn btn-danger" data-bs-target="#sstaticBackdrop" data-bs-toggle="modal">

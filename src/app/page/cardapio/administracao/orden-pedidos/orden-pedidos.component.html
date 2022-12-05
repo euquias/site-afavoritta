@@ -15,9 +15,11 @@
   </thead>
   <tbody>
     <tr *ngFor="let ordem of ordems">
-      <th scope="row">
-        <app-orden-status></app-orden-status>
+      <th scope="row" (click)="statu(ordem.id)">
+        {{ ordem.status }}
+        <!-- <app-orden-status (click)="statu(ordem.id)"  ngModel></app-orden-status> -->
       </th>
+     
       <td>{{ ordem.id }}</td>
       <td>{{ ordem.name }}</td>
       <td>{{ ordem.address }}</td>

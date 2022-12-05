@@ -10,6 +10,7 @@ export class DetalhesTotalComponent implements OnInit {
 
   @Input() deliverys!: number
   @Input() itemsvalue!: number
+  
 
 
   constructor() {

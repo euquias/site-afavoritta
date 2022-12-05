@@ -9,10 +9,12 @@ import {MenuComponent} from './page/cardapio/administracao/menu/menu.component';
 import {OrdenModelComponent} from './page/cardapio/administracao/orden-pedidos/orden-model/orden-model.component';
 import { OrdenObsComponent } from './page/cardapio/administracao/orden-pedidos/orden-obs/orden-obs.component';
 import {OrdenPedidosComponent} from './page/cardapio/administracao/orden-pedidos/orden-pedidos.component';
+import { OrdenStatusComponent } from './page/cardapio/administracao/orden-pedidos/orden-status/orden-status.component';
 import {PromocaoComponent} from './page/cardapio/administracao/promocao/promocao.component';
 import {UsuarioComponent} from './page/cardapio/administracao/usuario/usuario.component';
 import {CardapioComponent} from './page/cardapio/cardapio.component';
 import {CestoComponent} from './page/cardapio/cesto/cesto.component';
+import { DetalhesStatusComponent } from './page/cardapio/cesto/detalhes/detalhes-status/detalhes-status.component';
 import {DetalhesComponent} from './page/cardapio/cesto/detalhes/detalhes.component';
 import {PedidoComponent} from './page/cardapio/cesto/pedido/pedido.component';
 import {Menu1Component} from './page/cardapio/menu1/menu1.component';
@@ -100,6 +102,10 @@ const routes: Routes = [
   {
     path: 'obs/:id',
     component:OrdenObsComponent
+  },
+  {
+    path: 'status/:id',
+    component:OrdenStatusComponent
   }
 ];
 

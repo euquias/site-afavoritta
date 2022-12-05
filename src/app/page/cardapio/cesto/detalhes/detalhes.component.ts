@@ -5,6 +5,7 @@ import { DetalhesItemService } from './detalhes-item/detalhes-item.service';
 import { Cesto } from '../cesto.model';
 import { Detalhe, DetalheItem } from './detalhes.model';
 import { Delivery } from './detalhes-frete/detalhe-delivery.model';
+import { Status } from './detalhes-status/status.model';
 
 @Component({
   selector: 'app-detalhes',
@@ -14,11 +15,12 @@ import { Delivery } from './detalhes-frete/detalhe-delivery.model';
 export class DetalhesComponent implements OnInit {
   itemsvalues: Detalhe[] = [];
   deliverys: Delivery[] = [];
-  /* deliverys:number = 5  */
 
-
-
-  tests: RadioOption[] = [
+   testes:Status[] = [
+    { value:true },
+    { value:false }
+  ]  
+    tests: RadioOption[] = [
     { label: 'dinheiro', value: 'mon' },
     { label: 'cartão', value: 'deb&cre' },
     { label: 'pix', value: 'pix' },

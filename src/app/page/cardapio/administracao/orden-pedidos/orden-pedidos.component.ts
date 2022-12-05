@@ -10,14 +10,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class OrdenPedidosComponent implements OnInit {
   public ordems: Ordem[] = [];
-  status: boolean = false
+  status: Ordem[] = [];
 
 
   constructor(
     private ordenpedidosservice: OrdenPedidosService,
     private router: Router,
     private route: ActivatedRoute
-  ) {
+  ) { 
   }
 
   ngOnInit(): void {
@@ -29,8 +29,6 @@ export class OrdenPedidosComponent implements OnInit {
         });
       });
       this.ordems = ordems;
-      this.status = false
-      console.log('teste', this.status)
     });
 
   }
@@ -41,6 +39,10 @@ export class OrdenPedidosComponent implements OnInit {
   }
    obs(id: any): void {
     this.router.navigate(['/obs', id], { relativeTo: this.route });
+   
+  } 
+  statu(id: any): void {
+    this.router.navigate(['/status', id], { relativeTo: this.route });
    
   } 
   valorTotal(): number {

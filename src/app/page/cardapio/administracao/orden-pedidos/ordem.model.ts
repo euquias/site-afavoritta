@@ -5,7 +5,7 @@ class Ordem {
     public name: string,
     public test: string,
     public obs: string,
-
+    public status:boolean,
     public detalheitems: Array<any>,
     public id?: number,
     public total?: string

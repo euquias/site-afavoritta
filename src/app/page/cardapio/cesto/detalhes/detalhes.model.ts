@@ -7,6 +7,7 @@ class Detalhe {
     public detalheitems: DetalheItem[],
     public itemsvalues: number,
     public obs:string
+    
   ) {
   }
 }

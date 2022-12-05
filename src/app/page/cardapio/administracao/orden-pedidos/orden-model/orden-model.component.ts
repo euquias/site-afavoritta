@@ -16,11 +16,10 @@ export class OrdenModelComponent implements OnInit {
     number: '',
     name: '',
     test: '',
-    obs:'',
+    obs: '',
     detalheitems: [],
-    total:''
-   
-
+    total: '',
+    status: false
   };
 
   constructor(
