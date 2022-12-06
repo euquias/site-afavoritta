@@ -2,17 +2,33 @@
 .fa-print{
     color: black;
     margin-right: 5px;
+    margin-right: 10px;
+    font-size: 30px;
 }
 .fa-trash{
     color: rgb(230, 10, 10);
+    font-size: 30px;
 }
 .fa-clock-o{
     color: rgb(230, 10, 10);
+    font-size: 30px;
 }
 .fa-check-circle{
     color: rgb(10, 232, 10);
     margin-right: 5px;
+    font-size: 30px;
 }
 p{
     color: rgb(230, 10, 10); 
+}
+
+.fa-print:hover{
+    color: blue;
+}
+.fa-trash:hover{
+    color: rgb(243, 247, 29);
+    
+}
+i:hover{
+    color: blue;
 }

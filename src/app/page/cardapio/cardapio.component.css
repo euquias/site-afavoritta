@@ -1,6 +1,5 @@
 
 .menu {
-
   align-items: center;
   color: rgb(226, 43, 49);
 }
@@ -23,7 +22,7 @@ i {
 }
 
 .fa-minus {
-  color: black;
+  color: black; 
 }
 
 .fa-plus {
@@ -36,3 +35,8 @@ i {
   }
 
 }
+.tamanho {
+    height: 600px;
+    overflow-y: scroll;
+  }
+

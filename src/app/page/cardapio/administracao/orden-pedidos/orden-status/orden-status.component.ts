@@ -10,9 +10,9 @@ import { OrdenPedidosService } from '../orden-pedidos.service';
 })
 export class OrdenStatusComponent implements OnInit {
 
-  status :boolean= true
+  status: boolean = true
 
-  @Input() ordems: Ordem ={
+  @Input() ordems: Ordem = {
     name: "",
     address: '',
     number: '',
@@ -31,23 +31,18 @@ export class OrdenStatusComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get("id");
     this.ordenpedidosservice.readById(id).subscribe((ordems) => {
       this.ordems = ordems;
-      console.log(ordems)
     });
   }
 
-     teste():boolean{      
-     
-     return this.status = true
-     }
-     teste2():boolean{
-      
-       return this.status = false
-     
-       }
   salvar(): void {
     this.ordenpedidosservice.update(this.ordems).subscribe(
+      () => {
+        this.router.navigate(['adm/ordem']);
+      }
     );
-    console.log(this.ordems)
+  }
 
+  cancel(): void {
+    this.router.navigate(["adm/ordem"]);
   }
 }
