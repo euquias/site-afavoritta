@@ -32,5 +32,12 @@ export class CardapioComponent implements OnInit {
     console.log(item)
   }
 
+  tomenu1(){
+    document.getElementById("menu1")?.scrollIntoView({behavior:"smooth"}); 
+   
+  }
+  tomenu2(){
+     document.getElementById('menu2')?.scrollIntoView({behavior:"smooth"}); 
+  }
 
 }

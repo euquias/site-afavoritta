@@ -35,8 +35,13 @@ i {
   }
 
 }
-.tamanho {
+  .tamanho {
     height: 600px;
     overflow-y: scroll;
+  }  
+  h3{
+    margin-top: 20px;
+    color: #fff;
+    font-size: 30px;
   }
 
