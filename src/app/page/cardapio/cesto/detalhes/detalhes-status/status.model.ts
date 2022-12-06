@@ -1,4 +1,4 @@
 export class Status {
-    constructor( public value: boolean) {
+    constructor(public label:string, public value:boolean) {
     }
   }

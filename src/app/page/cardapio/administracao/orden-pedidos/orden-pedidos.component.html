@@ -14,22 +14,28 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let ordem of ordems">
-      <th scope="row" (click)="statu(ordem.id)">
-        {{ ordem.status }}
-        <!-- <app-orden-status (click)="statu(ordem.id)"  ngModel></app-orden-status> -->
+    <tr *ngFor="let ordem of ordems" >
+      <th scope="row" (click)="statu(ordem.id)" class="ordem" >
+        <a >
+          <i  class="fa fa-check-circle" aria-hidden="true">{{ordem.status}}</i>
+        </a>
+        <a *ngIf="!ordem.status" class="no-ordem">
+              <i  class="fa fa-clock-o" aria-hidden="true" >
+                Aguardando
+              </i>
+        </a>
       </th>
-     
+
       <td>{{ ordem.id }}</td>
       <td>{{ ordem.name }}</td>
       <td>{{ ordem.address }}</td>
       <td>{{ ordem.number }}</td>
-      
+
       <td>
     <tr class="item" *ngFor="let item of ordem.detalheitems">
       <td>({{item.quantity}}x) {{ item.menuid }} </td>
       <td>{{ item.value | currency: "BRL":"symbol" }}</td>
-      <td  *ngIf="!ordem.detalheitems.length" class="no-item">
+      <td *ngIf="!ordem.detalheitems.length" class="no-item">
         Nenhum item adicionado
       </td>
     </tr>
@@ -40,16 +46,17 @@
       <a>
         <i (click)="onedit(ordem.id)" aria-hidden="true" class="fa fa-print"></i>
         <i class="fa fa-trash" aria-hidden="true">
-         
+
         </i>
       </a>
     </td>
     <td>
-      <a>  <!-- data-bs-target="#sstaticBackdrop" data-bs-toggle="modal" -->
+      <a>
+        <!-- data-bs-target="#sstaticBackdrop" data-bs-toggle="modal" -->
         <i (click)="obs(ordem.id)" class="fa fa-commenting-o" aria-hidden="true"></i>
       </a>
     </td>
-    
+
     </tr>
 
   </tbody>
@@ -68,7 +75,7 @@
         <h5 class="modal-title" id="staticBackdropLabel">AVISO</h5>
         <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
       </div>
-      <div class="modal-body" *ngModel="ordems" >
+      <div class="modal-body" *ngModel="ordems">
         <app-orden-obs name="ordems" ngModel></app-orden-obs>
       </div>
       <div class="modal-footer">

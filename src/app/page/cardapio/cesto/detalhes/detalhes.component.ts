@@ -17,8 +17,9 @@ export class DetalhesComponent implements OnInit {
   deliverys: Delivery[] = [];
 
    testes:Status[] = [
-    { value:true },
-    { value:false }
+    { label:'Aguardando...', value:false },
+    { label: 'Entregue', value: true }
+   
   ]  
     tests: RadioOption[] = [
     { label: 'dinheiro', value: 'mon' },

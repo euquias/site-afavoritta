@@ -9,7 +9,9 @@ import { OrdenPedidosService } from '../orden-pedidos.service';
   styleUrls: ['./orden-status.component.css']
 })
 export class OrdenStatusComponent implements OnInit {
-  /*  status!: boolean; */
+
+  status :boolean= true
+
   @Input() ordems: Ordem ={
     name: "",
     address: '',
@@ -33,7 +35,7 @@ export class OrdenStatusComponent implements OnInit {
     });
   }
 
-  /*   teste():boolean{      
+     teste():boolean{      
      
      return this.status = true
      }
@@ -41,7 +43,7 @@ export class OrdenStatusComponent implements OnInit {
       
        return this.status = false
      
-       }  */
+       }
   salvar(): void {
     this.ordenpedidosservice.update(this.ordems).subscribe(
     );
