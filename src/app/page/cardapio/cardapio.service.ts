@@ -10,21 +10,22 @@ import {Menu} from './menu.model';
 export class CardapioService {
 
 
-  api = "http://localhost:3001/menu"
-  api2 = "http://localhost:3001/menu2"
-  api3 = "http://localhost:3001/frete"
-
+  api = "http://localhost:3001"
+ 
   constructor(public http: HttpClient) {
   }
 
   read(): Observable<Menu[]> {
-    return this.http.get<Menu[]>(this.api);
+    const url = `${this.api}/menu`;
+    return this.http.get<Menu[]>(url);
   }
 
   read2(): Observable<Menu[]> {
-    return this.http.get<Menu[]>(this.api2);
+    const url = `${this.api}/menu2`;
+    return this.http.get<Menu[]>(url);
   }
   read3(): Observable<Menu[]> {
-    return this.http.get<Menu[]>(this.api3);
+    const url = `${this.api}/frete`;
+    return this.http.get<Menu[]>(url);
   }
 }

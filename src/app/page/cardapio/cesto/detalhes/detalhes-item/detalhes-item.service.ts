@@ -11,7 +11,7 @@ import {Delivery} from '../detalhes-frete/detalhe-delivery.model';
 })
 export class DetalhesItemService {
   api = 'http://localhost:3001';
-  api2 = 'http://localhost:3001/frete';
+  
 
 
 
@@ -44,7 +44,9 @@ export class DetalhesItemService {
     );
   }
 
+ 
   read(): Observable<Delivery[]> {
-    return this.http.get<Delivery[]>(this.api2);
+    const url = `${this.api}/orders`;
+    return this.http.get<Delivery[]>(url);
   }
 }

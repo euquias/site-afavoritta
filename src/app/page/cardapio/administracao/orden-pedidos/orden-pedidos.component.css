@@ -6,17 +6,17 @@
     font-size: 30px;
 }
 .fa-trash{
-    color: rgb(230, 10, 10);
+    color: rgb(51, 29, 247);
     font-size: 30px;
 }
 .fa-clock-o{
     color: rgb(230, 10, 10);
-    font-size: 30px;
+    font-size: 20px;
 }
 .fa-check-circle{
     color: rgb(10, 232, 10);
     margin-right: 5px;
-    font-size: 30px;
+    font-size: 20px;
 }
 p{
     color: rgb(230, 10, 10); 
@@ -31,4 +31,10 @@ p{
 }
 i:hover{
     color: blue;
+}
+.on-obs{
+    color: rgb(10, 232, 10);
+}
+.of-obs{
+    color: rgb(230, 10, 10); 
 }

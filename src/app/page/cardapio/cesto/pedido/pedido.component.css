@@ -20,9 +20,9 @@
 }
 
 .acoes{
-  margin: 10px;
+  margin: 5px;
 }
 .menu {
-  height: 200px;
+  height: 150px;
   overflow-y: scroll;
 }

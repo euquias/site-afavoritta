@@ -42,6 +42,9 @@ export class OrdenPedidosComponent implements OnInit {
   statu(id: any): void {
     this.router.navigate(['/status', id], { relativeTo: this.route });
   }
+  deletar(id: any): void {
+    this.router.navigate(['/deletar', id], { relativeTo: this.route });
+  }
   
   valorTotal(): number {
     return 333;

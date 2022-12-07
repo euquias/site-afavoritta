@@ -1,7 +1,20 @@
-<div class="card m-1 col-sm-12" >
-    <div class="card-body col-sm-12">
-      <h5 class="card-title">{{menu3.name}}</h5>
-      <p class="card-text">{{ menu3.price | currency: "BRL":"symbol" }}</p>
-      <a (click)="emitaddevent()"  class="btn btn-primary">Adicionar</a>
+<!-- <div class="card m-1 col " >
+    <div class="card-body ">
+      <h5 class="card-title col">{{menu3.name}}</h5>
+      <p class="card-text col" >{{ menu3.price | currency: "BRL":"symbol" }}</p>
+      <a (click)="emitaddevent()"  class="btn btn-primary col">Adicionar</a>
+    </div>
+  </div> -->
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-5">
+        <h5 class="card-title ">{{menu3.name}}</h5>
+      </div>
+      <div class="col ">
+        <p class="card-text " >{{ menu3.price | currency: "BRL":"symbol" }}</p>
+      </div>
+      <div class="col m-1">
+        <a (click)="emitaddevent()"  class="btn btn-primary ">Adicionar</a>
+      </div>
     </div>
   </div>

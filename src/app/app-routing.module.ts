@@ -6,6 +6,7 @@ import {CategoriaComponent} from './page/cardapio/administracao/categoria/catego
 import {DashboardComponent} from './page/cardapio/administracao/dashboard/dashboard.component';
 import {FreteComponent} from './page/cardapio/administracao/frete/frete.component';
 import {MenuComponent} from './page/cardapio/administracao/menu/menu.component';
+import { OrdenDeliteComponent } from './page/cardapio/administracao/orden-pedidos/orden-delite/orden-delite.component';
 import {OrdenModelComponent} from './page/cardapio/administracao/orden-pedidos/orden-model/orden-model.component';
 import { OrdenObsComponent } from './page/cardapio/administracao/orden-pedidos/orden-obs/orden-obs.component';
 import {OrdenPedidosComponent} from './page/cardapio/administracao/orden-pedidos/orden-pedidos.component';
@@ -106,6 +107,10 @@ const routes: Routes = [
   {
     path: 'status/:id',
     component:OrdenStatusComponent
+  },
+  {
+    path: 'deletar/:id',
+    component:OrdenDeliteComponent
   }
 ];
 

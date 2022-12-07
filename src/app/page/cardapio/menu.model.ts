@@ -3,6 +3,4 @@ export interface Menu {
   price: number;
   imagePath: string;
   id: number;
-
-
 }

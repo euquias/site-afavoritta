@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Ordem } from '../ordem.model';
+import { OrdenPedidosService } from '../orden-pedidos.service';
+
 
 @Component({
   selector: 'app-orden-delite',
@@ -7,9 +11,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdenDeliteComponent implements OnInit {
 
-  constructor() { }
+  @Input() ordems: Ordem = {
+    name: "",
+    address: '',
+    number: '',
+    test: '',
+    obs: '',
+    status: false,
+    detalheitems: []
+  };
+
+  constructor(
+    private ordenpedidosservice: OrdenPedidosService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get("id");
+    this.ordenpedidosservice.readById(id).subscribe((ordems) => {
+      this.ordems = ordems;
+    });
+  }
+
+  cancel(): void {
+    this.router.navigate(["adm/ordem"]);
+  }
+
+  remover(): void {
+    this.ordenpedidosservice.deletar(this.ordems.id!).subscribe(() => {
+     
+      this.router.navigate(["adm/ordem"]);
+    });
   }
 
 }

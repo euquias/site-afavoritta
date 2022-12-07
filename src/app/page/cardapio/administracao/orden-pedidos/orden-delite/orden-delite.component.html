@@ -1,1 +1,19 @@
-<p>orden-delite works!</p>
+<div class=" d-flex p-4 justify-content-center">
+    <div class="card " style="width: 30rem;">
+        <div class="card-header">
+            <div class="nav">
+                <h4>Tem certeza que deseja cancelar esse Pedido</h4>
+            </div>
+            <div class="col-md-10">
+                <label for="validationCustom02" class="form-label">Nome</label>
+                <input type="text" class="form-control" [(ngModel)]="ordems.name" name="name" disabled>
+            </div>
+            <div class="nav justify-content-start">
+                <div class="btm">
+                    <button type="button" class="btn btn-warning m-1" (click)="cancel()">Cancelar</button>
+                    <button type="button" class="btn btn-danger m-1" (click)="remover()">Deletar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

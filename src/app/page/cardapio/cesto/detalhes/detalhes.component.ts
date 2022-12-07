@@ -63,7 +63,7 @@ export class DetalhesComponent implements OnInit {
 
   cancel() {
     this.detalhesitemservice.clear();
-    this.router.navigate(['cardapio']);
+    this.router.navigate(['/cardapio']);
   }
 
   detalhesitem(): Cesto[] {

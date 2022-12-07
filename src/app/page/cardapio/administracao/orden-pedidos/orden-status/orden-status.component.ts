@@ -19,7 +19,7 @@ export class OrdenStatusComponent implements OnInit {
     test: '',
     obs: '',
     status: false,
-    detalheitems: []
+    detalheitems: []  
   };
   constructor(
     private ordenpedidosservice: OrdenPedidosService,

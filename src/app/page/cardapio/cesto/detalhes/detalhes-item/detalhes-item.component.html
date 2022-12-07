@@ -9,10 +9,11 @@
   </thead>
   <tbody>
   <tr *ngFor="let item of items">
-    <th scope="row">{{item.menu.name}}</th>
+    <th scope="row">{{item.quantity}}</th>
     <td>{{item.menu.name}} </td>
-    <td></td>
+    <td> </td>
     <td>{{item.value() | currency: "BRL":"symbol"}}</td>
   </tr>
   </tbody>
 </table>
+

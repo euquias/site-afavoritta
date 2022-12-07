@@ -2,12 +2,12 @@
   <thead>
     <tr>
       <th scope="col">status</th>
-      <th scope="col">Numero do pedidos</th>
+      <th scope="col">Nº</th>
       <th scope="col">Nome</th>
       <th scope="col">Endereço</th>
       <th scope="col">numero</th>
       <th scope="col">Pedido</th>
-      <th scope="col">Forma de pagamento</th>
+      <th scope="col">pagamento</th>
       <th scope="col">valor</th>
       <th scope="col">Açoes</th>
       <th scope="col">Obs...</th>
@@ -43,14 +43,15 @@
     <td class="col-md-1">
       <a>
         <i (click)="onedit(ordem.id)" aria-hidden="true" class="fa fa-print"></i>
-        <i class="fa fa-trash" aria-hidden="true">
+        <i  class="fa fa-trash" aria-hidden="true">
+          <!-- (click)="deletar(ordem.id)" -->
         </i>
       </a>
     </td>
-    <td class="col-md-1" *ngIf="ordem.obs.length" >
-      {{ordem.obs}}
+    <td class="col-md-1 of-obs" *ngIf="ordem.obs.length" >
+     <strong> {{ordem.obs}}</strong>
     </td>
-      <td   class="col-md-1" *ngIf="!ordem.obs.length" >
+      <td   class="col-md-1 on-obs " *ngIf="!ordem.obs.length" >
         nenhuma observação
       </td>
     </tr>
