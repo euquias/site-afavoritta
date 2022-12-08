@@ -1,7 +1,7 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-    
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         </ul>
@@ -17,20 +17,21 @@
         <img alt="logo" class="logo" src="../../assets/logo.png" style="width: 3rem;" style="height: 3rem;">
       </a>
     </li>
-    <li class="nav-item m-1" >
-      <a class="nav-link" (click)="tomenu1()"  >Pizzas</a>
+    <li class="nav-item m-1">
+      <a class="nav-link" (click)="tomenu1()">Pizzas</a>
     </li>
     <li class="nav-item m-1">
-      <a class="nav-link " (click)="tomenu2()" >Bebidas</a>
+      <a class="nav-link " (click)="tomenu2()">Bebidas</a>
     </li>
     <li class="nav-item m-1">
-      <a class="nav-link" routerLinkActive="active" >Pizza metade/metade</a>
+      <a class="nav-link" routerLinkActive="active">Pizza metade/metade</a>
     </li>
     <li class="nav-item m-1">
-      <a class="nav-link" routerLinkActive="active" >Adicionais</a>
+      <a class="nav-link" routerLinkActive="active">Adicionais</a>
     </li>
     <li class="nav-item m-1">
-      <a routerLinkActive="active" [routerLink]="['/adm/ordem']" aria-current="page" class="nav-link "> Lista de pedidos</a>
+      <a routerLinkActive="active" [routerLink]="['/adm/ordem']" aria-current="page" class="nav-link "> Lista de
+        pedidos</a>
     </li>
   </ul>
   <div class="container ">
@@ -38,17 +39,38 @@
       <div class=" col-md-7 tamanho col-sm-9">
         <div class="container text-center">
           <div class="row">
-            <div>  
+            <div>
               <h3 class="d-flex justify-content-start">Pizzas</h3>
             </div>
             <div id="menu1" *ngFor="let menu of menus " class="col-md-4 col-sm-8">
-              <app-menu1  (add)="test.additem($event)" [menu]="menu"></app-menu1>
+              <app-menu1 (add)="test.additem($event)" [menu]="menu"></app-menu1>
             </div>
-            <div>  
+            <div>
               <h3 class="d-flex justify-content-start">Bebidas</h3>
             </div>
-            <div id="menu2" *ngFor="let menu of menus2 "  id="scrollspyHeading2" class="col-md-4 col-sm-8">
-              <app-menu2  (add)="test.additem($event)" [menu2]="menu"></app-menu2>
+            <div id="menu2" *ngFor="let menu of menus2 " id="scrollspyHeading2" class="col-md-4 col-sm-8">
+              <app-menu2 (add)="test.additem($event)" [menu2]="menu"></app-menu2>
+            </div>
+            <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static"
+              data-bs-keyboard="false" id="sstaticBackdrop" tabindex="-1">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Adicional</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div *ngFor="let menu of menus4 " class="col-md-12 col-sm-8">
+                      <app-menu4 (add)="test.additem($event)" [menu4]="menu"></app-menu4>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">
+                      Sem Adicional
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -59,6 +81,3 @@
     </div>
   </div>
 </div>
-
-
-

@@ -1,77 +1,50 @@
-<form>
-  <div class="mb-3">
-    <label class="form-label">Nome</label>
-    <input
-      aria-describedby="emailHelp"
-      class="form-control"
-      id="exampleInputEmail1"
-      type="email"
-    />
+<div class="container-fluid">
+  <div class="header">
+    <nav class="navbar p-3 navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/']">
+                <span>volta para o site</span>
+                <i class="material-icons">home</i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <span>
+                <a class="nav-link active text-light" aria-current="page" [routerLink]="['/']"
+                  routerLinkActive="active">CRUD</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="login">
+        <!-- <app-user-detall></app-user-detall> -->
+      </div>
+    </nav>
   </div>
-  <div class="mb-3">
-    <label class="form-label">Descriçao</label>
-    <input
-      aria-describedby="emailHelp"
-      class="form-control"
-      id="exampleInputEmail1"
-      type="email"
-    />
+  <div class="card-bory">
+    <div class="d-flex p-4 justify-content-center">
+      <div class="card" style="width: 50rem">
+        <div class="card-header">
+          <div class="nav">
+            <h4>CRUD-Produto</h4>
+          </div>
+          <div class="nav justify-content-end">
+            <button type="button" class="btn btn-primary">
+              <!--   (click)="adiciona()" -->
+              Novo Produto
+            </button>
+          </div>
+          <!--   <app-exibir-produto></app-exibir-produto> -->
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="mb-3">
-    <label class="form-label">Imgem (url)</label>
-    <input
-      aria-describedby="emailHelp"
-      class="form-control"
-      id="exampleInputEmail1"
-      type="email"
-    />
-  </div>
-  <div class="mb-3">
-    <label class="form-label">categoria</label>
-    <input
-      aria-describedby="emailHelp"
-      class="form-control"
-      id="exampleInputEmail1"
-      type="email"
-    />
-  </div>
-  <div class="mb-3">
-    <label class="form-label">altor</label>
-    <input
-      aria-describedby="emailHelp"
-      class="form-control"
-      id="exampleInputEmail1"
-      type="email"
-    />
-  </div>
-  <button class="btn btn-primary" type="submit">Salvar</button>
-</form>
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">Codigo</th>
-    <th scope="col">Nome</th>
-    <th scope="col">descriçao</th>
-    <th scope="col">Açao</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Nome</td>
-    <td>Otto</td>
-    <td>@mdo</td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Caminho</td>
-    <td>Thornton</td>
-    <td>@fat</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td colspan="2">Larry the Bird</td>
-    <td>@twitter</td>
-  </tr>
-  </tbody>
-</table>
+</div>

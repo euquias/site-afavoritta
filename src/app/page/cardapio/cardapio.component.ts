@@ -12,6 +12,7 @@ export class CardapioComponent implements OnInit {
   menus!: Menu[]
   menus2!: Menu[]
   menus3!: Menu[]
+  menus4!: Menu[]
 
   constructor(private cardapioservice: CardapioService) {
   }
@@ -25,6 +26,9 @@ export class CardapioComponent implements OnInit {
     })
     this.cardapioservice.read3().subscribe(menus3 => {
       this.menus3 = menus3
+    })
+    this.cardapioservice.read4().subscribe(menus4 => {
+      this.menus4 = menus4
     })
   }
 

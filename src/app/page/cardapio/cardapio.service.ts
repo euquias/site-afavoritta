@@ -28,4 +28,8 @@ export class CardapioService {
     const url = `${this.api}/frete`;
     return this.http.get<Menu[]>(url);
   }
+  read4(): Observable<Menu[]> {
+    const url = `${this.api}/menu4`;
+    return this.http.get<Menu[]>(url);
+  }
 }
