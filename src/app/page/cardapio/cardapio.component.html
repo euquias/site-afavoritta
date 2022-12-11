@@ -27,7 +27,7 @@
       <a class="nav-link" routerLinkActive="active">Pizza metade/metade</a>
     </li>
     <li class="nav-item m-1">
-      <a class="nav-link" routerLinkActive="active">Adicionais</a>
+      <a class="nav-link" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal" routerLinkActive="active">Adicionais</a>
     </li>
     <li class="nav-item m-1">
       <a routerLinkActive="active" [routerLink]="['/adm/ordem']" aria-current="page" class="nav-link "> Lista de
@@ -52,7 +52,7 @@
               <app-menu2 (add)="test.additem($event)" [menu2]="menu"></app-menu2>
             </div>
             <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static"
-              data-bs-keyboard="false" id="sstaticBackdrop" tabindex="-1">
+              data-bs-keyboard="false" id="sstaticBackdrop1" tabindex="-1">
               <div class="modal-dialog modal-md">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -71,7 +71,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
