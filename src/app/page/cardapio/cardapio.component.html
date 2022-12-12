@@ -17,7 +17,7 @@
         <img alt="logo" class="logo" src="../../assets/logo.png" style="width: 3rem;" style="height: 3rem;">
       </a>
     </li>
-    <li class="nav-item m-1" id="menu3">
+    <li class="nav-item m-1" >
       <a class="nav-link" (click)="tomenu1()">Pizzas</a>
     </li>
     <li class="nav-item m-1">
@@ -31,7 +31,7 @@
         pedidos</a>
     </li>
   </ul>
-  <div class="container ">
+  <div class="container  " >
     <div class="row">
       <div class=" col-md-7 tamanho col-sm-9">
         <div class="container text-center">
@@ -39,13 +39,13 @@
             <div>
               <h5 class="d-flex justify-content-start">Pizzas</h5>
             </div>
-            <div id="menu1" *ngFor="let menu of menus " class="col-md-2 col-sm-8">
+            <div id="menu1" id="menu3" *ngFor="let menu of menus " class="col-md-2 col-sm-8">
                 <app-menu1 (add)="test.additem($event)" [menu]="menu"></app-menu1>
             </div>
             <div>
               <h5 class="d-flex justify-content-start">Bebidas</h5>
             </div>
-            <div id="menu2" *ngFor="let menu of menus2 "  class="col-md-4 col-sm-8">
+            <div id="menu2" *ngFor="let menu of menus2 "  class="col-md-2 col-sm-8">
               <app-menu2 (add)="test.additem($event)" [menu2]="menu">
                 
               </app-menu2>
