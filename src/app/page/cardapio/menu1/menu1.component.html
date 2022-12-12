@@ -1,8 +1,6 @@
-<div class="card  m-1 col-md-12 col-sm-12 ">
-  <img [src]="menu.imagePath" height="150" width="150">
-  <div class="card-body">
+<div class="card m-1 " style="width: 5rem; height: 7rem;">
+  <img [src]="menu.imagePath"  style="width: 3rem; height: 3rem;" (click)="emitaddevent()" data-bs-target="#sstaticBackdrop" data-bs-toggle="modal" >
     <h5 class="card-title">{{menu.name}}</h5>
-    <p class="card-text">{{ menu.price | currency: "BRL":"symbol" }}</p>
-    <a (click)="emitaddevent()" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal"  class="btn btn-primary">Adicionar</a>
-  </div>
+    <p class="card-text">{{ menu.price | currency: "BRL":"symbol" }}</p> 
 </div>
+
