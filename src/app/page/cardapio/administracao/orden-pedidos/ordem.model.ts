@@ -7,8 +7,8 @@ class Ordem {
     public obs: string,
     public status:boolean,
     public detalheitems: Array<any>,
-    public id?: number,
-    public total?: string
+    public id?: any,
+    public total?: any
   ) {
   }
 }

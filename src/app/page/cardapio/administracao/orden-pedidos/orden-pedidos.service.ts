@@ -37,5 +37,4 @@ export class OrdenPedidosService {
     return this.http.delete<Ordem>(url);
   }
 
-
 }

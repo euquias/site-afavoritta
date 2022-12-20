@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Ordem} from '../ordem.model';
 import {OrdenPedidosService} from '../orden-pedidos.service';
-
+ 
 @Component({
   selector: 'app-orden-obs',
   templateUrl: './orden-obs.component.html',
