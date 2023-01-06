@@ -39,6 +39,9 @@ import { OrdenDeliteComponent } from './page/cardapio/administracao/orden-pedido
 import { DetalhesStatusComponent } from './page/cardapio/cesto/detalhes/detalhes-status/detalhes-status.component';
 import { Menu4Component } from './page/cardapio/menu4/menu4.component';
 import { PagamentoComponent } from './page/cardapio/administracao/dashboard/pagamento/pagamento.component';
+import { MenuUpdateComponent } from './page/cardapio/administracao/menu/menu-update/menu-update.component';
+import { MenuRemoverComponent } from './page/cardapio/administracao/menu/menu-remover/menu-remover.component';
+import { MenuExibirComponent } from './page/cardapio/administracao/menu/menu-exibir/menu-exibir.component';
 
 
 @NgModule({
@@ -78,6 +81,9 @@ import { PagamentoComponent } from './page/cardapio/administracao/dashboard/paga
     DetalhesStatusComponent,
     Menu4Component,
     PagamentoComponent,
+    MenuUpdateComponent,
+    MenuRemoverComponent,
+    MenuExibirComponent,
 
 
   ],
