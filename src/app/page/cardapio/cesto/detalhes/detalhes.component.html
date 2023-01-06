@@ -4,8 +4,8 @@
       <i aria-hidden="true" class="fa fa-shopping-basket"></i>
       Finalizar Pedido
     </div>
-    <!--     {{ form.valid }}
-    {{ form.value | json }} -->
+      {{ form.valid }}
+    {{ form.value | json }} 
     <div class="card-body">
       <form #form="ngForm" class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
@@ -19,18 +19,18 @@
               placeholder="Numero" required type="text" />
           </app-inputs>
         </div>
-        <div class="col-md-3"> 
+        <div class="col-md-3">  
           <app-inputs>
             <input class="form-control" name="name" ngModel placeholder="Nome" type="text" />
           </app-inputs>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12"> 
           <app-detalhes-item [items]="detalhesitem()"></app-detalhes-item>
-        </div>
+        </div>   
         <div class="col-md-4">
           <p class="lead">Formas de Pagamento:</p>
           <div class="form-group">
-            <app-radio [options]="tests" name="test" ngModel></app-radio>
+            <app-radio [options]="tests"  name="pagamento" ngModel></app-radio>
           </div>
         </div>
         <div class="card-text col-sm-6 col-md-3">

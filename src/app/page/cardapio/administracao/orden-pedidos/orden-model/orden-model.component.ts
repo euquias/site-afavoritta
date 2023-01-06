@@ -15,6 +15,7 @@ export class OrdenModelComponent implements OnInit {
     address: '',
     number: '',
     name: '',
+    pagamento: [],
     test: '',
     obs: '',
     detalheitems: [],

@@ -15,6 +15,7 @@ import { Status } from './detalhes-status/status.model';
 export class DetalhesComponent implements OnInit {
   itemsvalues: Detalhe[] = [];
   deliverys: Delivery[] = [];
+  
 
    testes:Status[] = [
     { label:'Aguardando...', value:false },
@@ -22,15 +23,22 @@ export class DetalhesComponent implements OnInit {
    
   ]  
     tests: RadioOption[] = [
-    { label: 'dinheiro', value: 'mon' },
-    { label: 'cartão', value: 'deb&cre' },
-    { label: 'pix', value: 'pix' },
+    { label: 'dinheiro', value: [{mon:'mon'}] }, 
+    { label: 'cartão', value: [{debcre:'debcre'}] },
+    { label: 'pix', value: [{pix:'pix'}] },
   ];
+ /*  tests: RadioOption[] = [
+    { label: 'dinheiro', value:'mon' }, 
+    { label: 'cartão', value: 'debcre' },
+    { label: 'pix', value: 'pix'},
+  ];
+  */
+
 
   constructor(
     private router: Router,
     public detalhesitemservice: DetalhesItemService
-  ) {
+  ) {   
   }
 
   ngOnInit(): void {

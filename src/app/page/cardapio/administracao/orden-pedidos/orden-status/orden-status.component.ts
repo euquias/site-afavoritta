@@ -18,6 +18,7 @@ export class OrdenStatusComponent implements OnInit {
     number: '',
     test: '',
     obs: '',
+    pagamento: [],
     status: false,
     detalheitems: []  
   };

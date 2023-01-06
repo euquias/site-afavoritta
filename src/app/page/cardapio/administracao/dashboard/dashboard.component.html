@@ -1,8 +1,107 @@
+<div class="card">
+  <div class="card-header">
+    Dashboard
+  </div>
+  <div class="card-body">
+    <div class="row g-0 text-center">
+      <div class="col-sm-6 col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Restaurantes</h5>
+            <button type="button" class="btn btn-primary col-sm-12 col-md-12 m-1">Restaurante Mesquita</button>
+            <button type="button" class="btn btn-primary col-sm-12 col-md-12 m-1">Restaurante Jardim Abc</button>
+            <button type="button" class="btn btn-primary col-sm-12 col-md-12 m-1">Restaurante Valparaiso</button>
+            <h5 class="card-title m-3">Venda Total</h5>
+            <button type="button" class="btn btn-success col-sm-12 col-md-12 m-1">Todos Restaurante</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-9">
+        <div class="card">
+          loja Mesquita
+          <div class="card-body">
+            <div class="row justify-content-md-center">
+              <div class="card col-3 col-md-3 m-2">
+                <div class="card-body">
+                  <h5 class="card-title ">Vendas no cartão</h5>
+                  <div>
+                    <p>Debito:R$:400,00</p>
+                    <p>Pix:R$:400,00</p>
+                    <p>Dinheiro:R$:400,00</p>
+                  </div>
+                  <!--   <app-pagamento [ordems]="ordems"></app-pagamento> -->
+                </div>
+              </div>
 
- <h1 >
-   total da venda: {{vendatotal}}
- </h1> 
-
- <h1 >
-   total da venda: {{ formadepagamneto}}
- </h1> 
+              <div class="card col-3 col-md-2 m-2">
+                <div class="card-body">
+                  <h5 class="card-title">Total venda Diaria</h5>
+                  <h1>
+                    {{vendatotal | currency: "BRL":"symbol"}}
+                  </h1>
+                </div>
+              </div>
+              <div class="card col-3 col-md-2 m-2">
+                <div class="card-body">
+                  <h5 class="card-title">Desperdicio</h5>
+                  <h1>
+                    0
+                  </h1>
+                </div>
+              </div>
+              <div class="card col-3 col-md-2 m-2">
+                <div class="card-body">
+                  <h5 class="card-title">Acumúlo Do mês</h5>
+                  <h3>
+                    20.000,00
+                  </h3>
+                </div>
+              </div>
+              <div class="card col-sm-12 col-md-12">
+                <div class="card-body">
+                  <h5 class="card-title">Vedas diarias</h5>
+                  <h1>
+                    20.000,00
+                  </h1>
+                </div>
+              </div>
+              <div class="card col-sm-12 col-md-12 p-3">
+                <div class="card-body">
+                  <h5 class="card-title">mix de produtos</h5>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
