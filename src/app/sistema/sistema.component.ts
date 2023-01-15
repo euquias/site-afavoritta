@@ -14,7 +14,5 @@ export class SistemaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() {
-    this.router.navigate(['adm'])
-  }
+ 
 }

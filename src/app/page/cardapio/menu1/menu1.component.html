@@ -1,5 +1,5 @@
 <div class="card m-1 " style="width: 5rem; height: 8rem;">
-  <img [src]="menu.imagePath" style="width: 4rem; height: 4rem;" (click)="emitaddevent()"
+  <img [src]="menu.imageUrl" style="width: 4rem; height: 4rem;" (click)="emitaddevent()"
     data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal">
   <h5 class="card-title">{{menu.name}}</h5>
   <p class="card-text">{{ menu.price | currency: "BRL":"symbol" }}</p>

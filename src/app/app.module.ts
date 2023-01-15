@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from "@angular/forms";
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {PageComponent} from './page/page.component';
@@ -42,6 +43,7 @@ import { PagamentoComponent } from './page/cardapio/administracao/dashboard/paga
 import { MenuUpdateComponent } from './page/cardapio/administracao/menu/menu-update/menu-update.component';
 import { MenuRemoverComponent } from './page/cardapio/administracao/menu/menu-remover/menu-remover.component';
 import { MenuExibirComponent } from './page/cardapio/administracao/menu/menu-exibir/menu-exibir.component';
+import { SistemaLoginComponent } from './sistema/sistema-login/sistema-login.component';
 
 
 @NgModule({
@@ -84,6 +86,7 @@ import { MenuExibirComponent } from './page/cardapio/administracao/menu/menu-exi
     MenuUpdateComponent,
     MenuRemoverComponent,
     MenuExibirComponent,
+    SistemaLoginComponent,
 
 
   ],
@@ -91,6 +94,7 @@ import { MenuExibirComponent } from './page/cardapio/administracao/menu/menu-exi
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule
 
 

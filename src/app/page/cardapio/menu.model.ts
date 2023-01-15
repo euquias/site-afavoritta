@@ -1,6 +1,6 @@
 export interface Menu {
   name: string;
   price: number;
-  imagePath: string;
+  imageUrl: string;
   id: number;
 }
