@@ -34,7 +34,7 @@
       <td class="col-md-12">({{item.quantity}}x) {{ item.menuid }} </td>
       <td class="col-md-12">{{ item.value | currency: "BRL":"symbol" }}</td>
       <td *ngIf="!ordem.detalheitems.length" class="no-item">
-        Nenhum item adicionado
+        Nenhum item adicionado 
       </td>
     </tr>
     </td>
@@ -43,8 +43,8 @@
     <td class="col-md-1">
       <a>
         <i (click)="onedit(ordem.id)" aria-hidden="true" class="fa fa-print"></i>
-        <i  class="fa fa-trash" aria-hidden="true">
-          <!-- (click)="deletar(ordem.id)" -->
+        <i  class="fa fa-trash" (click)="deletar(ordem.id)"  aria-hidden="true">
+           
         </i>
       </a>
     </td>

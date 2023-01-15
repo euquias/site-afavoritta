@@ -1,7 +1,7 @@
 <div class="contener">
 
   <form class=" g-3 needs-validation" novalidate>
-    <div class="col-md-12 position-relative">
+    <div class="col-md-12 position-relative"> 
       <label for="validationTooltip01" class="form-label d-flex justify-content-start"><strong>Nome do produto:</strong></label>
       <input type="text" class="form-control" id="validationTooltip01" [(ngModel)]="menus.name" name="name" required  placeholder="produto">
       <div class="valid-tooltip">
@@ -31,11 +31,10 @@
 
       <div class="col-md-3 position-relative">
         <label for="validationTooltip04" class="form-label"><strong>Categoria</strong></label>
-        <select class="form-select" id="validationTooltip04" required>
-          <option selected  value="">pizzas</option>
-          <option selected  value="">Bebidas</option> 
-          <option selected  value="">add</option>
-          <option selected  value="">frete</option>
+        <select   class="form-select" id="validationTooltip04" required>
+          <option *ngFor="let categoria of categorias" value="">{{categoria.name}}</option>
+          <!-- selected -->
+          
         </select>
         <div class="invalid-tooltip">
           Please select a valid state.
@@ -51,11 +50,11 @@
     </div>
     <div class="col-12 d-flex justify-content-start m-3">
       <button type="button" class="btn btn-primary col-md-2 m-1" (click)="criarproduto()">Salvar</button>
-      <button type="button" class="btn btn-secondary col-md-2 m-1">Cancelar</button>
+      <button type="button" class="btn btn-secondary col-md-2 m-1"  (click)="cancel()">Cancelar</button>
     </div>
   </form>
 
   <div class="card col-sm-12 col-md-12 p-3">
-   <app-menu-exibir></app-menu-exibir>
-  </div>
+    <app-menu-exibir></app-menu-exibir>
+     </div> 
 </div>

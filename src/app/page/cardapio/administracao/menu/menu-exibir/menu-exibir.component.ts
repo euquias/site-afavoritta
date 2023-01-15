@@ -10,20 +10,24 @@ import { MenuService } from '../menu.service';
 })
 export class MenuExibirComponent implements OnInit {
 
-  constructor(private menuservice: MenuService,
+  constructor(
+    private menuservice: MenuService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+    ) { }
 
-  menus: Menu[] = []
+
+  menus!: Menu[]
 
   ngOnInit(): void {
-    this.menuservice.read().subscribe((menus) => {
-      this.menus = menus;
-    });
+    this.menuservice.read().subscribe(menus => {
+      this.menus = menus
+      console.log('teteste', menus)
+    })
   }
 
   onedit(id: any): void {
-    this.router.navigate(["/update", id], { relativeTo: this.route });
+    this.router.navigate(["/update", id], { relativeTo: this.route }); 
     console.log(id);
   }
 

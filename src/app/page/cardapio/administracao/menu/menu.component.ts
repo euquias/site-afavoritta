@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import { Menu } from './menu.model';
+import { Categorias, Menu } from './menu.model';
 import { MenuService } from './menu.service';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-menu',
@@ -15,20 +16,40 @@ export class MenuComponent implements OnInit {
     description:'',
     price:"",
     id:"",
+    userId: "",
+    categoryId: ""  
   };
-  constructor(private menuservice:MenuService) {
+
+  categorias!:Categorias[]
+
+  constructor(
+    private menuservice:MenuService,
+      private router: Router,
+    private route: ActivatedRoute
+    ) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.menuservice.categorias().subscribe(categorias => {
+      this.categorias = categorias
+      console.log('teteste', categorias)
+    })
+
+  }
+
+  
   criarproduto(): void {
     this.menuservice.create(this.menus).subscribe(
       () => {
-        /* this.router.navigate(["menu"]); */
+         this.router.navigate(["/adm/menu"]); 
       }
     );
   }
   cancel(): void {
-  /*   this.router.navigate(["/menu"]); */
+    this.router.navigate(["/adm/menu"]); 
   }
+
+
 
 }
