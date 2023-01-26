@@ -30,7 +30,7 @@ export class DetalhesComponent implements OnInit {
  /*  tests: RadioOption[] = [
     { label: 'dinheiro', value:'mon' }, 
     { label: 'cartão', value: 'debcre' },
-    { label: 'pix', value: 'pix'},
+    { label: 'pix', value: 'pix'},teste o erro finalizar 
   ];
   */
 
