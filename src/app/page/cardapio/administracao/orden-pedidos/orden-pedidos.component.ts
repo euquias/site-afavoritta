@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ordem } from './ordem.model';
+import { Pedidos } from './pedidos.model';
 import { OrdenPedidosService } from './orden-pedidos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -12,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class OrdenPedidosComponent implements OnInit {
 
   public ordems: Ordem[] = [];
+  public pedidos: Pedidos[] = [];
   status: Ordem[] = [];
 
   constructor(
@@ -21,14 +23,19 @@ export class OrdenPedidosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.ordenpedidosservice.read().subscribe((ordems) => {
+   /*  this.ordenpedidosservice.read().subscribe((ordems) => {
       ordems.forEach((ordem) => {
         console.log(typeof ordem.detalheitems);
         ordem.detalheitems.forEach((r) => {
         });
       });
       this.ordems = ordems;
-    });
+    }); */
+    this.ordenpedidosservice.read().subscribe(pedidos => {
+      this.pedidos = pedidos
+      console.log('testando', pedidos)
+    })
+
   }
 
   onedit(id: any): void {

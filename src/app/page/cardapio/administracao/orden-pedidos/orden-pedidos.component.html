@@ -5,7 +5,7 @@
       <th scope="col">Nº</th>
       <th scope="col">Nome</th>
       <th scope="col">Endereço</th>
-      <th scope="col">numero</th>
+      <th scope="col">numero</th>   
       <th scope="col">Pedido</th>
       <th scope="col">pagamento</th>
       <th scope="col">valor</th>
@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="col-md-1" *ngFor="let ordem of ordems">
+    <tr class="col-md-1" *ngFor="let ordem of pedidos">
       <th scope="row" (click)="statu(ordem.id)" class="ordem">
         <a *ngIf="ordem.status">
           <i class="fa fa-check-circle" aria-hidden="true">{{ordem.status}}</i>
