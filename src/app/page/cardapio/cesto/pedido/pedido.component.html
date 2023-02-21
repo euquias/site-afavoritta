@@ -24,27 +24,27 @@
         </p>
       </div>
     </div>
-      <div class="card-footer" *ngIf="items().length">
-        <div class="row ">
-          <h3 class="card-text  col-md-6 col-sm-1">Total:</h3>
-          <h3 class="card-text total col-md-6 col-sm-11"><strong>{{ total() | currency: "BRL":"symbol" }} </strong></h3>
-          <div class=" col-sm-12 m-1 ">
-            <a [routerLink]="['/detalhes']" class="btn btn-success col-sm-6 acoes">
-              <i aria-hidden="true" class="fa fa-credit-card"></i>
-              Fechar
-            </a>
-            <a (click)="clear()" class="btn btn-danger  col-sm-6 acoes ">
-              <i aria-hidden="true" class="fa fa-times"></i>
-              Cancelar
-            </a>
-            <a class="btn btn-primary col-sm-6  acoes" data-bs-target="#sstaticBackdrop" data-bs-toggle="modal">
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-              Adicionar Frete</a> 
-          </div>
+    <div class="card-footer" *ngIf="items().length">
+      <div class="row ">
+        <h3 class="card-text  col-md-6 col-sm-1">Total:</h3>
+        <h3 class="card-text total col-md-6 col-sm-11"><strong>{{ total() | currency: "BRL":"symbol" }} </strong></h3>
+        <div class=" col-sm-12 m-1 ">
+          <a class="btn btn-primary col-sm-6  acoes" data-bs-target="#sstaticBackdrop" data-bs-toggle="modal">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            Adicionar Frete</a>
+          <a (click)="clear()" class="btn btn-danger  col-sm-6 acoes ">
+            <i aria-hidden="true" class="fa fa-times"></i>
+            Cancelar
+          </a>
+          <a [routerLink]="['/detalhes']" class="btn btn-success col-sm-6 acoes">
+            <i aria-hidden="true" class="fa fa-credit-card"></i>
+            Fechar
+          </a>
         </div>
       </div>
+    </div>
   </div>
-</div> 
+</div>
 <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static"
   data-bs-keyboard="false" id="sstaticBackdrop" tabindex="-1">
   <div class="modal-dialog modal-md">

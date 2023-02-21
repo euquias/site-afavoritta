@@ -5,7 +5,7 @@
       <th scope="col">Nº</th>
       <th scope="col">Nome</th>
       <th scope="col">Endereço</th>
-      <th scope="col">numero</th>   
+      <th scope="col">numero</th>
       <th scope="col">Pedido</th>
       <th scope="col">pagamento</th>
       <th scope="col">valor</th>
@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="col-md-1" *ngFor="let ordem of pedidos">
+    <tr class="col-md-1" *ngFor="let ordem of ordems">
       <th scope="row" (click)="statu(ordem.id)" class="ordem">
         <a *ngIf="ordem.status">
           <i class="fa fa-check-circle" aria-hidden="true">{{ordem.status}}</i>
@@ -25,8 +25,8 @@
           </i>
         </a>
       </th>
-      <td class="col-md-1" >{{ ordem.id }}</td>
-      <td class="col-md-1" >{{ ordem.name }}</td>
+      <td class="col-md-1">{{ ordem.id }}</td>
+      <td class="col-md-1">{{ ordem.name }}</td>
       <td class="col-md-1">{{ ordem.address }}</td>
       <td class="col-md-1">{{ ordem.number }}</td>
       <td>
@@ -34,26 +34,26 @@
       <td class="col-md-12">({{item.quantity}}x) {{ item.menuid }} </td>
       <td class="col-md-12">{{ item.value | currency: "BRL":"symbol" }}</td>
       <td *ngIf="!ordem.detalheitems.length" class="no-item">
-        Nenhum item adicionado 
+        Nenhum item adicionado
       </td>
     </tr>
     </td>
-    <td class="col-md-1">{{ ordem.test }}</td>
+    <td class="col-md-1">{{ ordem.pagamento}}</td>
     <td> {{ ordem?.total | currency: "BRL":"symbol" }}</td>
     <td class="col-md-1">
       <a>
         <i (click)="onedit(ordem.id)" aria-hidden="true" class="fa fa-print"></i>
-        <i  class="fa fa-trash" (click)="deletar(ordem.id)"  aria-hidden="true">
-           
+        <i class="fa fa-trash" (click)="deletar(ordem.id)" aria-hidden="true">
+
         </i>
       </a>
     </td>
-    <td class="col-md-1 of-obs" *ngIf="ordem.obs.length" >
-     <strong> {{ordem.obs}}</strong>
+    <td class="col-md-1 of-obs" *ngIf="ordem.obs.length">
+      <strong>{{ordem.obs}}</strong>
     </td>
-      <td   class="col-md-1 on-obs " *ngIf="!ordem.obs.length" >
-        nenhuma observação
-      </td>
+    <td class="col-md-1 on-obs " *ngIf="!ordem.obs.length">
+      nenhuma observação
+    </td>
     </tr>
   </tbody>
 </table>

@@ -3,4 +3,4 @@ export interface Menu {
   price: number;
   imageUrl: string;
   id: number;
-}  
+}

@@ -23,14 +23,14 @@ export class DetalhesComponent implements OnInit {
    
   ]  
     tests: RadioOption[] = [
-    { label: 'dinheiro', value: [{mon:'mon'}] }, 
-    { label: 'cartão', value: [{debcre:'debcre'}] },
-    { label: 'pix', value: [{pix:'pix'}] },
+    { label: 'dinheiro', value: 'mon' }, 
+    { label: 'cartão', value: 'debcre' },
+    { label: 'pix', value: 'pix' },
   ];
  /*  tests: RadioOption[] = [
     { label: 'dinheiro', value:'mon' }, 
     { label: 'cartão', value: 'debcre' },
-    { label: 'pix', value: 'pix'},teste o erro finalizar 
+    { label: 'pix', value: 'pix'},
   ];
   */
 

@@ -10,13 +10,13 @@ import {Menu} from './menu.model';
 export class CardapioService {
 
 
-   api = "http://localhost:3001" 
- /*  api = "http://localhost:3000" */
+  /* api = "http://localhost:3001" */
+  api = "http://localhost:3000"
  
   constructor(public http: HttpClient) {
   }
 
-   read(): Observable<Menu[]> {
+ /*  read(): Observable<Menu[]> {
     const url = `${this.api}/menu`;
     return this.http.get<Menu[]>(url);
   }
@@ -32,24 +32,24 @@ export class CardapioService {
   read4(): Observable<Menu[]> {
     const url = `${this.api}/menu4`;
     return this.http.get<Menu[]>(url);
-  } 
-  /* read(): Observable<Menu[]> {
-    const url = `${this.api}/categories/14/menu`;
+  } */
+  read(): Observable<Menu[]> {
+    const url = `${this.api}/categories/3/menu`;
     return this.http.get<Menu[]>(url);
   }
 
   read2(): Observable<Menu[]> {
-    const url = `${this.api}/categories/16/menu`;
+    const url = `${this.api}/categories/4/menu`;
     return this.http.get<Menu[]>(url);
   }
 
   read3(): Observable<Menu[]> {
-    const url = `${this.api}/categories/17/menu`;
+    const url = `${this.api}/categories/5/menu`;
     return this.http.get<Menu[]>(url);
   }
 
   read4(): Observable<Menu[]> {
-    const url = `${this.api}/categories/18/menu`;
+    const url = `${this.api}/categories/6/menu`;
     return this.http.get<Menu[]>(url);
-  } */
+  }
 }
