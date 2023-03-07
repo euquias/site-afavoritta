@@ -12,7 +12,7 @@ export class OrdenStatusComponent implements OnInit {
 
   status: boolean = true
 
-  @Input() ordems: Ordem = {
+  @Input() ordems: any = {
     name: "",
     address: '',
     number: '',

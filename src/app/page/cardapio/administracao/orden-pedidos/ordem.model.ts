@@ -1,5 +1,6 @@
 class Ordem {
   constructor(
+    public usersEmbedded: Array<any>,
     public address: string,
     public number: string,
     public name: string,
@@ -23,15 +24,34 @@ class DetalheItem {
   }
 }
 
-class Pagamento {
+class UsersEmbedded {
   constructor(
-    public mon: string,
-    public debcre: string,
-    public pix: string
-    ) {
+    public pedidos_itens:Pedidos_itens[] ,
+  ) {
+  }
+}
+class Pedidos_itens {
+  constructor(
+    public address: string,
+    public number: string,
+    public name: string,
+    public pagamento: string,
+    public obs: string,
+    public itens:Itens[] ,
+    public id?: any,
+    public total?: any
+  ) {
+  }
+}
+class Itens {
+  constructor(
+    public quantity: number,
+    public name: number,
+    public value: number
+  ) {
   }
 }
 
-export { Ordem, DetalheItem, Pagamento };
+export { Ordem, DetalheItem, UsersEmbedded, Pedidos_itens, Itens  };
 
 

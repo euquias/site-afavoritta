@@ -3,8 +3,8 @@ class Detalhe {
     public address: string,
     public number: number,
     public name: string,
-    public test: string,
-    public detalheitems: DetalheItem[],
+    public pagamento: string,
+    public itens: DetalheItem[],
     public itemsvalues: number,
     public obs:string
     
@@ -17,7 +17,7 @@ class DetalheItem {
     throw new Error('Method not implemented.');
   }
 
-  constructor(public quantity: number, public menuid: string, public value: number) {
+  constructor(public quantity: number, public name: string, public value: number) {
   }
 }
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Ordem, Pagamento } from '../orden-pedidos/ordem.model';
+import { Ordem } from '../orden-pedidos/ordem.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrdenPedidosService } from '../orden-pedidos/orden-pedidos.service';
 

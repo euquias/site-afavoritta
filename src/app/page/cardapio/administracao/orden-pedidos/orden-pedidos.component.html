@@ -15,16 +15,17 @@
   </thead>
   <tbody>
     <tr class="col-md-1" *ngFor="let ordem of ordems">
-      <th scope="row" (click)="statu(ordem.id)" class="ordem">
+    
+     <!--  <th scope="row" (click)="statu(ordem.id)" class="ordem">
         <a *ngIf="ordem.status">
           <i class="fa fa-check-circle" aria-hidden="true">{{ordem.status}}</i>
         </a>
         <a *ngIf="!ordem.status" class="no-ordem">
           <i class="fa fa-clock-o" aria-hidden="true">
-            Aguardando
+            Aguardando 
           </i>
         </a>
-      </th>
+      </th> -->
       <td class="col-md-1">{{ ordem.id }}</td>
       <td class="col-md-1">{{ ordem.name }}</td>
       <td class="col-md-1">{{ ordem.address }}</td>
@@ -61,3 +62,11 @@
   data-bs-keyboard="false" id="staticBackdrop" tabindex="-1">
   <app-orden-model></app-orden-model>
 </div>
+
+
+<!--  <div *ngFor= "let teste of usersEmbedded">
+ {{teste | json}}
+</div>   -->
+ 
+
+<p>{{usersEmbedded | json}}</p>

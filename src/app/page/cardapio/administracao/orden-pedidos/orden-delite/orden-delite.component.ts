@@ -11,7 +11,7 @@ import { OrdenPedidosService } from '../orden-pedidos.service';
 })
 export class OrdenDeliteComponent implements OnInit {
 
-  @Input() ordems: Ordem = {
+  @Input() ordems: any = {
     name: "",
     address: '',
     number: '',

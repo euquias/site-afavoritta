@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ordem } from './ordem.model';
+import { Ordem, UsersEmbedded } from './ordem.model';
 import { OrdenPedidosService } from './orden-pedidos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -13,6 +13,7 @@ export class OrdenPedidosComponent implements OnInit {
 
   public ordems: Ordem[] = [];
   status: Ordem[] = [];
+  public usersEmbedded: UsersEmbedded[] = [];
 
   constructor(
     private ordenpedidosservice: OrdenPedidosService,
@@ -21,13 +22,18 @@ export class OrdenPedidosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.ordenpedidosservice.read().subscribe((ordems) => {
-      ordems.forEach((ordem) => {
-        console.log(typeof ordem.detalheitems);
-        ordem.detalheitems.forEach((r) => {
-        });
-      });
-      this.ordems = ordems;
+    /*    this.ordenpedidosservice.read().subscribe((ordems) => {
+          ordems.forEach((ordem) => {
+           console.log(typeof ordem.usersEmbedded, 'FDGFDGDFGDFGDFG');
+           ordem.usersEmbedded.forEach((r) => {
+           });
+         });
+         this.ordems = ordems;
+       }); */
+
+    this.ordenpedidosservice.teste().subscribe((usersEmbedded) => {   
+      this.usersEmbedded = usersEmbedded;
+      console.log(usersEmbedded, 'sfdgsdgf')
     });
   }
 
@@ -45,7 +51,7 @@ export class OrdenPedidosComponent implements OnInit {
   deletar(id: any): void {
     this.router.navigate(['/deletar', id], { relativeTo: this.route });
   }
-  
+
   valorTotal(): number {
     return 333;
   }

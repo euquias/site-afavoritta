@@ -34,7 +34,7 @@ export class CardapioService {
     return this.http.get<Menu[]>(url);
   } */
   read(): Observable<Menu[]> {
-    const url = `${this.api}/categories/3/menu`;
+    const url = `${this.api}/categories/1/menu`;
     return this.http.get<Menu[]>(url);
   }
 

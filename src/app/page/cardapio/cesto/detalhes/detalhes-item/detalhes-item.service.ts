@@ -10,7 +10,7 @@ import {Delivery} from '../detalhes-frete/detalhe-delivery.model';
   providedIn: 'root',
 })
 export class DetalhesItemService {
-  api = 'http://localhost:3001';
+  api = 'http://localhost:3000';
   
 
 

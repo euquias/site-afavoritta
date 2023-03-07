@@ -15,30 +15,23 @@ import { Status } from './detalhes-status/status.model';
 export class DetalhesComponent implements OnInit {
   itemsvalues: Detalhe[] = [];
   deliverys: Delivery[] = [];
-  
 
-   testes:Status[] = [
-    { label:'Aguardando...', value:false },
+
+  testes: Status[] = [
+    { label: 'Aguardando...', value: false },
     { label: 'Entregue', value: true }
-   
-  ]  
-    tests: RadioOption[] = [
-    { label: 'dinheiro', value: 'mon' }, 
+
+  ]
+  pagamento: RadioOption[] = [
+    { label: 'dinheiro', value: 'mon' },
     { label: 'cartão', value: 'debcre' },
     { label: 'pix', value: 'pix' },
   ];
- /*  tests: RadioOption[] = [
-    { label: 'dinheiro', value:'mon' }, 
-    { label: 'cartão', value: 'debcre' },
-    { label: 'pix', value: 'pix'},
-  ];
-  */
-
 
   constructor(
     private router: Router,
     public detalhesitemservice: DetalhesItemService
-  ) {   
+  ) {
   }
 
   ngOnInit(): void {
@@ -54,12 +47,13 @@ export class DetalhesComponent implements OnInit {
   finalizarpedido(detalhe: Detalhe) {
     console.log('VALOR TOTAL ', this.itemsvalue());
     const _detalhe = { ...detalhe, total: this.itemsvalue() };
-    _detalhe.detalheitems = this.detalhesitemservice
+    _detalhe.itens = this.detalhesitemservice
       .cestoitems()
       .map(
         (item: Cesto) =>
           new DetalheItem(item.quantity, item.menu.name, item.menu.price)
       );
+    console.log(_detalhe, 'endipoit ');
     this.detalhesitemservice
       .finalizarpedido(_detalhe)
       .subscribe((detalhid: string) => {

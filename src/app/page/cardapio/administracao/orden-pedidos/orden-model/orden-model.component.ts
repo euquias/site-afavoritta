@@ -11,7 +11,7 @@ import {OrdenPedidosService} from '../orden-pedidos.service';
 })
 export class OrdenModelComponent implements OnInit {
 
-  @Input() ordems: Ordem = {
+  @Input() ordems: any = {
     address: '',
     number: '',
     name: '',

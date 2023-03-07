@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Ordem, Pagamento } from '../../orden-pedidos/ordem.model';
+import { Ordem } from '../../orden-pedidos/ordem.model';
 import { OrdenPedidosService } from '../../orden-pedidos/orden-pedidos.service';
 
 
@@ -12,14 +12,14 @@ import { OrdenPedidosService } from '../../orden-pedidos/orden-pedidos.service';
 export class PagamentoComponent implements OnInit {
 
   @Input() ordems: Ordem[] = [];
-  pagamento!: Pagamento[] 
+ /*  pagamento!: Pagamento[]  */
   e!:[]
   constructor(private ordenpedidosservice: OrdenPedidosService,
     private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.ordenpedidosservice.read().subscribe((ordems) => {
+  /*   this.ordenpedidosservice.read().subscribe((ordems) => {
       ordems.forEach((ordem) => {
         console.log(typeof ordem.pagamento);
         ordem.pagamento.map((r) => {
@@ -34,11 +34,9 @@ export class PagamentoComponent implements OnInit {
       const e2 = e
       
       console.log(e2)
-      
-        
-     
+           
     });
-  
+   */
 
     
 

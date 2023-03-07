@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Ordem, Pagamento } from './ordem.model';
+import { Ordem,  UsersEmbedded } from './ordem.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdenPedidosService {
 
-  api = 'http://localhost:3001';
+  api = 'http://localhost:3000';
 
   ordems: Ordem[] = []
   detalheitems!: string
@@ -20,6 +20,11 @@ export class OrdenPedidosService {
   read(): Observable<Ordem[]> {
     const url = `${this.api}/orders`;
     return this.http.get<Ordem[]>(url)
+  }
+
+  teste(): Observable< UsersEmbedded[]> {
+    const url = `${this.api}/orders`;
+    return this.http.get< UsersEmbedded[]>(url)
   }
 
   readById(id: any): Observable<Ordem> {
