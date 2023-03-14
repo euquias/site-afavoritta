@@ -6,6 +6,7 @@ class Detalhe {
     public pagamento: string,
     public itens: DetalheItem[],
     public itemsvalues: number,
+    public total: number,
     public obs:string
     
   ) {
@@ -17,7 +18,7 @@ class DetalheItem {
     throw new Error('Method not implemented.');
   }
 
-  constructor(public quantity: number, public name: string, public value: number) {
+  constructor(public quantity: number, public produto: string, public value: number) {
   }
 }
 

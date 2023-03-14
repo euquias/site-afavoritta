@@ -1,4 +1,4 @@
-<div class="modal-dialog modal-sm">
+<!-- <div class="modal-dialog modal-sm">
   <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title" id="staticBackdropLabel"></h5>
@@ -8,20 +8,20 @@
       <div class="grid">
         <div class="container text-center col-12 col-md-12">
           <div class="row">
-            <div class="col-6 col-md-12">
+            <div class="col-6 col-md-12"  >
               <div class="dados">Pizzaria Afavoritta<br>
                 Mesquita<br>
                 72870028-Cidade Ocidental-GO<br>
-                <strong> Lanches e Salgados</strong><br>
+                <strong> Lanches e Salgados</strong><br> 
                 <strong> Cupom não fiscal</strong>
               </div>
-              <div class="text-start">
-                <div class="col-12 col-md-12 dados">
-                  <div class="col-md-12">Nome: {{ordems.name}}</div>
-                  <div class="col-md-12">Endereço: {{ordems.address}}</div>
-                  <div [(ngModel)]="ordems.number" class="col-md-12">Numero: {{ordems.number}}</div>
+              <div class="text-start" >
+                <div class="col-12 col-md-12 dados" >
+                  <div class="col-md-12"  >Nome: </div>
+                  <div class="col-md-12" >Endereço: {{ordem.address}}</div>
+                  <div  class="col-md-12">Numero: {{ordem.number}}</div>
                 </div>
-                <table class="table dados">
+                <table class="table dados"> 
                   <thead>
                   <tr>
                     <th scope="col-md-1">qtd</th>
@@ -30,29 +30,29 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let item of ordems.detalheitems">
-                    <th  scope="row">({{item.quantity}}x)</th>
-                    <td>{{ item.menuid }}</td>
-                    <td>{{ item.value | currency: "BRL":"symbol" }}</td>
+                  <tr >
+                    <th  scope="row">({{ordems.quantity}}x)</th>
+                    <td>{{ ordem.produto }}</td>
+                    <td>{{ ordem.value | currency: "BRL":"symbol" }}</td>
                   </tr>
                   </tbody>
                 </table>
                 <div class="col-12 col-md-12 dados">
                   <div class="row">
                     <div class="col-sm-2"><strong>obs.</strong></div>
-                    <div class="col-sm-10">{{ordems.obs}}</div>
+                    <div class="col-sm-10">{{ordem.obs}}</div>
                   </div>
                 </div>
                 <div class="col-12 col-md-12 dados">
                   <div class="row">
                     <div class="col-sm-8"><strong>Total</strong></div>
-                    <div class="col-sm-4"><strong> {{ ordems.total | currency: "BRL":"symbol" }}</strong></div>
+                    <div class="col-sm-4"><strong> {{ ordem.total | currency: "BRL":"symbol" }}</strong></div>
                   </div>
                 </div>
                 <div class="col-12 col-md-12 dados">
                   <div class="row">
                     <div class="col-sm-8"><strong>Forma de pagamento</strong></div>
-                  <!--   <div class="col-sm-4">{{ordems.test}}</div> -->
+                    <div class="col-sm-4">{{ordems.test}}</div>
                   </div>
                 </div>
                 <div class="col-12 col-md-12 text-center dados">
@@ -70,4 +70,6 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+{{ordems | json}}

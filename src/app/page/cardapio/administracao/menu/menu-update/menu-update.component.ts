@@ -11,11 +11,11 @@ import { MenuService } from '../menu.service';
 export class MenuUpdateComponent implements OnInit {
 
   menus: Menu = {
-    name: "",
-    imagePath:"",
+    produto: "",
+    imageUrl:"",
     description: "",
     price: "",
-    id:"",
+    id:"", 
     userId: "",
     categoryId: "" 
   }
@@ -27,18 +27,18 @@ export class MenuUpdateComponent implements OnInit {
   ) { }
  
   
-  
+   
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get("id");
     this.menuservice.readById(id).subscribe((menus) => {
       this.menus = menus;
+      console.log(menus)
     });
   }
 
   salvar(): void {
-    this.menuservice.update(this.menus).subscribe(
-      () => {
-        this.router.navigate(["/adm/menu"]);
+    this.menuservice.update(this.menus).subscribe(() => {
+      this.router.navigate(["/adm/menu"]);
       }
     );
   }

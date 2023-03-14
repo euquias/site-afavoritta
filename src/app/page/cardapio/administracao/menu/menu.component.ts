@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, } from '@angular/core';
 import { Categorias, Menu } from './menu.model';
 import { MenuService } from './menu.service';
 import { ActivatedRoute, Router } from "@angular/router";
@@ -10,44 +10,47 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class MenuComponent implements OnInit {
 
+
+  @Output() add = new EventEmitter()
   menus: Menu = {
-    name: "",
-    imagePath:"",
-    description:'',
-    price:"",
-    id:"",
+    produto: "",
+    description: '',
+    imageUrl: "",
+    price: "",
     userId: "",
-    categoryId: ""  
+    categoryId:"3"
   };
 
-  categorias!:Categorias[]
+  categorias!: Categorias[]
 
   constructor(
-    private menuservice:MenuService,
-      private router: Router,
+    private menuservice: MenuService,
+    private router: Router,
     private route: ActivatedRoute
-    ) {
+  ) {
   }
 
   ngOnInit(): void {
 
     this.menuservice.categorias().subscribe(categorias => {
       this.categorias = categorias
-      console.log('teteste', categorias)
     })
 
   }
 
-  
+  emitaddevent() {
+    this.add.emit()
+  } 
+
   criarproduto(): void {
-    this.menuservice.create(this.menus).subscribe(
-      () => {
-         this.router.navigate(["/adm/menu"]); 
-      }
-    );
+    this.menuservice.create(this.menus).subscribe(() => {
+        console.log(this.menus)
+        this.router.navigate(["/"]);
+      })
   }
+
   cancel(): void {
-    this.router.navigate(["/adm/menu"]); 
+    this.router.navigate(["/adm/menu"]);
   }
 
 

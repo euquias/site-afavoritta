@@ -1,7 +1,8 @@
 <div class="contener">
 
-  <form class="row g-3 needs-validation" novalidate>
+  <form  #form="ngForm" class="row g-3 needs-validation" novalidate>
     <div class="col-md-4 m-1">
+      {{ form.value | json }}
       <label for="validationTooltip01" class="form-label d-flex justify-content-start"><strong>Nome:</strong></label>
       <input type="text" class="form-control" id="validationTooltip01" required placeholder="Nome">
       <div class="valid-tooltip">
@@ -34,9 +35,15 @@
         </div>
       </div>
     </div>
-    <div class="col-md-1 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Administrador?</label>
+    <div class="adm/fun m-1">
+      <div class="col-md-1 form-check ">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Administrador?</label>
+      </div>
+      <div class="col-md-1 form-check" >
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Colaborador?</label>
+      </div>
     </div>
     <div class="col-12 d-flex justify-content-start m-3">
       <button type="button" class="btn btn-primary col-md-2 m-1">Salvar</button>
@@ -61,7 +68,7 @@
             <th scope="row">1</th>
             <td>Euquias</td>
             <td>euquiasa@gmail.com</td>
-            <td>sim</td>
+            <td>sim</td>    
             <td>
               <i class="fa fa-pencil m-2" aria-hidden="true"></i>
               <i class="fa fa-trash m-2" aria-hidden="true"></i>

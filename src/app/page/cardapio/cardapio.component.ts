@@ -10,7 +10,7 @@ import {Menu} from './menu.model';
 export class CardapioComponent implements OnInit {
 
   menus!: Menu[]
-  menus2!: Menu[]
+  menus2!: Menu[] 
   menus3!: Menu[]
   menus4!: Menu[]
 
@@ -20,6 +20,7 @@ export class CardapioComponent implements OnInit {
   ngOnInit(): void {
     this.cardapioservice.read().subscribe(menus => {
       this.menus = menus
+      console.log(menus)
     })
     this.cardapioservice.read2().subscribe(menus2 => {
       this.menus2 = menus2

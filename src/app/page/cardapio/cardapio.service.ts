@@ -22,7 +22,7 @@ export class CardapioService {
   }
 
   read2(): Observable<Menu[]> {
-    const url = `${this.api}/menu2`;
+    const url = `${this.api}/menu2`; 
     return this.http.get<Menu[]>(url);
   }
   read3(): Observable<Menu[]> {

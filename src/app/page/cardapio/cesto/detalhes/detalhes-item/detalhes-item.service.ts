@@ -34,14 +34,8 @@ export class DetalhesItemService {
     this.cestoservice.clear();
   }
 
-  finalizarpedido(detalhe: Detalhe): Observable<string> {
-    type Header = { [header: string]: string };
-    const headers: Header = {'Content-Type': 'application/json'};
-    return this.http.post<string>(
-      `${this.api}/orders`,
-      JSON.stringify(detalhe),
-      {headers}
-    );
+  finalizarpedido(detalhe: Detalhe): Observable<Detalhe> {
+    return this.http.post<Detalhe>(`${this.api}/orders`, detalhe)
   }
 
  

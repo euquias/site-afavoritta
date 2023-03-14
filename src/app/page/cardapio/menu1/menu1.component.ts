@@ -15,13 +15,13 @@ export class Menu1Component implements OnInit {
   }
 
   ngOnInit(): void { 
-
+ 
   }
 
   emitaddevent() {
     this.add.emit(this.menu)
 
-  }
+  } 
 
 
 }

@@ -3,10 +3,10 @@
         <div class="card-header">
             <div class="nav">
                 <h4>Tem certeza que deseja cancelar esse Pedido</h4>
-            </div>
+            </div> 
             <div class="col-md-10">
                 <label for="validationCustom02" class="form-label">Nome</label>
-                <input type="text" class="form-control" [(ngModel)]="menus.name" name="name" disabled>
+                <input type="text" class="form-control" [(ngModel)]="menus.produto" name="produto" disabled>
             </div>
             <div class="col-md-10">
                 <label for="validationCustom02" class="form-label">Descriçao</label>
@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-10">
                 <label for="validationCustom02" class="form-label">valor</label>
-                <input type="text" class="form-control" [(ngModel)]="menus.price" name="price">
+                <input type="text" class="form-control" [(ngModel)]="menus.price" name="price"> 
             </div>
             <div class="nav justify-content-start">
                 <div class="btm">
@@ -22,6 +22,6 @@
                     <button type="button" class="btn btn-danger m-1" (click)="cancel()">Cancelar</button>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 </div>

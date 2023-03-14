@@ -1,5 +1,5 @@
 export interface Menu {
-  name: string;
+  produto: string;
   price: number;
   imageUrl: string;
   id: number;

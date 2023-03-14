@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ordem, UsersEmbedded } from './ordem.model';
+import { Ordem} from './ordem.model';
 import { OrdenPedidosService } from './orden-pedidos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -11,9 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class OrdenPedidosComponent implements OnInit {
 
-  public ordems: Ordem[] = [];
-  status: Ordem[] = [];
-  public usersEmbedded: UsersEmbedded[] = [];
+ ordems!: Ordem[];
 
   constructor(
     private ordenpedidosservice: OrdenPedidosService,
@@ -22,21 +20,12 @@ export class OrdenPedidosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    /*    this.ordenpedidosservice.read().subscribe((ordems) => {
-          ordems.forEach((ordem) => {
-           console.log(typeof ordem.usersEmbedded, 'FDGFDGDFGDFGDFG');
-           ordem.usersEmbedded.forEach((r) => {
-           });
-         });
+        this.ordenpedidosservice.read().subscribe((ordems) => {
          this.ordems = ordems;
-       }); */
-
-    this.ordenpedidosservice.teste().subscribe((usersEmbedded) => {   
-      this.usersEmbedded = usersEmbedded;
-      console.log(usersEmbedded, 'sfdgsdgf')
-    });
+         console.log(ordems)
+       }); 
   }
-
+ 
   onedit(id: any): void {
     this.router.navigate(['/ordemodel', id], { relativeTo: this.route });
   }

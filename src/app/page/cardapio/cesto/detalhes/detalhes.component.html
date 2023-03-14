@@ -4,24 +4,22 @@
       <i aria-hidden="true" class="fa fa-shopping-basket"></i>
       Finalizar Pedido
     </div>
-      {{ form.valid }}
-    {{ form.value | json }} 
     <div class="card-body">
-      <form #form="ngForm" class="row g-3 needs-validation" novalidate>
+      <form [formGroup]="orderForm" class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
           <app-inputs errormessage label="Endereço De Entrega:">
-            <input class="form-control" minlength="10" name="address" ngModel placeholder="Endereço" required />
+            <input class="form-control" minlength="10" formControlName="address" placeholder="Endereço" required />
           </app-inputs>
         </div>
         <div class="col-md-2"> 
           <app-inputs label="Numero">
-            <input class="form-control" errormessage label="Endereço" minlength="4" name="number" ngModel
+            <input class="form-control" errormessage label="Endereço" minlength="4" formControlName="number" 
               placeholder="Numero" required type="text" />
           </app-inputs>
         </div>
         <div class="col-md-3">  
           <app-inputs>
-            <input class="form-control" name="name" ngModel placeholder="Nome" type="text" />
+            <input class="form-control" formControlName="name"  placeholder="Nome" type="text" />
           </app-inputs>
         </div>
         <div class="col-md-12"> 
@@ -30,27 +28,27 @@
         <div class="col-md-4">
           <p class="lead">Formas de Pagamento:</p>
           <div class="form-group">
-            <app-radio [options]="pagamento"  name="pagamento" ngModel></app-radio>
+            <app-radio [options]="pagamento"  formControlName="pagamento" ></app-radio>
           </div>
         </div>
         <div class="card-text col-sm-6 col-md-3">
           <app-inputs errormessage label="Observaçao">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="obs" ngModel
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="obs" 
               placeholder="troco pra/, metade dinheiro/cartao..."></textarea>
           </app-inputs>
         </div>
         <div class="card-text col-sm-6 col-md-5">
           <app-detalhes-total [itemsvalue]="itemsvalue()">
           </app-detalhes-total>
-          <app-detalhes-status [status]="testes" name="status" ngModel></app-detalhes-status>
+          <app-detalhes-status [status]="testes" name="status" ></app-detalhes-status>
         </div>
         <div class="row">
           <div class="col-md-7">
             <a class="btn btn-danger espaco" (click)="cancel()">
               <i aria-hidden="true" class="fa fa-trash m-1"></i>Cancelar
               Pedido</a>
-            <a (click)="finalizarpedido(form.value)" class="btn btn-success">
-              <i aria-hidden="true" class="fa fa-money m-1 "></i>finalizar
+            <a (click)="finalizarpedido(orderForm.value)" class="btn btn-success">
+              <i  aria-hidden="true" class="fa fa-money m-1 "></i>finalizar
               Pedido</a>
           </div>
         </div>

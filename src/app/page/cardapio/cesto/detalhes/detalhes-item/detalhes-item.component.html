@@ -10,7 +10,7 @@
   <tbody>
   <tr *ngFor="let item of items">
     <th scope="row">{{item.quantity}}</th>
-    <td>{{item.menu.name}} </td>
+    <td>{{item.menu.produto}} </td>
     <td> </td>
     <td>{{item.value() | currency: "BRL":"symbol"}}</td>
   </tr>

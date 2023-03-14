@@ -10,10 +10,10 @@
         <th scope="col">Ações</th>
       </tr>
     </thead>
-    <tbody>    
+    <tbody>     
       <tr *ngFor="let menu of menus">
         <th scope="row">{{menu.id}}</th>
-        <td>{{menu.name}}</td>
+        <td>{{menu.produto}}</td>
         <td>{{menu.description}}</td>
         <td>{{ menu.price | currency: "BRL":"symbol" }}</td>
         <td>
@@ -21,7 +21,7 @@
          <i class="fa fa-trash m-2" (click)="oneremove(menu.id)" aria-hidden="true"></i> 
         </td>
       </tr>
-    </tbody>
+    </tbody> 
   </table>
 </div> 
 

@@ -22,9 +22,8 @@ export class MenuExibirComponent implements OnInit {
   ngOnInit(): void {
     this.menuservice.read().subscribe(menus => {
       this.menus = menus
-      console.log('teteste', menus)
-    })
-  }
+     })
+  } 
 
   onedit(id: any): void {
     this.router.navigate(["/update", id], { relativeTo: this.route }); 

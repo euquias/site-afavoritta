@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { RadioOption } from './radio/radio-option.model';
 import { Router } from '@angular/router';
 import { DetalhesItemService } from './detalhes-item/detalhes-item.service';
@@ -13,9 +14,11 @@ import { Status } from './detalhes-status/status.model';
   styleUrls: ['./detalhes.component.css'],
 })
 export class DetalhesComponent implements OnInit {
+
   itemsvalues: Detalhe[] = [];
   deliverys: Delivery[] = [];
 
+  orderForm!: FormGroup
 
   testes: Status[] = [
     { label: 'Aguardando...', value: false },
@@ -30,18 +33,22 @@ export class DetalhesComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public detalhesitemservice: DetalhesItemService
+    public detalhesitemservice: DetalhesItemService,
+    public formBuilder: FormBuilder
   ) {
   }
 
   ngOnInit(): void {
-    const itemsvalues = this.detalhesitemservice.itemsvalue();
-    console.log('teste', itemsvalues);
 
-    this.detalhesitemservice.read().subscribe((deliverys) => {
-      this.deliverys = deliverys;
-      console.log(deliverys);
-    });
+    this.orderForm = this.formBuilder.group({
+      address: this.formBuilder.control(''),
+      number: this.formBuilder.control(''),
+      name: this.formBuilder.control(''),
+      pagamento: this.formBuilder.control(''),
+      total: this.formBuilder.control(''),
+      obs: this.formBuilder.control('')
+    })
+
   }
 
   finalizarpedido(detalhe: Detalhe) {
@@ -51,15 +58,15 @@ export class DetalhesComponent implements OnInit {
       .cestoitems()
       .map(
         (item: Cesto) =>
-          new DetalheItem(item.quantity, item.menu.name, item.menu.price)
+          new DetalheItem(item.quantity, item.menu.produto, item.menu.price)
       );
     console.log(_detalhe, 'endipoit ');
     this.detalhesitemservice
       .finalizarpedido(_detalhe)
-      .subscribe((detalhid: string) => {
+      .subscribe((detalhid: Detalhe) => {
         console.log(`compra comcluida:${detalhid}`);
         this.detalhesitemservice.clear();
-        this.router.navigate(['cardapio']);
+        this.router.navigate(['/']);
       });
   }
 
