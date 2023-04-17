@@ -1,97 +1,97 @@
 <div class="d-flex justify-content-end">
-    <ul class="social-network">
-        <li><a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-placement="top" title="instagram"><i
-                    class="fa fa-clock-o"></i>Horários</a>
-        </li>
-        <li><a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" data-placement="top" title="whatsapp"><i
-                    class="fa fa-credit-card-alt"></i>Pagamentos</a>
-        </li>
-        <li><a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" data-placement="top" title="Linkedin"><i
-                    class="fa fa-map-marker"></i>Locais de entrega</a>
-        </li>
-    </ul>
+  <ul class="social-network">
+    <li><a data-bs-target="#staticBackdrop" data-bs-toggle="modal" data-placement="top" href="" title="instagram"><i
+      class="fa fa-clock-o"></i>Horários</a>
+    </li>
+    <li><a data-bs-target="#staticBackdrop1" data-bs-toggle="modal" data-placement="top" href="" title="whatsapp"><i
+      class="fa fa-credit-card-alt"></i>Pagamentos</a>
+    </li>
+    <li><a data-bs-target="#staticBackdrop2" data-bs-toggle="modal" data-placement="top" href="" title="Linkedin"><i
+      class="fa fa-map-marker"></i>Locais de entrega</a>
+    </li>
+  </ul>
 </div>
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Horário</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Domingo: 17:30 as 22:30</p>
-                <p>Segunda-Feira: 17:30 as 22:00</p>
-                <p>Terça-Feira: 17:30 as 22:00</p>
-                <p>Quarta-Feira: 17:30 as 22:00</p>
-                <p>Quinta-Feira: 17:30 as 22:00</p>
-                <p>Sexta-Feira: 17:30 as 22:30</p>
-                <p>Sábado: 17:30 as 22:30</p>
-            </div>
-        </div>
+<div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"
+     id="staticBackdrop" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Horário</h5>
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+      </div>
+      <div class="modal-body">
+        <p>Domingo: 17:30 as 22:30</p>
+        <p>Segunda-Feira: 17:30 as 22:00</p>
+        <p>Terça-Feira: 17:30 as 22:00</p>
+        <p>Quarta-Feira: 17:30 as 22:00</p>
+        <p>Quinta-Feira: 17:30 as 22:00</p>
+        <p>Sexta-Feira: 17:30 as 22:30</p>
+        <p>Sábado: 17:30 as 22:30</p>
+      </div>
     </div>
+  </div>
 </div>
 
-<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Pagamentos aceito na entrega</h5>
-                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>   
-            </div>
-            <div class="modal-body">
-                <a  *ngIf="testandoifelse; then thenblock; else elseblock">
-                </a>
-                <i class="fa fa-money " aria-hidden="true">
-                    <p>Dinheiro</p>
-                </i>
-                <i class="fa fa-credit-card-alt">
-                    <p>Débito</p>
-                </i>
-                <i class="fa fa-credit-card-alt">
-                    <p>crédito</p>
-                </i>
-            </div>
-        </div>
+<div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"
+     id="staticBackdrop1" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Pagamentos aceito na entrega</h5>
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+      </div>
+      <div class="modal-body">
+        <a *ngIf="testandoifelse; then thenblock; else elseblock">
+        </a>
+        <i aria-hidden="true" class="fa fa-money ">
+          <p>Dinheiro</p>
+        </i>
+        <i class="fa fa-credit-card-alt">
+          <p>Débito</p>
+        </i>
+        <i class="fa fa-credit-card-alt">
+          <p>crédito</p>
+        </i>
+      </div>
     </div>
+  </div>
 </div>
-<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title local" id="staticBackdropLabel">Em frente ao balão do Mesquita, Cidade Ocidental</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4559.14791170064!2d-47.85730143841108!3d-16.077361856333905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93598fef2e56df1d%3A0x8cb22bcf04053c43!2sPizzaria%20A%20Favoritta!5e0!3m2!1spt-BR!2sbr!4v1664563088233!5m2!1spt-BR!2sbr"
-                    width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <p>
-                        Local de Entrega:<br>
-                        Mesquita<br>
-                        Jardim Edite<br>
-                        Jardim Abc
-                    </p>
-            </div>
-        </div>
+<div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"
+     id="staticBackdrop2" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title local" id="staticBackdropLabel">Em frente ao balão do Mesquita, Cidade Ocidental</h5>
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+      </div>
+      <div class="modal-body">
+        <iframe
+          allowfullscreen=""
+          height="250" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4559.14791170064!2d-47.85730143841108!3d-16.077361856333905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93598fef2e56df1d%3A0x8cb22bcf04053c43!2sPizzaria%20A%20Favoritta!5e0!3m2!1spt-BR!2sbr!4v1664563088233!5m2!1spt-BR!2sbr" style="border:0;"
+          width="300"></iframe>
+        <p>
+          Local de Entrega:<br>
+          Mesquita<br>
+          Jardim Edite<br>
+          Jardim Abc
+        </p>
+      </div>
     </div>
+  </div>
 </div>
 
 <ng-template #thenblock>
-    <p></p>
-    <p>pix:<br>CPF: 05554768121
-        <a >
-            <i class="fa fa-files-o" (click)="copyMessage('05554768121')" value="click to copy " alt="copiar">
-            </i>
-        </a>
-    </p>
+  <p></p>
+  <p>pix:<br>CPF: 05554768121
+    <a>
+      <i (click)="copyMessage('05554768121')" alt="copiar" class="fa fa-files-o" value="click to copy ">
+      </i>
+    </a>
+  </p>
 </ng-template>
 <ng-template #elseblock>
-    <p class="copiado">Copiado com sucesso
-        <i class="fa fa-check-square-o" aria-hidden="true">
-        </i>
-    </p>
+  <p class="copiado">Copiado com sucesso
+    <i aria-hidden="true" class="fa fa-check-square-o">
+    </i>
+  </p>
 </ng-template>

@@ -1,0 +1,12 @@
+<div [class.has-error]="!input.valid && (input.dirty || input.touched)" [class.has-success]="input.valid && (input.dirty || input.touched)"
+     class="form-group">
+  <label class="control-label se -only" for="inputsuccess">{{label}}</label>
+  <ng-content>
+  </ng-content>
+</div>
+<div *ngIf="input.valid && (input.dirty || input.touched)" class="help-block ok">
+  ok!
+</div>
+<div *ngIf="!input.valid && (input.dirty || input.touched)" class="help-block error">
+  Campo obrigatorío
+</div>

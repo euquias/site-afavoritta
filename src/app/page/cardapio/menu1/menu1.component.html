@@ -1,3 +1,10 @@
-  <div class="card" style="width: 23rem;">
-    <img src="../../../assets/cardapio.png" class="card-img-top" alt="...">
-  </div> 
+<div class="coco">
+  <div class="head"></div>
+  <div class="info">
+    <div class="img">
+      <img [src]="menu.imageUrl" (click)="emitaddevent()" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal">
+    </div>
+    <div class="card-title">{{menu.produto}}</div>
+    <div class="card-text">{{ menu.price | currency: "BRL":"symbol" }}</div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="card-body">
+  <h5 class="card-title">mix de produtos</h5>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">valor</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>     
+      <tr *ngFor="let menu of menus">
+        <th scope="row">{{menu.id}}</th>
+        <td>{{menu.produto}}</td>
+        <td>{{menu.description}}</td>
+        <td>{{ menu.price | currency: "BRL":"symbol" }}</td>
+        <td>
+          <i class="fa fa-pencil m-2" (click)="onedit(menu.id)" aria-hidden="true"></i>
+         <i class="fa fa-trash m-2" (click)="oneremove(menu.id)" aria-hidden="true"></i> 
+        </td>
+      </tr>
+    </tbody> 
+  </table>
+</div> 
+

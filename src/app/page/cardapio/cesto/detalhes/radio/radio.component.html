@@ -1,0 +1,9 @@
+<div *ngFor="let option of options">
+  <div class="form-check">
+    <input (click)="setvalue(option.value)" [class.checked]="option.value === value" class="form-check-input"
+      id="flexRadioDefault2" name="flexRadioDefault" type="radio">
+    <label class="form-check-label" for="flexRadioDefault2">
+      {{option.label}}
+    </label>
+  </div>
+</div>

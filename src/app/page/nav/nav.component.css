@@ -6,6 +6,9 @@
   height: 100px;
 
 }
+.login:hover{
+  color: red;
+}
 
 h2 {
   display: flex;
@@ -102,4 +105,10 @@ h2 {
     margin-top: 5px;
 
   }
+}
+
+.login {
+  color: aliceblue;
+  pointer-events: all;
+  text-decoration: none;
 }

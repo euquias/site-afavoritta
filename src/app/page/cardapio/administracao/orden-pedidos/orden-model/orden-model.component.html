@@ -1,0 +1,75 @@
+<!-- <div class="modal-dialog modal-sm">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel"></h5>
+      <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+    </div>
+    <div class="card">
+      <div class="grid">
+        <div class="container text-center col-12 col-md-12">
+          <div class="row">
+            <div class="col-6 col-md-12"  >
+              <div class="dados">Pizzaria Afavoritta<br>
+                Mesquita<br>
+                72870028-Cidade Ocidental-GO<br>
+                <strong> Lanches e Salgados</strong><br> 
+                <strong> Cupom não fiscal</strong>
+              </div>
+              <div class="text-start" >
+                <div class="col-12 col-md-12 dados" >
+                  <div class="col-md-12"  >Nome: </div>
+                  <div class="col-md-12" >Endereço: {{ordem.address}}</div>
+                  <div  class="col-md-12">Numero: {{ordem.number}}</div>
+                </div>
+                <table class="table dados"> 
+                  <thead>
+                  <tr>
+                    <th scope="col-md-1">qtd</th>
+                    <th scope="col-md-8">descrid</th> 
+                    <th scope="col-md-4">valor</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr >
+                    <th  scope="row">({{ordems.quantity}}x)</th>
+                    <td>{{ ordem.produto }}</td>
+                    <td>{{ ordem.value | currency: "BRL":"symbol" }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <div class="col-12 col-md-12 dados">
+                  <div class="row">
+                    <div class="col-sm-2"><strong>obs.</strong></div>
+                    <div class="col-sm-10">{{ordem.obs}}</div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-12 dados">
+                  <div class="row">
+                    <div class="col-sm-8"><strong>Total</strong></div>
+                    <div class="col-sm-4"><strong> {{ ordem.total | currency: "BRL":"symbol" }}</strong></div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-12 dados">
+                  <div class="row">
+                    <div class="col-sm-8"><strong>Forma de pagamento</strong></div>
+                    <div class="col-sm-4">{{ordems.test}}</div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-12 text-center dados">
+                  <div class="row">
+                    <div class="col-sm-12"><strong>www.afavorittapizzaria.com.br </strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-12 text-center dados">
+        <i class="fa fa-copy" style="font-size:36px;"></i>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+{{ordems | json}}

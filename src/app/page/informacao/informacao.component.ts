@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-informacao',
@@ -10,7 +10,8 @@ export class InformacaoComponent implements OnInit {
   testandoifelse = true
 
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -26,7 +27,7 @@ export class InformacaoComponent implements OnInit {
     selBox.focus();
     selBox.select();
     document.execCommand('copy');
-    document.body.removeChild(selBox) 
+    document.body.removeChild(selBox)
   }
 
 

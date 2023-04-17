@@ -1,0 +1,53 @@
+<div class="conteiner">
+  <div class="card">
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p><i aria-hidden="true" class="fa fa-cogs"> </i> Administração do sitema</p>
+        <footer class="blockquote-footer">Cadastros<cite title="Source Title"> & Cia</cite></footer>
+      </blockquote>
+    </div>
+  </div>
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a [routerLink]="['categoria']" aria-current="true" class="nav-link"
+            routerLinkActive="active">Categoria</a>
+        </li>
+        <li class="nav-item ">
+          <a [routerLink]="['menu']" aria-current="true" class="nav-link " routerLinkActive="active">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['promocao']" aria-current="true" class="nav-link disabled"
+            routerLinkActive="active">Promoção</a>
+        </li>
+        <li class="nav-item disabled">
+          <a [routerLink]="['usuario']" aria-current="true" class="nav-link "
+            routerLinkActive="active">Usuario</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['adicional']" aria-current="true" class="nav-link disabled"
+            routerLinkActive="active">Adicional</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['dashboard']" aria-current="true" class="nav-link "
+            routerLinkActive="active">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['ordem']" aria-current="true" class="nav-link" routerLinkActive="active">Ordem de
+            pedidos</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['frete']" aria-current="true" class="nav-link disabled" routerLinkActive="active">frete</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/cardapio']" aria-current="true" class="nav-link " routerLinkActive="active">Volta ao menu
+            principal</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

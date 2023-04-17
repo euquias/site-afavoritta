@@ -1,0 +1,38 @@
+.container {
+    background: #ffff;
+    box-shadow: 0px 8px 40px rgm(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .head {
+    height: 90px;
+    background-color: #fff9f2;
+  }
+  
+  .infor {
+    padding: 13px;
+  }
+  
+  .infor .img {
+    text-align: center;
+    margin-top: -90px;
+  }
+  
+  .infor .img .ing{
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-title{
+  font-weight: 700;
+  font-size: 18px;
+  color: #1b1b1b;
+  }
+  .card-text{
+    font-weight: 600;
+    font-size: 15px;
+    color: #569e52;
+  }
+  
+  
