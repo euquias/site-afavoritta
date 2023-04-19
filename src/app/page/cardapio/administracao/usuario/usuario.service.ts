@@ -40,4 +40,4 @@ export class UsuarioService {
     const url = `${this.api}/users/${id}`;
     return this.http.delete<Usuario>(url);
   }
-}
+} 

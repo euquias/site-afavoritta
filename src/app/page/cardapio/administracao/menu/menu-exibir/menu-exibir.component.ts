@@ -6,7 +6,7 @@ import { MenuService } from '../menu.service';
 @Component({
   selector: 'app-menu-exibir',
   templateUrl: './menu-exibir.component.html',
-  styleUrls: ['./menu-exibir.component.css']
+  styleUrls: ['./menu-exibir.component.css'] 
 })
 export class MenuExibirComponent implements OnInit {
 

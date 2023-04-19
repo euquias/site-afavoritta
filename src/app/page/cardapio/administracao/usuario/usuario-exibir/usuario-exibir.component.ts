@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
+import { Usuario } from '../usuario.Model';
+import { UsuarioService } from '../usuario.service';
 
 @Component({
   selector: 'app-usuario-exibir',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioExibirComponent implements OnInit {
 
-  constructor() { }
+  usuario!: Usuario[]
+
+  constructor(
+    private usuarioservice: UsuarioService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-  }
+    this.usuarioservice.read().subscribe(usuario => {
+      this.usuario = usuario
+      console.log(usuario)
+     })
+  } 
 
+/*   onedit(id: any): void {
+    this.router.navigate(["/update", id], { relativeTo: this.route }); 
+  } 
+
+  oneremove(id: any): void {
+    this.router.navigate(["/remover", id], { relativeTo: this.route });
+  }
+ */
 }

@@ -1,0 +1,17 @@
+.fa-trash {
+    font-size: 35px;
+    color: red;
+}
+.fa-pencil{
+    font-size: 35px;
+    color:gold;
+}
+.fa-pencil:hover{
+    color: darkgray;
+}
+.fa-trash:hover{
+    color: darkgrey;
+}
+.form-check{
+    margin-left: 30px;
+}
