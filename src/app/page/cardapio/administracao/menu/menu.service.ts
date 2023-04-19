@@ -5,12 +5,11 @@ import { Categorias, Menu } from './menu.model';
 
 
 
-@Injectable({
+@Injectable({ 
   providedIn: 'root'
 })
 
 export class MenuService {
-
 
   api = 'http://localhost:3000';
 
@@ -27,7 +26,6 @@ export class MenuService {
   }
 
   create(menus: Menu): Observable<Menu> {
-  
     return this.http.post<Menu>(`${this.api}/menu`, menus);
   }
 

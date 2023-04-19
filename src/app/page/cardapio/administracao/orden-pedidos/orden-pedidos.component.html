@@ -16,7 +16,23 @@
   </thead>
   <tbody>
     <tr class="col-md-1" *ngFor="let ordem of ordems">
-      <td class="col-md-1" (click)="statu(ordem.id)">{{ ordem.statu }}</td>
+     
+
+      <td class="col-md-1" (click)="statu(ordem.id)">
+        
+        
+        
+       <!--  -->
+        <button type="button" class="btn btn-primary position-relative"  >
+          {{ ordem.statu }}
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ ordem.created_at }}
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </button> 
+      
+      
+      </td>
       <td class="col-md-1">{{ ordem.id }}</td>
       <td class="col-md-1">{{ ordem.name }}</td>
       <td class="col-md-1">{{ ordem.address }}</td>
@@ -45,3 +61,4 @@
   <app-orden-model></app-orden-model>
 </div>  
 
+<p>{{ordems | json}}</p>

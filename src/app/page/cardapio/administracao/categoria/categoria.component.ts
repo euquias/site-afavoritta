@@ -36,12 +36,12 @@ export class CategoriaComponent implements OnInit {
   criarcategories(): void{
     this.categoriaservice.create(this.categories).subscribe(() => {
       console.log(this.categories)
-      this.router.navigate(["/adm"]);
+      this.router.navigate(["adm"]);
     })
   }
 
   cancel(): void {
-    this.router.navigate(["/adm"]);
+    this.router.navigate(["adm"]);
   }
  
 }

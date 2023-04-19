@@ -7,6 +7,7 @@ class  Ordem {
     public obs: string,
     public total: any,
     public produto: string,
+    public created_at?:string,
     public statu?: string,
     public color?: string,
     public statusId?: string,

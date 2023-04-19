@@ -49,7 +49,10 @@ import { HttpInterceptorProviders } from ".././app/sistema/http-interceptors";
 import { AuthsGuard } from '../app/sistema/auths.guard';
 import { CategoriaExibirComponent } from './page/cardapio/administracao/categoria/categoria-exibir/categoria-exibir.component';
 import { CategoriaRemoverComponent } from './page/cardapio/administracao/categoria/categoria-remover/categoria-remover.component';
-import { CategoriaUpdateComponent } from './page/cardapio/administracao/categoria/categoria-update/categoria-update.component'
+import { CategoriaUpdateComponent } from './page/cardapio/administracao/categoria/categoria-update/categoria-update.component';
+import { UsuarioUpdateComponent } from './page/cardapio/administracao/usuario/usuario-update/usuario-update.component';
+import { UsuarioRemoverComponent } from './page/cardapio/administracao/usuario/usuario-remover/usuario-remover.component';
+import { UsuarioExibirComponent } from './page/cardapio/administracao/usuario/usuario-exibir/usuario-exibir.component'
 
 @NgModule({
   declarations: [
@@ -95,6 +98,9 @@ import { CategoriaUpdateComponent } from './page/cardapio/administracao/categori
     CategoriaExibirComponent,
     CategoriaRemoverComponent,
     CategoriaUpdateComponent,
+    UsuarioUpdateComponent,
+    UsuarioRemoverComponent,
+    UsuarioExibirComponent,
 
 
   ],

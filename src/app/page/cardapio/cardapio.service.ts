@@ -44,12 +44,12 @@ export class CardapioService {
   }
 
   read3(): Observable<Menu[]> {
-    const url = `${this.api}/categories/6/menu`;
+    const url = `${this.api}/categories/4/menu`;
     return this.http.get<Menu[]>(url);
   }
 
   read4(): Observable<Menu[]> {
-    const url = `${this.api}/categories/7/menu`;
+    const url = `${this.api}/categories/5/menu`;
     return this.http.get<Menu[]>(url);
   }
 }

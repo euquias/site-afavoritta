@@ -42,7 +42,7 @@ export class MenuComponent implements OnInit {
 
     this.menuservice.create(this.menus).subscribe(() => {
         console.log(this.menus)
-        this.router.navigate(["adm/menu "]);
+        this.router.navigate(["/adm/menu"]);
       })
   }
 
