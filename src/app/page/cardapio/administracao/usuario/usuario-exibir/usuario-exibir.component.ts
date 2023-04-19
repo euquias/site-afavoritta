@@ -25,12 +25,12 @@ export class UsuarioExibirComponent implements OnInit {
      })
   } 
 
-/*   onedit(id: any): void {
-    this.router.navigate(["/update", id], { relativeTo: this.route }); 
+   onedit(id: any): void {
+    this.router.navigate(["/updatess", id], { relativeTo: this.route }); 
   } 
 
   oneremove(id: any): void {
-    this.router.navigate(["/remover", id], { relativeTo: this.route });
+    this.router.navigate(["/deletess", id], { relativeTo: this.route });
   }
- */
+ 
 }

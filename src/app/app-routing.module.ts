@@ -27,6 +27,8 @@ import { AuthGuard } from './sistema/auth.guard';
 import { MenuRemoverComponent } from './page/cardapio/administracao/menu/menu-remover/menu-remover.component';
 import { CategoriaUpdateComponent } from './page/cardapio/administracao/categoria/categoria-update/categoria-update.component';
 import { CategoriaRemoverComponent } from './page/cardapio/administracao/categoria/categoria-remover/categoria-remover.component';
+import { UsuarioUpdateComponent } from './page/cardapio/administracao/usuario/usuario-update/usuario-update.component';
+import { UsuarioRemoverComponent } from './page/cardapio/administracao/usuario/usuario-remover/usuario-remover.component';
 
 
 const routes: Routes = [
@@ -139,7 +141,17 @@ const routes: Routes = [
   {
     path: 'deletes/:id',
     component:CategoriaRemoverComponent
-  }
+  },
+  {
+    path: 'updatess/:id',
+    component:UsuarioUpdateComponent
+  },
+  {
+    path: 'deletess/:id',
+    component:UsuarioRemoverComponent
+  },
+  
+
   
 
 ];

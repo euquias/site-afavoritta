@@ -1,17 +1,18 @@
 <div class="contener">
-
-  <form  #form="ngForm" class="row g-3 needs-validation" novalidate>
+  <form #form="ngForm" class="row g-3 needs-validation" novalidate>
     <div class="col-md-4 m-1">
-      {{ form.value | json }}
+      <!--  {{ form.value | json }} -->
       <label for="validationTooltip01" class="form-label d-flex justify-content-start"><strong>Nome:</strong></label>
-      <input type="text" class="form-control" id="validationTooltip01" required placeholder="Nome">
+      <input type="text" class="form-control" id="validationTooltip01" [(ngModel)]="usuario.name" name="name" required
+        placeholder="Nome">
       <div class="valid-tooltip">
         Looks good!
       </div>
     </div>
     <div class="col-md-4 m-1 ">
       <label for="validationTooltip01" class="form-label d-flex justify-content-start"> <strong>E-mail:</strong></label>
-      <input type="text" class="form-control" id="validationTooltip01" required placeholder="E-mail">
+      <input type="text" class="form-control" id="validationTooltip01" [(ngModel)]="usuario.email" name="email" required
+        placeholder="E-mail">
       <div class="valid-tooltip">
         Looks good!
       </div>
@@ -20,7 +21,8 @@
     <div class="row p-2">
       <div class="col-md-2 position-relative">
         <label for="validationTooltip01" class="form-label d-flex justify-content-start"><strong>Senha:</strong></label>
-        <input type="password" class="form-control" id="validationTooltip01" required>
+        <input type="password" class="form-control" id="validationTooltip01" [(ngModel)]="usuario.password"
+          name="password" required>
         <div class="valid-tooltip">
           Looks good!
         </div>
@@ -29,25 +31,28 @@
       <div class="col-md-2 position-relative">
         <label for="validationTooltip01" class="form-label d-flex justify-content-start"><strong>Confirmar
             senha</strong></label>
-        <input type="password" class="form-control" id="validationTooltip01" required>
+        <input type="password" class="form-control" id="validationTooltip01" [(ngModel)]="usuario.confirmPassword"
+          name="confirmPassword" required>
         <div class="valid-tooltip">
           Looks good!
         </div>
       </div>
     </div>
     <div class="adm/fun m-1">
-      <div class="col-md-1 form-check ">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <div class="col-md-1 form-check" ng-controller="ExampleController">
+        <input type="checkbox" class="form-check-input" [(ngModel)]="usuario.admin" name="admin" id="exampleCheck1"
+          ng-model="admin">
         <label class="form-check-label" for="exampleCheck1">Administrador?</label>
       </div>
-      <div class="col-md-1 form-check" >
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <div class="col-md-1 form-check">
+        <input type="checkbox" class="form-check-input" [(ngModel)]="usuario.fucionario" name="fucionario"
+          id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Colaborador?</label>
       </div>
     </div>
     <div class="col-12 d-flex justify-content-start m-3">
-      <button type="button" class="btn btn-primary col-md-2 m-1">Salvar</button>
-      <button type="button" class="btn btn-secondary col-md-2 m-1">Cancelar</button>
+      <button type="button" class="btn btn-primary col-md-2 m-1" (click)="criarproduto()">Salvar</button>
+      <button type="button" class="btn btn-secondary col-md-2 m-1" (click)="cancel()">Cancelar</button>
     </div>
   </form>
   <div class="card col-sm-12 col-md-12 p-3">

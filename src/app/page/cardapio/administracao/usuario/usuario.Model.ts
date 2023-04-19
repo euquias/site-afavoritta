@@ -1,7 +1,9 @@
 export interface Usuario {
-    id: string,
-    name: string,
-    email: string, 
-    admin: boolean,
-    fucionario:boolean
-  }
+  name: string,
+  email: string,
+  id?: any,
+  admin?: boolean,
+  fucionario?: boolean,
+  password?:string,
+  confirmPassword?:string
+}

@@ -19,8 +19,8 @@
           <td>{{usuario.admin}}</td>  
           <td>{{usuario.fucionario}}</td>  
           <td>
-            <i class="fa fa-pencil m-2" aria-hidden="true"></i>
-            <i class="fa fa-trash m-2" aria-hidden="true"></i>
+            <i class="fa fa-pencil m-2" (click)="onedit(usuario.id)" aria-hidden="true"></i>
+            <i class="fa fa-trash m-2" (click)="oneremove(usuario.id)" aria-hidden="true"></i>
           </td>
         </tr>
       </tbody>

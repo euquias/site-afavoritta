@@ -39,7 +39,6 @@ export class MenuComponent implements OnInit {
 
   }
   criarproduto(): void {
-
     this.menuservice.create(this.menus).subscribe(() => {
         console.log(this.menus)
         this.router.navigate(["/adm/menu"]);
