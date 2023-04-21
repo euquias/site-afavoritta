@@ -20,44 +20,19 @@ export class LoginService {
     private router: Router
   ) { }
 
-/*   login(email: string, password: string): Observable<Users> {
-    return this.http
-      .post<Users>(`${api}/signin`, { email: email, password: password })
-      .pipe(tap((users) => (this.users = users)));
-  }
 
-  gettoken(): boolean {
-    return this.users !== undefined
-   
-  }
-
-  handlogin(){
-    this.router.navigate(['/sistema'])
-  }
-  */
   login(email: string, password: string): Observable<Users> {
     return this.http
       .post<Users>(`${api}/signin`, { email: email, password: password })
       .pipe(tap((users) => (this.users = users)))
   }
-  gettoken() {
-    return this.users !== undefined
-   
+  gettoken(): boolean {
+   return this.users !== undefined 
   }
 
-  set() {
-    if (this.users) {
-      this.users.setItem(this.users.token);
-      return true;
-    }
-    return false;
+  logout() {
+    this.users === undefined;
+    this.router.navigate(["/"]);
   }
-
- /*  get(key: string): any {
-    if (this.storage) {
-      return JSON.parse(this.storage.getItem(key));
-    }
-    return null;
-  } */
 
 }

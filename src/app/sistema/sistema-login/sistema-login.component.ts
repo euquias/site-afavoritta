@@ -34,8 +34,8 @@ export class SistemaLoginComponent implements OnInit {
     this.loginservice.login(this.loginform.value.email,
       this.loginform.value.password)
       .subscribe(users =>
-          /* console.log(users)  */ 
-           this.router.navigate(['/adm'])   
+           /* console.log(users)  */ 
+            this.router.navigate(['/adm'])    
       )
   }
    

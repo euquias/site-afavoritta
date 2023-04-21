@@ -52,7 +52,8 @@ import { CategoriaRemoverComponent } from './page/cardapio/administracao/categor
 import { CategoriaUpdateComponent } from './page/cardapio/administracao/categoria/categoria-update/categoria-update.component';
 import { UsuarioUpdateComponent } from './page/cardapio/administracao/usuario/usuario-update/usuario-update.component';
 import { UsuarioRemoverComponent } from './page/cardapio/administracao/usuario/usuario-remover/usuario-remover.component';
-import { UsuarioExibirComponent } from './page/cardapio/administracao/usuario/usuario-exibir/usuario-exibir.component'
+import { UsuarioExibirComponent } from './page/cardapio/administracao/usuario/usuario-exibir/usuario-exibir.component';
+import { UsersDetailComponent } from './sistema/sistema-login/users-detail/users-detail.component'
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { UsuarioExibirComponent } from './page/cardapio/administracao/usuario/us
     UsuarioUpdateComponent,
     UsuarioRemoverComponent,
     UsuarioExibirComponent,
+    UsersDetailComponent,
 
 
   ],
