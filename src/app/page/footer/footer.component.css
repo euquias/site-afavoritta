@@ -2,6 +2,11 @@
     position: fixed;
     bottom: 0;
 }
+.container-fluid {
+    position: fixed;
+    bottom: 0;
+}
+
 
 .compartilhar a {
     color: #fff;
