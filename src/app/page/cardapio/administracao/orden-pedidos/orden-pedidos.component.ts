@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class OrdenPedidosComponent implements OnInit {
 
- ordems!: Ordem[];
+ ordems!: Ordem[]; 
 
   constructor(
     private ordenpedidosservice: OrdenPedidosService,

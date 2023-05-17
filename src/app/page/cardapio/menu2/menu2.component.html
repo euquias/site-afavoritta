@@ -1,9 +1,11 @@
-<div class="container m-1 ">
+<div class="cards">
   <div class="head"></div>
-  <div class="info">
+  <div class="infor">
     <div class="img">
-      <img [src]="menu2.imageUrl" style="width: 4rem; height: 4rem;" (click)="emitaddevent()">
+      <img [src]="menu2.imageUrl"  (click)="emitaddevent()">
     </div>
     <div class="card-title">{{menu2.produto}}</div>
     <div class="card-text">{{ menu2.price | currency: "BRL":"symbol" }}</div>
   </div>
+</div>
+

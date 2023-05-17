@@ -29,6 +29,7 @@ import { CategoriaUpdateComponent } from './page/cardapio/administracao/categori
 import { CategoriaRemoverComponent } from './page/cardapio/administracao/categoria/categoria-remover/categoria-remover.component';
 import { UsuarioUpdateComponent } from './page/cardapio/administracao/usuario/usuario-update/usuario-update.component';
 import { UsuarioRemoverComponent } from './page/cardapio/administracao/usuario/usuario-remover/usuario-remover.component';
+import { Kvs1Component } from './page/cardapio/administracao/kvs1/kvs1.component';
 
 
 const routes: Routes = [
@@ -101,6 +102,10 @@ const routes: Routes = [
       {
         path: 'ordem',
         component: OrdenPedidosComponent
+      },
+      {
+        path:'kvs1',
+        component:Kvs1Component
       },
       {
         path: 'frete',

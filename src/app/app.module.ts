@@ -54,7 +54,8 @@ import { UsuarioUpdateComponent } from './page/cardapio/administracao/usuario/us
 import { UsuarioRemoverComponent } from './page/cardapio/administracao/usuario/usuario-remover/usuario-remover.component';
 import { UsuarioExibirComponent } from './page/cardapio/administracao/usuario/usuario-exibir/usuario-exibir.component';
 import { UsersDetailComponent } from './sistema/sistema-login/users-detail/users-detail.component';
-import { FooterComponent } from './page/footer/footer.component'
+import { FooterComponent } from './page/footer/footer.component';
+import { Kvs1Component } from './page/cardapio/administracao/kvs1/kvs1.component'
 
 @NgModule({
   declarations: [
@@ -105,6 +106,7 @@ import { FooterComponent } from './page/footer/footer.component'
     UsuarioExibirComponent,
     UsersDetailComponent,
     FooterComponent,
+    Kvs1Component,
 
 
   ],

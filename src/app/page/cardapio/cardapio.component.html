@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="header col-sm-12">
       <div class="header-top">
@@ -8,7 +8,7 @@
         </div>
         <div class="header-topright">
           <div class="menubotton m-1">
-               <i class="fa fa-shopping-basket"></i>
+            <i class="fa fa-shopping-basket"></i>
           </div>
         </div>
       </div>
@@ -25,16 +25,12 @@
           </li>
           <li class="nav-item ">
             <a class="nav-link" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal"
-              routerLinkActive="active">Adicionais</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal"
               routerLinkActive="active">Açai</a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal"
               routerLinkActive="active">Hamburgue</a>
-          </li> 
+          </li>
           <li class="nav-item">
             <a routerLinkActive="active" [routerLink]="['/adm/ordem']" aria-current="page" class="nav-link "> Lista de
               pedidos</a>
@@ -53,7 +49,6 @@
           </div>
         </div>
       </div>
-      <div class="container">
         <div class="row">
           <div class="container col-md-8  p-1 ">
             <div class="row  row-cols-md-4  row-cols-sm-2">
@@ -64,7 +59,7 @@
                 <app-menu2 (add)="test.additem($event)" [menu2]="menu"></app-menu2>
               </div>
             </div>
-          </div>
+          </div> 
           <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static"
             data-bs-keyboard="false" id="sstaticBackdrop1" tabindex="-1">
             <div class="modal-dialog modal-md">
@@ -86,12 +81,11 @@
               </div>
             </div>
           </div>
-
           <div class="carrinho col-md-4">
             <app-pedido #test></app-pedido>
           </div>
         </div>
-      </div>
+      
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="container mx-auto rounded">
+<!-- <div class="container">
     <div class="title">
         <h3>Login</h3>
     </div>
@@ -24,4 +24,36 @@
             </div>
         </div>
     </form>
+</div>
+ -->
+<div class="container text-center p-5">
+    <div class="row justify-content-md-center">
+    <div class="cards">
+        <div class="head"></div>
+        <div class="infor">
+            <div class="img">
+                <img src="../../../assets/logo.png" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal">
+            </div>
+        </div>
+        <form [formGroup]="loginform">
+            <div class="form-floating d-grid gap-2 col-11 mx-auto">
+                <input type="text" class="form-control" id="floatingInput" formControlName="email"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Digite seu E-mail</label>
+            </div>
+            <div class="form-floating d-grid gap-2 col-11 mx-auto">
+                <input type="password" class="form-control" id="floatingPassword" formControlName="password"
+                    placeholder="Password">
+                <label for="floatingPassword">Digite sua Senha</label>
+            </div>
+            <div class="butoens">
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-primary" (click)="logar()" type="button">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
 </div>

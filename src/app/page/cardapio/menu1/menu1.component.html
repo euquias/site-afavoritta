@@ -1,10 +1,11 @@
-<div class="coco">
+<div class="cards">
   <div class="head"></div>
-  <div class="info">
+  <div class="infor">
     <div class="img">
-      <img [src]="menu.imageUrl" (click)="emitaddevent()" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal">
+       <img [src]="menu.imageUrl" (click)="emitaddevent()" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal">  
+       <!-- <img src="../../../../assets/foods/calabresa.png" (click)="emitaddevent()" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal"> --> 
     </div>
     <div class="card-title">{{menu.produto}}</div>
     <div class="card-text">{{ menu.price | currency: "BRL":"symbol" }}</div>
   </div>
-</div>
+</div> 
