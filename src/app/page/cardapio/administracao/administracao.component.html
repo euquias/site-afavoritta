@@ -1,22 +1,29 @@
-<div class="conteiner">
-  <div class="card">
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <nav class="navbar">
-          <div class="container-fluid">
-            <p><i aria-hidden="true" class="fa fa-cogs"> </i> Administração do sitema </p>
-            <form class="d-flex">
-              <app-users-detail></app-users-detail>
-            </form>
-          </div>
-        </nav>
-        <footer class="blockquote-footer">Cadastros<cite title="Source Title"> & Cia</cite></footer>
-      </blockquote>
-    </div>
+<div class="card admin">
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <nav class="navbar">
+        <div class="container-fluid ">
+          <p><i aria-hidden="true"  class="fa fa-cogs "> </i> Administração do sitema </p>
+          <form class="d-flex">
+            <app-users-detail></app-users-detail>
+          </form>
+        </div>
+      </nav>
+      <footer class="blockquote-footer ">Cadastros<cite title="Source Title"> & Cia</cite></footer>
+    </blockquote>
   </div>
-  <div class="card text-center">
-    <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs">
+</div> 
+
+
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand"> <p><i aria-hidden="true" class="fa fa-cogs"> </i> Administração do sitema </p></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a [routerLink]="['categoria']" aria-current="true" class="nav-link" routerLinkActive="active">Categoria</a>
         </li>
@@ -53,8 +60,46 @@
         </li>
       </ul>
     </div>
-    <div class="card-body">
-      <router-outlet></router-outlet>
-    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+
+    </ul>
+  </div>
+  <div class="card-body">
+    <router-outlet></router-outlet>
   </div>
 </div>

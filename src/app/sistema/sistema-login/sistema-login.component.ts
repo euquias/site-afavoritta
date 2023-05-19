@@ -11,7 +11,7 @@ import { Login, Users } from './login.Model';
 })
 export class SistemaLoginComponent implements OnInit {
 
-  users!: Users 
+  users!: Users
   submitted = true;
   loginform!: FormGroup
 
@@ -33,15 +33,25 @@ export class SistemaLoginComponent implements OnInit {
     this.submitted = false;
     this.loginservice.login(this.loginform.value.email,
       this.loginform.value.password)
-      .subscribe(users =>
-           /* console.log(users)  */ 
-            this.router.navigate(['/adm'])    
+       .subscribe(users => {
+              if (users) {
+                if (users.token) {
+                if(typeof users.token === 'string'){
+                 localStorage.setItem('authTokenkey', users.token)
+                }
+           }
+           }
+          //     console.log(users)
+        }
+
+           /* this.router.navigate(['/adm']) */
       )
   }
-   
 
 
 
-  
+
+
+
 }
 

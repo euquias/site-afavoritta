@@ -12,23 +12,32 @@ export class OrdenPedidosService {
 
   api = 'http://localhost:3000';
 
-  ordems!: Ordem[] 
+  ordems!: Ordem[]
   detalheitems!: string
- 
+
   constructor(
     private http: HttpClient,
- 
+
     ) {
   }
- 
+
 
   read(): Observable<Ordem[]> {
     const url = `${this.api}/orders`;
     return this.http.get<Ordem[]>(url)
   }
 
+  pedidos(): Observable<Ordem[]> {
+    const url = `${this.api}/pedidos`;
+    return this.http.get<Ordem[]>(url)
+  } 
+  /* pedidos(): Observable<Ordem[]> {
+    const url = `${this.api}/pedidos?page=${this.page}`;
+    return this.http.get<Ordem[]>(url)
+  }  */
+
   readById(id: any): Observable<Ordem> {
-    const url = `${this.api}/orders/${id}`;
+    const url = `${this.api}/pedidos/${id}`;
     return this.http.get<Ordem>(url);
   }
 
@@ -38,13 +47,13 @@ export class OrdenPedidosService {
   }
 
   deletar(id: number): Observable<Ordem> {
-    const url = `${this.api}/orders/${id}`;
+    const url = `${this.api}/pedidos/${id}`;
     return this.http.delete<Ordem>(url);
   }
 
   status(): Observable<Status[]> {
     const url = `${this.api}/status`;
-    return this.http.get<Status[]>(url)
+    return this.http.get<Status[]>(url) 
   }
 
 

@@ -1,57 +1,82 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Status</th>
-      <th scope="col">Nº</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Endereço</th>
-      <th scope="col">numero</th>
-      <th scope="col">Pedido</th>
-      <th scope="col">pagamento</th>
-      <th scope="col">valor</th>
-      <th scope="col">Açoes</th>
-      <th scope="col">Obs...</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="col-md-1" *ngFor="let ordem of ordems">
-      <td class="col-md-1" (click)="statu(ordem.id)">
-        <!--  -->
-        <button type="button" class="btn btn-primary position-relative">
-          {{ ordem.statu }}
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{ ordem.created_at }}
-            <span class="visually-hidden">unread messages</span>
-          </span>
-        </button>
-      </td>
-      <td class="col-md-1">{{ ordem.id }}</td>
-      <td class="col-md-1">{{ ordem.name }}</td>
-      <td class="col-md-1">{{ ordem.address }}</td>
-      <td class="col-md-1">{{ ordem.number }}</td>
-      <td class="col-md-3">({{ordem.quantity}}x){{ordem.produto}}<p>{{ ordem.value | currency: "BRL":"symbol" }}</p>
-      </td>
-      <td class="col-md-3">{{ ordem.pagamento}}</td>
-      <td class="col-md-1">{{ ordem?.total | currency: "BRL":"symbol" }}</td>
-      <td class="col-md-3">
-        <a>
-          <i (click)="onedit(ordem.id)" aria-hidden="true" class="fa fa-print"></i>
-          <i class="fa fa-trash" (click)="deletar(ordem.id)" aria-hidden="true">
-          </i>
-        </a>
-      </td>
-      <td class="col-md-1 of-obs" *ngIf="ordem.obs.length">
-        <strong>{{ordem.obs}}</strong>
-      </td>
-      <td class="col-md-1 on-obs " *ngIf="!ordem.obs.length">
-        nenhuma observação
-      </td>
-    </tr>
-  </tbody>
-</table>
-<div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static"
-  data-bs-keyboard="false" id="staticBackdrop" tabindex="-1">
-  <app-orden-model></app-orden-model>
-</div>
+<div class="container-fluid">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Status</th>
+        <th scope="col col-sm-0">Nº</th>
+        <th scope="col col-sm-0">Nome</th>
+        <th class="address" scope="col">Endereço</th>
+        <th class="number" scope="col">numero</th>
+        <th scope="col col-sm-0">Pedido</th>
+        <th class="pagamento" scope="col">pagamento</th>
+        <th scope="col">valor</th>
+        <th class="acoes" scope="col">Açoes</th>
+        <th class="obs" scope="col ">Obs...</th>
+      </tr>
+    </thead> 
+    <tbody>
+      <tr class="col-md-1 " *ngFor="let ordem of pedidos">
+        <td class="col-md-1 status" (click)="statu(ordem.id)">
+          <button type="button" class="btn btn-primary position-relative" [style]="'background-color:' + ordem?.color">
+            {{ ordem.statu }}
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+              {{ ordem.created_at }}
+            </span>
+          </button>
+        </td>
+        <td class="time" (click)="statu(ordem.id)">
+          <i class="fa fa-clock-o" [style]="'color:' + ordem?.color"></i>
+        </td>
+        <td class="col-md-1 col-sm-0">{{ ordem.id }}</td>
+        <td class="col-md-1 col-sm-0">{{ ordem.name }}</td>
+        <td class="col-md-2 address">{{ ordem.address }}</td>
+        <td class="col-md-1 number">{{ ordem.number }}</td>
+        <td class="col-md-3 col-sm-1">
+          <ul class="list-group " *ngFor="let item of listarPedidoPorCliente(ordem.id)">
+            <li class="list-group-item d-flex justify-content-between align-items-center ">
+              ({{item.quantity}}x){{item.produto}}
+              <span class="badge bg-primary rounded-pill ">{{ item.value | currency: "BRL":"symbol" }}</span>
+            </li>
+          </ul>
+        </td>
+        <td class="col-md-2 pagamento">{{ ordem.pagamento}}</td>
+        <td class="col-md-1">{{ ordem?.total | currency: "BRL":"symbol" }}</td>
+        <td class="col-md-3 acoes">
+          <a>
+            <i (click)="onedit(ordem.id)" aria-hidden="true" class="fa fa-print"></i>
+            <i class="fa fa-trash" (click)="deletar(ordem.id)" aria-hidden="true">
+            </i>
+          </a>
+        </td>
+        <td class="col-md-1  of-obs obs " *ngIf="ordem.obs.length">
+          <strong>{{ordem.obs}}</strong>
+        </td>
+        <td class="col-md-1 on-obs obs " *ngIf="!ordem.obs.length">
+          nenhuma observação
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static"
+    data-bs-keyboard="false" id="staticBackdrop" tabindex="-1">
+    <app-orden-model></app-orden-model>
+  </div>
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" >1</a></li>
+      <li class="page-item active" aria-current="page">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item"><a class="page-link" >3</a></li>
+      <li class="page-item">
+        <a class="page-link" >Next</a>
+      </li>
+    </ul>
+  </nav>
+  <!--  <pre>{{pedidos|json}}</pre>  -->
 
-<!-- <p>{{ordems | json}}</p> -->
+
+</div>

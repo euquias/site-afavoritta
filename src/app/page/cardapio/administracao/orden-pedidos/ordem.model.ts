@@ -39,9 +39,16 @@ class Status {
   }
 }
 
+class  Pedido {
+  constructor(
+    public itens:any[]
+  ) {
+  }
+}
 
 
 
-export  { Ordem, DetalheItem, Status };
+
+export  { Ordem, Pedido, DetalheItem, Status };
 
 
