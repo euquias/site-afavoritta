@@ -16,12 +16,12 @@ export class CardapioService {
   }
 
   read(): Observable<Menu[]> {
-    const url = `${this.api}/categories/1/menu`;
+    const url = `${this.api}/categories/2/menu`;
     return this.http.get<Menu[]>(url);
   }
 
   read2(): Observable<Menu[]> {
-    const url = `${this.api}/categories/2/menu`;
+    const url = `${this.api}/categories/3/menu`;
     return this.http.get<Menu[]>(url);
   }
 
