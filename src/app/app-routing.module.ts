@@ -56,7 +56,8 @@ const routes: Routes = [
   },
   {
     path: 'detalhes',
-    component: DetalhesComponent
+    component: DetalhesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'sistema',
@@ -65,95 +66,108 @@ const routes: Routes = [
   {
     path: 'adm',
     component: AdministracaoComponent,
+    canActivate: [AuthGuard],  
     children: [
       {
         path: '', redirectTo: 'categoria', pathMatch: 'full'
       },
       {
         path: 'categoria',
-        component: CategoriaComponent /* ,
-        canActivate: [AuthGuard]  */ 
+        component: CategoriaComponent  ,
+        canActivate: [AuthGuard]  
       },
       {
         path: 'menu',
-        component: MenuComponent /* ,
-        canActivate: [AuthGuard]  */
+        component: MenuComponent  ,
+        canActivate: [AuthGuard]  
       },
       {
         path: 'promocao',
-        component: PromocaoComponent/* ,
-        canActivate: [AuthGuard] */
+        component: PromocaoComponent ,
+        canActivate: [AuthGuard] 
       },
       {
         path: 'usuario',
-        component: UsuarioComponent/* ,
-        canActivate: [AuthGuard] */
+        component: UsuarioComponent ,
+        canActivate: [AuthGuard]  
       },
       {
         path: 'adicional',
-        component: AdicionalComponent/* ,
-        canActivate: [AuthGuard] */
+        component: AdicionalComponent ,
+        canActivate: [AuthGuard] 
       },
       {
         path: 'dashboard',
-        component: DashboardComponent/* ,
-        canActivate: [AuthGuard] */
+        component: DashboardComponent ,
+        canActivate: [AuthGuard] 
       },
       {
         path: 'ordem',
-        component: OrdenPedidosComponent
+        component: OrdenPedidosComponent,
+        canActivate: [AuthGuard] 
       },
       {
         path:'kvs1',
-        component:Kvs1Component
+        component:Kvs1Component,
+        canActivate: [AuthGuard] 
       },
       {
         path: 'frete',
-        component: FreteComponent/* ,
-        canActivate: [AuthGuard] */
+        component: FreteComponent,
+        canActivate: [AuthGuard] 
       },
 
     ]
   },
   {
     path: 'ordemodel/:id',
-    component: OrdenModelComponent
+    component: OrdenModelComponent,
+    canActivate: [AuthGuard] 
   },
   {
     path: 'obs/:id',
-    component: OrdenObsComponent
+    component: OrdenObsComponent,
+    canActivate: [AuthGuard] 
   },
   {
     path: 'status/:id',
-    component: OrdenStatusComponent
+    component: OrdenStatusComponent,
+    canActivate: [AuthGuard] 
   },
   {
     path: 'deletar/:id',
-    component: OrdenDeliteComponent
+    component: OrdenDeliteComponent,
+    canActivate: [AuthGuard] 
   },
   {
     path: 'update/:id',
-    component: MenuUpdateComponent
+    component: MenuUpdateComponent,
+    canActivate: [AuthGuard] 
   },
   {
     path: 'remover/:id',
-    component: MenuRemoverComponent
+    component: MenuRemoverComponent,
+    canActivate: [AuthGuard] 
   },
   {
     path: 'updates/:id',
-    component:CategoriaUpdateComponent
+    component:CategoriaUpdateComponent,
+    canActivate: [AuthGuard] 
   },
   {
     path: 'deletes/:id',
-    component:CategoriaRemoverComponent
+    component:CategoriaRemoverComponent,
+    canActivate: [AuthGuard] 
   },
   {
     path: 'updatess/:id',
-    component:UsuarioUpdateComponent
+    component:UsuarioUpdateComponent,
+    canActivate: [AuthGuard] 
   },
   {
     path: 'deletess/:id',
-    component:UsuarioRemoverComponent
+    component:UsuarioRemoverComponent,
+    canActivate: [AuthGuard] 
   },
   
 

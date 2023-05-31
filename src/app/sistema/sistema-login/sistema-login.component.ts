@@ -10,7 +10,6 @@ import { Login, Users } from './login.Model';
   styleUrls: ['./sistema-login.component.css']
 })
 export class SistemaLoginComponent implements OnInit {
-
   users!: Users
   submitted = true;
   loginform!: FormGroup
@@ -26,25 +25,22 @@ export class SistemaLoginComponent implements OnInit {
       email: this.fb.control('', [Validators.required, Validators.email]),
       password: this.fb.control('', [Validators.required])
     })
-
   }
 
-   logar(): void {
+  logar(): void {
     this.submitted = false;
     this.loginservice.login(this.loginform.value.email,
       this.loginform.value.password)
-       .subscribe(users => {
-              if (users) {
-                if (users.token) {
-                if(typeof users.token === 'string'){
-                 localStorage.setItem('authTokenkey', users.token)
-                }
-           }
-           }
-          //     console.log(users)
+      .subscribe(users => {
+        if (users) {
+          if (users.token) {
+            if (typeof users.token === 'string') {
+              localStorage.setItem('authTokenkey', users.token)
+            }
+          }
+          this.router.navigate(['/adm/ordem'])
         }
-
-           /* this.router.navigate(['/adm']) */
+      }
       )
   }
 

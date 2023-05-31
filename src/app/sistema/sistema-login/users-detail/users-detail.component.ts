@@ -30,7 +30,7 @@ export class UsersDetailComponent implements OnInit {
 
   login() {
     this.router.navigate(['/sistema']);
-  }
+  } 
 
    logout() {
     this.loginservice.logout();

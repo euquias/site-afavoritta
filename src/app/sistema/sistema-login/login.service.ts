@@ -27,8 +27,10 @@ export class LoginService {
       .post<Users>(`${api}/signin`, { email: email, password: password })
       .pipe(tap((users) => (this.users = users)))
   }
+
   gettoken(): boolean {
-   return this.users !== undefined 
+   return this.users!== undefined 
+   
   }
 
   logout() {
@@ -36,7 +38,7 @@ export class LoginService {
     this.router.navigate(["/"]);
   }
 
-  gettokem(){
+  gettokem(){ 
     const token = window.localStorage.getItem('authTokenkey');
     return token;
   }
