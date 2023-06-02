@@ -52,13 +52,13 @@ const routes: Routes = [
   },
   {
     path: 'pedido',
-    component: PedidoComponent,
-    canActivate: [AuthGuard]
+    component: PedidoComponent
+    
   },
   {
     path: 'detalhes',
-    component: DetalhesComponent,
-    canActivate: [AuthGuard]
+    component: DetalhesComponent
+    
   },
   {
     path: 'sistema',

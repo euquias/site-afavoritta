@@ -41,12 +41,12 @@ export class LoginService {
 
   gettokem() {
     const token = window.localStorage.getItem('authTokenkey');
-      if(token){
+     /*  if(token){
       const res = this.http.post<Users>(`${api}/validateToken`,token)
       }else{
         localStorage.removeItem('authTokenkey'),
         this.router.navigate(['/sistema'])
-      }
+      } */
     return token;
   }
 
