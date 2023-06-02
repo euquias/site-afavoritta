@@ -11,7 +11,8 @@ import { Ordem } from '../orden-pedidos/ordem.model';
 })
 export class Kvs1Component implements OnInit {
 
-  ordems!: Ordem[]; 
+  ordems!: Ordem[];  
+  pedidos!: Ordem[]; 
 
   constructor(
     private ordenpedidosservice: OrdenPedidosService,
@@ -22,8 +23,18 @@ export class Kvs1Component implements OnInit {
   ngOnInit(): void {
     this.ordenpedidosservice.read().subscribe((ordems) => {
       this.ordems = ordems;
-      console.log(ordems)
     }); 
+    this.ordenpedidosservice.pedidos().subscribe((pedidos) => {
+      this.pedidos = pedidos;
+    });
+        
+  }
+
+  listarPedidoPorCliente(pedidoId: number | string): Ordem[] {
+    if (Array.isArray(this.ordems) && this.ordems.length) {
+      return this.ordems.filter((r) => r.pedido_id == pedidoId)
+    }
+    return [];
   }
  
 }

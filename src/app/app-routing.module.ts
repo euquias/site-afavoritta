@@ -52,7 +52,8 @@ const routes: Routes = [
   },
   {
     path: 'pedido',
-    component: PedidoComponent
+    component: PedidoComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'detalhes',
@@ -168,10 +169,7 @@ const routes: Routes = [
     path: 'deletess/:id',
     component:UsuarioRemoverComponent,
     canActivate: [AuthGuard] 
-  },
-  
-
-  
+  }
 
 ];
 

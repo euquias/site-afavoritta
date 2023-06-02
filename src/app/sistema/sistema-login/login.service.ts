@@ -10,12 +10,13 @@ const api = "http://localhost:3000"
 
 @Injectable({
   providedIn: 'root'
-}) 
+})
 
 export class LoginService {
 
   users!: Users;
-  $store: any;
+  menuvisible = false
+
   constructor(
     private http: HttpClient,
     private router: Router
@@ -29,8 +30,8 @@ export class LoginService {
   }
 
   gettoken(): boolean {
-   return this.users!== undefined 
-   
+    return this.users !== undefined
+
   }
 
   logout() {
@@ -38,17 +39,17 @@ export class LoginService {
     this.router.navigate(["/"]);
   }
 
-  gettokem(){ 
+  gettokem() {
     const token = window.localStorage.getItem('authTokenkey');
+      if(token){
+      const res = this.http.post<Users>(`${api}/validateToken`,token)
+      }else{
+        localStorage.removeItem('authTokenkey'),
+        this.router.navigate(['/sistema'])
+      }
     return token;
   }
 
-/*   validartoken(){
-    const token = window.localStorage.getItem('authTokenkey');
-    const validador = JSON.parse(token)
-    if(validador?.length){
-    return this.http.post(`${api}/validateToken`,token )
-    }
-  } */
+ 
 
 }

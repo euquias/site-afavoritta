@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { Users } from '../login.Model';
 
 @Component({
@@ -11,7 +11,7 @@ import { Users } from '../login.Model';
 export class UsersDetailComponent implements OnInit {
 
   users!: Users 
-
+ 
   constructor(
     private loginservice: LoginService,
     public router: Router

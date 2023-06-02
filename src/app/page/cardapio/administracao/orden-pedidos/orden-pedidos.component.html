@@ -14,12 +14,12 @@
         <th class="obs" scope="col ">Obs...</th>
       </tr>
     </thead> 
-    <tbody>
-      <tr class="col-md-1 " *ngFor="let ordem of pedidos">
-        <td class="col-md-1 status" (click)="statu(ordem.id)">
-          <button type="button" class="btn btn-primary position-relative" [style]="'background-color:' + ordem?.color">
+    <tbody> 
+      <tr class="col-md-12 " *ngFor="let ordem of pedidos">
+        <td class="col-md-2 status" (click)="statu(ordem.id)">
+          <button type="button" class=" btn btn-primary position-relative" [style]="'background-color:' + ordem?.color">
             {{ ordem.statu }}
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" [style]="'background-color:' + ordem?.color">
               {{ ordem.created_at }}
             </span>
           </button>

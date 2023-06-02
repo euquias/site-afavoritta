@@ -3,6 +3,7 @@ import { Menu } from '../../menu.model';
 import {CestoService} from '../cesto.service';
 import { CardapioService } from '../../cardapio.service';
 
+
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html',

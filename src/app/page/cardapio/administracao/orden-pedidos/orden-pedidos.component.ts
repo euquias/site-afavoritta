@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class OrdenPedidosComponent implements OnInit {
 
    ordems!: Ordem[]; 
-  pedidos!: Ordem[];
+   pedidos!: Ordem[]; 
 
 
   constructor(
@@ -28,7 +28,6 @@ export class OrdenPedidosComponent implements OnInit {
     }); 
     this.ordenpedidosservice.pedidos().subscribe((pedidos) => {
       this.pedidos = pedidos;
-      
     });
     
   }
