@@ -67,7 +67,7 @@ export class DetalhesComponent implements OnInit {
       .subscribe((detalhid: Detalhe) => {
         console.log(`compra comcluida:${detalhid}`);
         this.detalhesitemservice.clear();
-        this.router.navigate(['/']);
+        this.router.navigate(['/cardapio']);
       });
   }
 

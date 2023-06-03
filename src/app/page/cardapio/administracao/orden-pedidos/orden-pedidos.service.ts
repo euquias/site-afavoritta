@@ -31,10 +31,6 @@ export class OrdenPedidosService {
     const url = `${this.api}/pedidos`;
     return this.http.get<Ordem[]>(url)
   } 
-  /* pedidos(): Observable<Ordem[]> {
-    const url = `${this.api}/pedidos?page=${this.page}`;
-    return this.http.get<Ordem[]>(url)
-  }  */
 
   readById(id: any): Observable<Ordem> {
     const url = `${this.api}/pedidos/${id}`;
