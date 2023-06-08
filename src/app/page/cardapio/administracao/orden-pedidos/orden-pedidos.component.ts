@@ -3,6 +3,7 @@ import { Ordem, Pedido } from './ordem.model';
 import { OrdenPedidosService } from './orden-pedidos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-orden-pedidos',
   templateUrl: './orden-pedidos.component.html',
@@ -24,10 +25,11 @@ export class OrdenPedidosComponent implements OnInit {
 
   ngOnInit(): void {
      this.ordenpedidosservice.read().subscribe((ordems) => {
-      this.ordems = ordems;
+      this.ordems = ordems; 
     }); 
     this.ordenpedidosservice.pedidos().subscribe((pedidos) => {
       this.pedidos = pedidos;
+     
     });
     
   }

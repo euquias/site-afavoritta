@@ -32,7 +32,7 @@ export class AuthInterceptor implements HttpInterceptor {
         if(error.error instanceof ErrorEvent){
             console.error('ocorreu um erro:', error.error.message);
         }else{
-            console.error(
+            console.error( 
                 `codigo de erro ${error.status},`+
                 `Erro:${JSON.stringify(error.error)}`)
         }

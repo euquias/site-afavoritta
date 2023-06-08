@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from '../categoria.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../categoria.Model';
+import { SnackbarService } from 'src/app/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-categoria-update',
@@ -14,6 +15,7 @@ export class CategoriaUpdateComponent implements OnInit {
     private categoriaservice: CategoriaService,
     private router: Router,
     private route: ActivatedRoute,
+    private notification:SnackbarService
   ) { }
 
   categories: Categoria = {
@@ -32,7 +34,8 @@ export class CategoriaUpdateComponent implements OnInit {
 
   salvar(): void {
     this.categoriaservice.update(this.categories).subscribe(() => {
-      this.router.navigate(["/adm"]);
+      this.router.navigate(["/adm"])
+      this.notification.notify(`Categoria Alterada com sucesso:${ this.categories.name}`)
       }
     );
   }

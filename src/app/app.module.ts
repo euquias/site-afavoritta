@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from "@angular/forms";
@@ -55,7 +56,9 @@ import { UsuarioRemoverComponent } from './page/cardapio/administracao/usuario/u
 import { UsuarioExibirComponent } from './page/cardapio/administracao/usuario/usuario-exibir/usuario-exibir.component';
 import { UsersDetailComponent } from './sistema/sistema-login/users-detail/users-detail.component';
 import { FooterComponent } from './page/footer/footer.component';
-import { Kvs1Component } from './page/cardapio/administracao/kvs1/kvs1.component'
+import { Kvs1Component } from './page/cardapio/administracao/kvs1/kvs1.component';
+import { SnackbarComponent } from './snackbar/snackbar.component'
+import {SnackbarService} from '../app/snackbar/snackbar.service'
 
 @NgModule({
   declarations: [
@@ -107,11 +110,13 @@ import { Kvs1Component } from './page/cardapio/administracao/kvs1/kvs1.component
     UsersDetailComponent,
     FooterComponent,
     Kvs1Component,
+    SnackbarComponent,
 
 
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -120,7 +125,8 @@ import { Kvs1Component } from './page/cardapio/administracao/kvs1/kvs1.component
 
   ],
   providers: [
-    HttpInterceptorProviders
+    HttpInterceptorProviders,
+    SnackbarService
 
   ],
   bootstrap: [AppComponent]

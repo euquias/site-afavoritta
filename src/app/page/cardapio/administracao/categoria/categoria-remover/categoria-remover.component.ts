@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from '../categoria.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../categoria.Model';
+import { SnackbarService } from 'src/app/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-categoria-remover',
@@ -17,6 +18,7 @@ export class CategoriaRemoverComponent implements OnInit {
     private categoriaservice: CategoriaService,
     private router: Router,
     private route: ActivatedRoute,
+    private notification:SnackbarService
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +35,7 @@ export class CategoriaRemoverComponent implements OnInit {
    remover(): void {
     this.categoriaservice.deletar(this.categories.id!).subscribe(() => {
       this.router.navigate(["adm"]);
+      this.notification.notify(`Categoria deletado com sucesso:${ this.categories.name}`)
     });
   }  
 }

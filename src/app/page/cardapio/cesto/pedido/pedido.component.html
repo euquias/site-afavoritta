@@ -13,8 +13,8 @@
     <div *ngIf="!items().length">
       <p class="text-center"><strong>Não a Pedidos!</strong></p>
     </div>
-    <div class="card-body menu" *ngIf="items().length">
-      <div *ngFor="let item of items()" class="row ">
+    <div class="card-body menu" *ngIf="items().length" >
+      <div *ngFor="let item of items()" class="row " [@row]="itemstate">
         <p class="card-text col-6">({{item.quantity}}x){{item.menu.produto}}</p>
         <p class="card-text col-4">{{item.value() | currency: "BRL":"symbol"}}</p>
         <p class="card-text col-2">

@@ -5,6 +5,7 @@ import { tap } from "rxjs/operators";
 import { Router } from "@angular/router";
 import { Login, Users, Usuario } from './login.Model';
 import { Token } from '@angular/compiler';
+import jwt_decode from "jwt-decode";
 
 const api = "http://localhost:3000"
 
@@ -30,26 +31,63 @@ export class LoginService {
   }
 
   gettoken(): boolean {
+    const users = window.localStorage.getItem('nome')
     return this.users !== undefined
-
   }
 
   logout() {
-    this.users === undefined;
-    this.router.navigate(["/"]);
+    if (this.users === undefined) {
+    } else {
+      localStorage.removeItem('authTokenkey'),
+        localStorage.removeItem('nome'),
+        this.router.navigate(["/"])
+    }
+    return this.users == undefined
   }
 
   gettokem() {
-    const token = window.localStorage.getItem('authTokenkey');
-     /*  if(token){
-      const res = this.http.post<Users>(`${api}/validateToken`,token)
-      }else{
-        localStorage.removeItem('authTokenkey'),
-        this.router.navigate(['/sistema'])
-      } */
+    const token = window.localStorage.getItem('authTokenkey')
     return token;
   }
 
- 
+  getTokenExpirationDate(token: string): Date {
+    const decoded: any = jwt_decode(token);
+    if (decoded.exp === undefined) {
+      null
+    }
 
+    const date = new Date(0);
+    date.setUTCSeconds(decoded.exp);
+    return date;
+  }
+
+  isTokenExpired(token?: string): boolean {
+    if (!token) {
+      return true;
+    }
+
+    const date = this.getTokenExpirationDate(token);
+    if (date === undefined) {
+      return false;
+    }
+
+    return !(date.valueOf() > new Date().valueOf());
+  }
+
+  isUserLoggedIn() {
+    const token = this.gettokem();
+    if (!token) {
+      return false;
+    } else if (this.isTokenExpired(token)) {
+      return false;
+    }
+
+    return true;
+  }
+  getAuthorizationToken() {
+    throw new Error('Method not implemented.');
+  }
+
+
+  /*     const res = this.http.post<Users>(`${api}/validateToken`,token) */
 }

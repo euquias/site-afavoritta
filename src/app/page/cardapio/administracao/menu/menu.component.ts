@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output, } from '@angular/core';
 import { Categorias, Menu } from './menu.model';
 import { MenuService } from './menu.service';
 import { ActivatedRoute, Router } from "@angular/router";
+import { SnackbarService } from 'src/app/snackbar/snackbar.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class MenuComponent implements OnInit {
     imageUrl: "",
     price: "",
     userId: "",
-    categoryId:""
+    categoryId: ""
   };
 
   categorias!: Categorias[]
@@ -27,7 +28,8 @@ export class MenuComponent implements OnInit {
     private menuservice: MenuService,
     private router: Router,
     private route: ActivatedRoute,
-   
+    private notification: SnackbarService
+
   ) {
   }
 
@@ -40,9 +42,9 @@ export class MenuComponent implements OnInit {
   }
   criarproduto(): void {
     this.menuservice.create(this.menus).subscribe(() => {
-        console.log(this.menus)
-        this.router.navigate(["/adm/menu"]);
-      })
+      this.notification.notify(`${this.menus.produto}  cadastrado com sucesso:`)
+      this.router.navigate(["/adm"]);
+    })
   }
 
   cancel(): void {

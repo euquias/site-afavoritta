@@ -52,10 +52,10 @@
         <div class="row">
           <div class="container col-md-8  p-1 ">
             <div class="row  row-cols-md-4  row-cols-sm-2">
-              <div class="col" id="menu1" id="menu3" *ngFor="let menu of menus ">
+              <div class="col" id="menu1" id="menu3" *ngFor="let menu of menus " [@menuappeared]="menustate">
                 <app-menu1 (add)="test.additem($event)" [menu]="menu"></app-menu1>
               </div>
-              <div class="col" id="menu2" *ngFor="let menu of menus2 ">
+              <div class="col" id="menu2" *ngFor="let menu of menus2 " [@menuappeared]="menustate">
                 <app-menu2 (add)="test.additem($event)" [menu2]="menu"></app-menu2>
               </div>
             </div>
