@@ -12,7 +12,9 @@ import { environment } from 'src/environments/environment';
 })
 export class DetalhesItemService {
   
-  api =  `${environment.API}/`
+  /* api =  `${environment.API}/` */
+
+  api = "https://sistema-backend2.onrender.com/" 
 
   constructor(private cestoservice: CestoService, private http: HttpClient) {
   }

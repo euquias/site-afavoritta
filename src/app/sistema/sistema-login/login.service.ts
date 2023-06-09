@@ -8,7 +8,8 @@ import { Token } from '@angular/compiler';
 import jwt_decode from "jwt-decode";
 import { environment } from 'src/environments/environment';
 
-const api =  `${environment.API}/`
+/* const api =  `${environment.API}/` */
+const api = "https://sistema-backend2.onrender.com/" 
 
 @Injectable({
   providedIn: 'root'

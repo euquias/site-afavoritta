@@ -12,8 +12,9 @@ import { environment } from 'src/environments/environment';
 
 export class MenuService {
 
-  api =  `${environment.API}/`
+  /* api =  `${environment.API}/` */
   /* api = "http://localhost:3000" */
+  api = "https://sistema-backend2.onrender.com/" 
 
   menus!: Menu[]
 

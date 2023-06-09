@@ -11,8 +11,9 @@ import { environment } from 'src/environments/environment';
 })
 export class OrdenPedidosService {
 
-  api =  `${environment.API}/`
+/*   api =  `${environment.API}/` */
   /* api = "http://localhost:3000" */
+  api = "https://sistema-backend2.onrender.com/" 
 
   ordems!: Ordem[]
   detalheitems!: string
