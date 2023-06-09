@@ -10,8 +10,8 @@ import { environment } from 'src/environments/environment';
 })
 export class CardapioService {
 
-  api =  `${environment.API}/`
-  /* api = "http://localhost:3000" */
+  /* api =  `${environment.API}/` */
+   api = "https://sistema-backend2.onrender.com/" 
  
   constructor(public http: HttpClient) {
   }
