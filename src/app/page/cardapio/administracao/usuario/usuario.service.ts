@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Usuario } from './usuario.Model';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -9,7 +10,8 @@ import { Usuario } from './usuario.Model';
 })
 export class UsuarioService {
 
-  api = 'http://localhost:3000';
+  api =  `${environment.API}/`
+  
 
   usuario!: Usuario[]
 
@@ -18,26 +20,26 @@ export class UsuarioService {
   ) { }
 
   read(): Observable<Usuario[]> {
-    const url = `${this.api}/users`;
+    const url = `${this.api}users`;
     return this.http.get<Usuario[]>(url)
   }
 
   create(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(`${this.api}/users`, usuario);
+    return this.http.post<Usuario>(`${this.api}users`, usuario);
   }
 
   readById(id: any): Observable<Usuario> {
-    const url = `${this.api}/users/${id}`;
+    const url = `${this.api}users/${id}`;
     return this.http.get<Usuario>(url);
   }
 
   update(usuario: Usuario): Observable<Usuario> {
-    const url = `${this.api}/users/${usuario.id}`;
+    const url = `${this.api}users/${usuario.id}`;
     return this.http.put<Usuario>(url, usuario);
   }
 
   deletar(id: number): Observable<Usuario> {
-    const url = `${this.api}/users/${id}`;
+    const url = `${this.api}users/${id}`;
     return this.http.delete<Usuario>(url);
   }
 } 

@@ -6,8 +6,9 @@ import { Router } from "@angular/router";
 import { Login, Users, Usuario } from './login.Model';
 import { Token } from '@angular/compiler';
 import jwt_decode from "jwt-decode";
+import { environment } from 'src/environments/environment';
 
-const api = "http://localhost:3000"
+const api =  `${environment.API}/`
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,7 @@ export class LoginService {
 
   login(email: string, password: string): Observable<Users> {
     return this.http
-      .post<Users>(`${api}/signin`, { email: email, password: password })
+      .post<Users>(`${api}signin`, { email: email, password: password })
       .pipe(tap((users) => (this.users = users)))
   }
 

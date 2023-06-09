@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from 'rxjs/internal/Observable';
 import {Menu} from './menu.model';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -9,29 +10,29 @@ import {Menu} from './menu.model';
 })
 export class CardapioService {
 
-
-  api = "http://localhost:3000"
+  api =  `${environment.API}/`
+  /* api = "http://localhost:3000" */
  
   constructor(public http: HttpClient) {
   }
 
   read(): Observable<Menu[]> {
-    const url = `${this.api}/categories/2/menu`;
+    const url = `${this.api}categories/2/menu`;
     return this.http.get<Menu[]>(url);
   }
 
   read2(): Observable<Menu[]> {
-    const url = `${this.api}/categories/3/menu`;
+    const url = `${this.api}categories/3/menu`;
     return this.http.get<Menu[]>(url);
   }
 
   read3(): Observable<Menu[]> {
-    const url = `${this.api}/categories/5/menu`;
+    const url = `${this.api}categories/5/menu`;
     return this.http.get<Menu[]>(url);
   }
 
   read4(): Observable<Menu[]> {
-    const url = `${this.api}/categories/4/menu`;
+    const url = `${this.api}categories/4/menu`;
     return this.http.get<Menu[]>(url);
   }
 }
