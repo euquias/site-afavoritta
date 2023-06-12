@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let ordem of pedidos ">
+      <div class="card" >
+        <div class="d-flex justify-content-start">
+          <p>Nº:{{ ordem.id }}</p>
+        </div>
+          <div class="d-flex justify-content-evenly">
+            <p><i class="fa fa-clock-o" [style]="'color:' + ordem?.color"></i> Hora:{{ ordem.created_at }}</p>
+        </div>
+        <div class="card-body">
+          <table class="table"> 
+            <thead>
+              <tr>
+                <th scope="row">Produtos</th>
+                <th scope="row">Quantidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listarPedidoPorCliente(ordem.id)">
+                <td class="col-md-11">{{item.produto}}
+                </td >
+                <td class="col-md-1">({{item.quantity}}x)</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="alert alert-danger" *ngIf="ordem.obs.length" role="alert">
+                    {{ordem.obs}}
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <a  class="btn btn-primary" [style]="'background-color:' + ordem?.color">{{ordem.statu}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="...">
+    <ul class="pagination pagination-lg">
+      <li class="page-item active" aria-current="page">
+        <span class="page-link">1</span>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+    </ul>
+  </nav>
+</div>
+  <!-- <p>{{pedidos| json}}</p> -->  

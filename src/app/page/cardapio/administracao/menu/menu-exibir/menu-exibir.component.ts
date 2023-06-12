@@ -6,7 +6,7 @@ import { MenuService } from '../menu.service';
 @Component({
   selector: 'app-menu-exibir',
   templateUrl: './menu-exibir.component.html',
-  styleUrls: ['./menu-exibir.component.css']
+  styleUrls: ['./menu-exibir.component.css'] 
 })
 export class MenuExibirComponent implements OnInit {
 
@@ -15,7 +15,7 @@ export class MenuExibirComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
     ) { }
-
+   
 
   menus!: Menu[]
 
@@ -27,8 +27,7 @@ export class MenuExibirComponent implements OnInit {
 
   onedit(id: any): void {
     this.router.navigate(["/update", id], { relativeTo: this.route }); 
-    console.log(id);
-  }
+  } 
 
   oneremove(id: any): void {
     this.router.navigate(["/remover", id], { relativeTo: this.route });

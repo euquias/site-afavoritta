@@ -27,12 +27,11 @@ export class MenuUpdateComponent implements OnInit {
   ) { }
  
   
-   
+    
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get("id");
     this.menuservice.readById(id).subscribe((menus) => {
       this.menus = menus;
-      console.log(menus)
     });
   }
 

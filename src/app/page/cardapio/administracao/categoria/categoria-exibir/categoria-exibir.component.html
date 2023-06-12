@@ -1,0 +1,27 @@
+<div class="card-body">
+    <h5 class="card-title">mix de restaurantes</h5>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">name</th>
+          <th scope="col">parentId</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>     
+        <tr *ngFor="let categoria of categorias">
+          <th scope="row">{{categoria.id}}</th>
+          <td>{{categoria.name}}</td>
+          <td>{{categoria.parentId}}</td>
+          <td>
+             <i class="fa fa-pencil m-2" (click)="onedit(categoria.id)" aria-hidden="true"></i>
+           <i class="fa fa-trash m-2" (click)="oneremove(categoria.id)" aria-hidden="true"></i>  
+          </td>
+        </tr>
+      </tbody> 
+    </table>
+  </div> 
+  
+  
+ 

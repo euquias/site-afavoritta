@@ -1,4 +1,4 @@
-class Ordem {
+class  Ordem {
   constructor(
     public address: string,
     public number: string,
@@ -7,12 +7,16 @@ class Ordem {
     public obs: string,
     public total: any,
     public produto: string,
+    public created_at?:string,
+    public statu?: string,
+    public color?: string,
+    public statusId?: string,
     public quantity?: number,
     public value?: number,
     public pedido_id?: string,
     public itens_id?: string,
     public id?: any,
-    
+
   ) {
   }
 }
@@ -26,9 +30,25 @@ class DetalheItem {
   }
 }
 
+class Status {
+  constructor(
+    public statu: string,
+    public color: string,
+    public id?: string,
+  ) {
+  }
+}
+
+class  Pedido {
+  constructor(
+    public itens:any[]
+  ) {
+  }
+}
 
 
 
-export { Ordem, DetalheItem  };
+
+export  { Ordem, Pedido, DetalheItem, Status };
 
 

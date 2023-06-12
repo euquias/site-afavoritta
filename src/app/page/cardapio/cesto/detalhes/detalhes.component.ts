@@ -7,6 +7,7 @@ import { Cesto } from '../cesto.model';
 import { Detalhe, DetalheItem } from './detalhes.model';
 import { Delivery } from './detalhes-frete/detalhe-delivery.model';
 import { Status } from './detalhes-status/status.model';
+import { SnackbarService } from 'src/app/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-detalhes',
@@ -34,7 +35,8 @@ export class DetalhesComponent implements OnInit {
   constructor(
     private router: Router,
     public detalhesitemservice: DetalhesItemService,
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
+    private notification:SnackbarService
   ) {
   }
 
@@ -46,7 +48,8 @@ export class DetalhesComponent implements OnInit {
       name: this.formBuilder.control(''),
       pagamento: this.formBuilder.control(''),
       total: this.formBuilder.control(''),
-      obs: this.formBuilder.control('')
+      obs: this.formBuilder.control(''),
+      statusId: this.formBuilder.control('1')
     })
 
   }
@@ -66,13 +69,14 @@ export class DetalhesComponent implements OnInit {
       .subscribe((detalhid: Detalhe) => {
         console.log(`compra comcluida:${detalhid}`);
         this.detalhesitemservice.clear();
-        this.router.navigate(['/']);
+        this.notification.notify(`compra concluida com sucesso :${detalhid.name}`)
+        this.router.navigate(['/cardapio']);
       });
   }
 
   cancel() {
     this.detalhesitemservice.clear();
-    this.router.navigate(['/cardapio']);
+    this.router.navigate(['/cardapio']); 
   }
 
   detalhesitem(): Cesto[] {

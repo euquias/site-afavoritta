@@ -37,10 +37,9 @@ export class OrdenDeliteComponent implements OnInit {
   cancel(): void {
     this.router.navigate(["adm/ordem"]);
   }
-
+ 
   remover(): void {
     this.ordenpedidosservice.deletar(this.ordems.id!).subscribe(() => {
-
       this.router.navigate(["adm/ordem"]);
     });
   }

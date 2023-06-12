@@ -2,6 +2,8 @@ import { Component, OnInit, EventEmitter, Output, } from '@angular/core';
 import { Categorias, Menu } from './menu.model';
 import { MenuService } from './menu.service';
 import { ActivatedRoute, Router } from "@angular/router";
+import { SnackbarService } from 'src/app/snackbar/snackbar.service';
+
 
 @Component({
   selector: 'app-menu',
@@ -10,7 +12,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class MenuComponent implements OnInit {
 
-
   @Output() add = new EventEmitter()
   menus: Menu = {
     produto: "",
@@ -18,7 +19,7 @@ export class MenuComponent implements OnInit {
     imageUrl: "",
     price: "",
     userId: "",
-    categoryId:"3"
+    categoryId: ""
   };
 
   categorias!: Categorias[]
@@ -26,7 +27,9 @@ export class MenuComponent implements OnInit {
   constructor(
     private menuservice: MenuService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private notification: SnackbarService
+
   ) {
   }
 
@@ -37,16 +40,11 @@ export class MenuComponent implements OnInit {
     })
 
   }
-
-  emitaddevent() {
-    this.add.emit()
-  } 
-
   criarproduto(): void {
     this.menuservice.create(this.menus).subscribe(() => {
-        console.log(this.menus)
-        this.router.navigate(["/"]);
-      })
+      this.notification.notify(`${this.menus.produto}  cadastrado com sucesso:`)
+      this.router.navigate(["/adm"]);
+    })
   }
 
   cancel(): void {

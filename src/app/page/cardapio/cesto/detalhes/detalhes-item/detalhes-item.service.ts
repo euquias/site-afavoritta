@@ -5,15 +5,14 @@ import {CestoService} from '../../cesto.service';
 import {Cesto} from '../../cesto.model';
 import {Observable} from 'rxjs';
 import {Delivery} from '../detalhes-frete/detalhe-delivery.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DetalhesItemService {
-  api = 'http://localhost:3000';
   
-
-
+ api =  `${environment.API}/` 
 
   constructor(private cestoservice: CestoService, private http: HttpClient) {
   }
@@ -35,12 +34,12 @@ export class DetalhesItemService {
   }
 
   finalizarpedido(detalhe: Detalhe): Observable<Detalhe> {
-    return this.http.post<Detalhe>(`${this.api}/orders`, detalhe)
+    return this.http.post<Detalhe>(`${this.api}orders`, detalhe)
   }
 
  
   read(): Observable<Delivery[]> {
-    const url = `${this.api}/orders`;
+    const url = `${this.api}orders`;
     return this.http.get<Delivery[]>(url);
   }
 }

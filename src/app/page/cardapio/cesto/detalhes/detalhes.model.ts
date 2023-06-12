@@ -7,7 +7,9 @@ class Detalhe {
     public itens: DetalheItem[],
     public itemsvalues: number,
     public total: number,
-    public obs:string
+    public obs:string,
+    public statusId:string
+
     
   ) {
   }

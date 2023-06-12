@@ -1,0 +1,29 @@
+<div class="card-body">
+    <h5 class="card-title">Usuaríos</h5>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Administrador</th>
+          <th scope="col">fucionario</th>
+          <th scope="col">Ações</th>
+        </tr>   
+      </thead> 
+      <tbody>
+        <tr *ngFor="let usuario of usuario">
+          <th scope="row">{{usuario.id}}</th>
+          <td>{{usuario.name}}</td>
+          <td>{{usuario.email}}</td>
+          <td>{{usuario.admin}}</td>   
+          <td>{{usuario.fucionario}}</td>  
+          <td>
+            <i class="fa fa-pencil m-2" (click)="onedit(usuario.id)" aria-hidden="true"></i>
+            <i class="fa fa-trash m-2" (click)="oneremove(usuario.id)" aria-hidden="true"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+

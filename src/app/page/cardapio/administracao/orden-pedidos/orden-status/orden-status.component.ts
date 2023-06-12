@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input,  EventEmitter, Output, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Ordem } from '../ordem.model';
+import { Ordem, Status } from '../ordem.model';
 import { OrdenPedidosService } from '../orden-pedidos.service';
 
 @Component({
@@ -10,29 +10,36 @@ import { OrdenPedidosService } from '../orden-pedidos.service';
 })
 export class OrdenStatusComponent implements OnInit {
 
-  status: boolean = true
+/*     @Output() add = new EventEmitter() */
+  @Input() status!: Status[]
 
-  @Input() ordems: any = {
+  ordems: Ordem = {
     name: "",
     address: '',
-    number: '',
-    test: '',
+    number: '', 
     obs: '',
-    pagamento: [],
-    status: false,
-    detalheitems: []  
-  };
+    pagamento: '',
+    total: '',
+    produto: '',
+    statusId: ''
+  }; 
   constructor(
     private ordenpedidosservice: OrdenPedidosService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) { } 
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get("id");
     this.ordenpedidosservice.readById(id).subscribe((ordems) => {
       this.ordems = ordems;
+      console.log(ordems)
     });
+    
+    this.ordenpedidosservice.status().subscribe(status => {
+      this.status = status
+      
+     })
   }
 
   salvar(): void {
@@ -42,6 +49,16 @@ export class OrdenStatusComponent implements OnInit {
       }
     );
   }
+
+  onedit(id:any) {
+      this.ordenpedidosservice.readById(this.ordems).subscribe(
+        () => {
+          this.router.navigate(['adm/ordem']);
+        }
+      );
+    
+  } 
+
 
   cancel(): void {
     this.router.navigate(["adm/ordem"]);

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Users } from './login.Model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Login, Users } from './login.Model';
+import { SnackbarService } from 'src/app/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-sistema-login',
@@ -10,15 +11,17 @@ import { Users } from './login.Model';
   styleUrls: ['./sistema-login.component.css']
 })
 export class SistemaLoginComponent implements OnInit {
-
   users!: Users
-  loginform!: FormGroup 
   submitted = true;
+  loginform!: FormGroup
 
   constructor(
     private loginservice: LoginService,
     private fb: FormBuilder,
-    public router: Router) { }
+    public router: Router,
+    public route: ActivatedRoute,
+    private notification:SnackbarService
+    ) { }
 
   ngOnInit(): void {
     this.loginform = this.fb.group({
@@ -31,12 +34,25 @@ export class SistemaLoginComponent implements OnInit {
     this.submitted = false;
     this.loginservice.login(this.loginform.value.email,
       this.loginform.value.password)
-      .subscribe(
-        () => {
-          this.router.navigate(['adm'])
+      .subscribe(users => {
+        this.notification.notify(`Bem Vindo${users.name}`)
+        if (users) {
+          if (users.token) {
+            if (typeof users.token === 'string') {
+              localStorage.setItem('authTokenkey', users.token),
+              localStorage.setItem('nome', users.name)
+            }
+          }
+          this.router.navigate(['/adm/ordem'])
         }
+      }
       )
   }
 
 
+
+
+
+
 }
+

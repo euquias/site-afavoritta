@@ -9,19 +9,19 @@
           </a>
         </li>
       </ul>
-    </div>
+    </div>  
     <div *ngIf="!items().length">
       <p class="text-center"><strong>Não a Pedidos!</strong></p>
     </div>
-    <div class="card-body menu" *ngIf="items().length">
-      <div *ngFor="let item of items()" class="row ">
-        <p class="card-text col-6">({{item.quantity}}x) {{item.menu.name}}</p>
+    <div class="card-body menu" *ngIf="items().length" >
+      <div *ngFor="let item of items()" class="row " [@row]="itemstate">
+        <p class="card-text col-6">({{item.quantity}}x){{item.menu.produto}}</p>
         <p class="card-text col-4">{{item.value() | currency: "BRL":"symbol"}}</p>
         <p class="card-text col-2">
           <a (click)=" removeritem(item)">
             <i aria-hidden="true" class="fa fa-times"></i>
           </a>
-        </p>
+        </p> 
       </div>
     </div>
     <div class="card-footer" *ngIf="items().length">

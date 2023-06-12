@@ -1,7 +1,58 @@
+.header {
+  padding: 50px 24px 30px 24px;
+
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.t {
+  font-weight: 500;
+  font-size: 24px;
+  color: #f8f2f2;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  color: #f9f7f7;
+}
+
+.header-bottom {
+  margin-top: 10px;
+}
+
+/* .banner{
+  
+}
+ */
 
 .menu {
   align-items: center;
-  color: rgb(226, 43, 49);
+  color: rgb(249, 247, 247);
+}
+
+.menubotton {
+  width: 18px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fa-search {
+  color: #f8f2f2;
+}
+
+.menubottonline {
+  background-color: rgb(255, 255, 255);
+  height: 2px;
 }
 
 .infor {
@@ -22,26 +73,46 @@ i {
 }
 
 .fa-minus {
-  color: black; 
+  color: black;
 }
 
 .fa-plus {
   color: black;
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 700px) {
   .carrinho {
     display: none;
   }
 
+
 }
-  .tamanho {
-    height: 370px;
-    overflow-y: scroll;
-  }  
-  h3{
-    margin-top: 20px;
-    color: #fff;
-    font-size: 30px;
+
+@media only screen and (min-width: 500px) {
+  .banner {
+    display: none;
   }
 
+  .fa-shopping-basket {
+    display: none;
+
+  }
+
+}
+
+h3 {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 30px;
+}
+
+.banner img {
+  max-height: 150px;
+  width: auto;
+  height: auto;
+}
+
+.fa-shopping-basket {
+  color: #fff;
+  margin-right: 5px;
+}

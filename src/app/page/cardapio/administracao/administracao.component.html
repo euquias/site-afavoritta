@@ -1,18 +1,31 @@
-<div class="conteiner">
-  <div class="card">
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p><i aria-hidden="true" class="fa fa-cogs"> </i> Administração do sitema</p>
-        <footer class="blockquote-footer">Cadastros<cite title="Source Title"> & Cia</cite></footer>
-      </blockquote>
-    </div>
+<div class="card admin">
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <nav class="navbar">
+        <div class="container-fluid ">
+          <p><i aria-hidden="true"  class="fa fa-cogs "> </i> Administração do sitema </p>
+          <form class="d-flex">
+            <app-users-detail></app-users-detail>
+          </form>
+        </div>
+      </nav>
+      <footer class="blockquote-footer ">Cadastros<cite title="Source Title"> & Cia</cite></footer>
+    </blockquote>
   </div>
-  <div class="card text-center">
-    <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs">
+</div> 
+
+
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand"> <p><i aria-hidden="true" class="fa fa-cogs"> </i> Administração do sitema </p></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a [routerLink]="['categoria']" aria-current="true" class="nav-link disabled"
-            routerLinkActive="active">Categoria</a>
+          <a [routerLink]="['categoria']" aria-current="true" class="nav-link" routerLinkActive="active">Categoria</a>
         </li>
         <li class="nav-item ">
           <a [routerLink]="['menu']" aria-current="true" class="nav-link " routerLinkActive="active">Menu</a>
@@ -22,20 +35,21 @@
             routerLinkActive="active">Promoção</a>
         </li>
         <li class="nav-item disabled">
-          <a [routerLink]="['usuario']" aria-current="true" class="nav-link "
-            routerLinkActive="active">Usuario</a>
+          <a [routerLink]="['usuario']" aria-current="true" class="nav-link " routerLinkActive="active">Usuario</a>
         </li>
         <li class="nav-item">
           <a [routerLink]="['adicional']" aria-current="true" class="nav-link disabled"
             routerLinkActive="active">Adicional</a>
         </li>
         <li class="nav-item">
-          <a [routerLink]="['dashboard']" aria-current="true" class="nav-link "
-            routerLinkActive="active">Dashboard</a>
+          <a [routerLink]="['dashboard']" aria-current="true" class="nav-link " routerLinkActive="active">Dashboard</a>
         </li>
         <li class="nav-item">
           <a [routerLink]="['ordem']" aria-current="true" class="nav-link" routerLinkActive="active">Ordem de
             pedidos</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['kvs1']" aria-current="true" class="nav-link" routerLinkActive="active">kvs1</a>
         </li>
         <li class="nav-item">
           <a [routerLink]="['frete']" aria-current="true" class="nav-link disabled" routerLinkActive="active">frete</a>
@@ -46,8 +60,46 @@
         </li>
       </ul>
     </div>
-    <div class="card-body">
-      <router-outlet></router-outlet>
-    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+
+    </ul>
+  </div>
+  <div class="card-body">
+    <router-outlet></router-outlet>
   </div>
 </div>

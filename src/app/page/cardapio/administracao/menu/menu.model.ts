@@ -3,9 +3,9 @@ export interface Menu {
   description:string,
   imageUrl: string,
   price: string,
-  id?: string,
   userId: string,
-  categoryId:string
+  categoryId:string 
+  id?: any,
 }
 export interface Categorias {
   id: string,

@@ -11,7 +11,7 @@ import {OrdenPedidosService} from '../orden-pedidos.service';
 })
 export class OrdenModelComponent implements OnInit {
 
-  @Input() ordems: Ordem = {
+   ordems: Ordem = {
     address: '',
     number: '',
     name: '',
@@ -19,9 +19,10 @@ export class OrdenModelComponent implements OnInit {
     obs: '',
     total: '',
     produto:'' ,
+    created_at:''
+  }; 
+  
 
-
-  };
 
   constructor(
     private ordenpedidosservice: OrdenPedidosService,
@@ -36,6 +37,13 @@ export class OrdenModelComponent implements OnInit {
       this.ordems = ordems;
     });
 
+  }
+
+  listarPedidoPorCliente(pedidoId: number | string): Ordem[] {
+    if (Array.isArray(this.ordems) && this.ordems.length) {
+      return this.ordems.filter((r) => r.pedido_id == pedidoId)
+    }
+    return [];
   }
 
 }

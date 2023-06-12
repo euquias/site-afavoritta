@@ -1,84 +1,90 @@
 <div class="container">
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        </ul>
-        <form class="d-flex" role="search">
-
-        </form>
-      </div>
-    </div>
-  </nav>
-  <ul class="nav nav-pills ">
-    <li class=" nav-item m-1">
-      <a class="nav-link  nav-pills" routerLink="">
-        <img alt="logo" class="logo" src="../../assets/logo.png" style="width: 3rem;" style="height: 3rem;">
-      </a>
-    </li>
-    <li class="nav-item m-1" >
-      <a class="nav-link" (click)="tomenu1()">Pizzas</a>
-    </li>
-    <li class="nav-item m-1">
-      <a class="nav-link " (click)="tomenu2()">Bebidas</a>
-    </li>
-     <li class="nav-item m-1">
-      <a class="nav-link" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal" routerLinkActive="active">Adicionais</a>
-    </li>
-    <li class="nav-item m-1">
-      <a routerLinkActive="active" [routerLink]="['/adm/ordem']" aria-current="page" class="nav-link "> Lista de
-        pedidos</a>
-    </li>
-  </ul>
-  <div class="container  " > 
-    <div class="row">
-      <div class=" col-md-7 tamanho col-sm-9">
-        <div class="container text-center">
-          <div class="row">
-            <div>
-              <h5 class="d-flex justify-content-start">Pizzas</h5>
-            </div>
-            <div id="menu1" id="menu3" *ngFor="let menu of menus " class="col-md-2 col-sm-8">
-                <app-menu1 (add)="test.additem($event)" [menu]="menu"></app-menu1>
-            </div>
-            <div>
-              <h5 class="d-flex justify-content-start">Bebidas</h5>
-            </div>
-            <div id="menu2" *ngFor="let menu of menus2 "  class="col-md-2 col-sm-8">
-              <app-menu2 (add)="test.additem($event)" [menu2]="menu">
-                
-              </app-menu2>
-              
-            </div>
-            <button (click)="tomenu3()">volta ao inicio</button>
-            <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static"
-              data-bs-keyboard="false" id="sstaticBackdrop1" tabindex="-1">
-              <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Adicional</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
-                  </div>
-                  <div class="modal-body">
-                    <div *ngFor="let menu of menus4 " class="col-md-12 col-sm-8">
-                      <app-menu4 (add)="test.additem($event)" [menu4]="menu"></app-menu4>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">
-                      Sem Adicional
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> 
+  <div class="row">
+    <div class="header col-sm-12">
+      <div class="header-top">
+        <div class="header-toplefet">
+          <div class="t">Seja Bem Vindo(a) <i class="fa fa-hand-peace-o"></i></div>
+          <div class="subtitle">O que deseja pra hoje?</div>
+        </div>
+        <div class="header-topright">
+          <div class="menubotton m-1">
+            <i class="fa fa-shopping-basket"></i>
           </div>
         </div>
       </div>
-      <div class="col-md-5 col-sm-4">
-        <app-pedido #test></app-pedido>
+      <div class="header-bottom">
+        <ul class="nav nav-pills ">
+          <li class=" nav-item">
+            <a class="nav-link"><i class="fa fa-search"></i></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" (click)="tomenu1()">Pizzas</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link " (click)="tomenu2()">Bebidas</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal"
+              routerLinkActive="active">Açai</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" data-bs-target="#sstaticBackdrop1" data-bs-toggle="modal"
+              routerLinkActive="active">Hamburgue</a>
+          </li>
+          <li class="nav-item">
+            <a routerLinkActive="active" [routerLink]="['/adm/ordem']" aria-current="page" class="nav-link "> Lista de
+              pedidos</a> 
+          </li>
+        </ul>
+        <div class="banner col-sm-12 m-1">
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../../assets/promocao3.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../../assets/Pizza.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+        <div class="row">
+          <div class="container col-md-8  p-1 ">
+            <div class="row  row-cols-md-4  row-cols-sm-2">
+              <div class="col" id="menu1" id="menu3" *ngFor="let menu of menus " [@menuappeared]="menustate">
+                <app-menu1 (add)="test.additem($event)" [menu]="menu"></app-menu1>
+              </div>
+              <div class="col" id="menu2" *ngFor="let menu of menus2 " [@menuappeared]="menustate">
+                <app-menu2 (add)="test.additem($event)" [menu2]="menu"></app-menu2>
+              </div>
+            </div>
+          </div> 
+          <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static"
+            data-bs-keyboard="false" id="sstaticBackdrop1" tabindex="-1">
+            <div class="modal-dialog modal-md">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Adicional</h5>
+                  <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                </div>
+                <div class="modal-body">
+                  <div *ngFor="let menu of menus4 " class="col-md-12 col-sm-8">
+                    <app-menu4 (add)="test.additem($event)" [menu4]="menu"></app-menu4>
+                  </div>
+                </div>
+                <div class="modal-footer  ">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">
+                    Sem Adicional
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carrinho col-md-4">
+            <app-pedido #test></app-pedido>
+          </div>
+        </div>
     </div>
   </div>
 </div>
