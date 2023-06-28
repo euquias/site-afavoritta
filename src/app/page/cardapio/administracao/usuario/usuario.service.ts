@@ -10,9 +10,8 @@ import { environment } from 'src/environments/environment';
 })
 export class UsuarioService {
 
- /*  api =  `${environment.API}/` */
- api = "https://sistema-backend2.onrender.com/" 
-
+   api =  `${environment.API}/` 
+ 
   usuario!: Usuario[]
 
   constructor(

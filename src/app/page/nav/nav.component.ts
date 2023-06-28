@@ -14,8 +14,9 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+ 
   login() {
-    this.router.navigate(['sistema'])
-  }
+    this.router.navigate(['/sistema']);
+  } 
 
 }

@@ -9,9 +9,9 @@ import { environment } from 'src/environments/environment';
 })
 export class CategoriaService {
 
-  /* api =  `${environment.API}/` */
+  api =  `${environment.API}/` 
   /* api = "http://localhost:3000" */
-  api = "https://sistema-backend2.onrender.com/" 
+  
 
   categories!: Categoria[]
 

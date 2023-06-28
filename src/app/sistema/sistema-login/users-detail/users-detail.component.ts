@@ -20,17 +20,11 @@ export class UsersDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  user(): Users {
-    return this.loginservice.users
+  user(): any {
+    
+    return this.loginservice.users.name
   }
 
-   islogin(): boolean {
-    return this.loginservice.gettoken() ;
-  } 
-
-  login() {
-    this.router.navigate(['/sistema']);
-  } 
 
    logout() {
     this.loginservice.logout();

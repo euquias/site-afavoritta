@@ -8,8 +8,7 @@ import { Token } from '@angular/compiler';
 import jwt_decode from "jwt-decode";
 import { environment } from 'src/environments/environment';
 
-/* const api =  `${environment.API}/` */
-const api = "https://sistema-backend2.onrender.com/" 
+const api = `${environment.API}/`
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,6 @@ const api = "https://sistema-backend2.onrender.com/"
 export class LoginService {
 
   users!: Users;
-  menuvisible = false
 
   constructor(
     private http: HttpClient,
@@ -29,22 +27,18 @@ export class LoginService {
   login(email: string, password: string): Observable<Users> {
     return this.http
       .post<Users>(`${api}signin`, { email: email, password: password })
-      .pipe(tap((users) => (this.users = users)))
+      // .pipe(tap((users) => (this.users = users))) 
   }
 
-  gettoken(): boolean {
-    const users = window.localStorage.getItem('nome')
-    return this.users !== undefined
+  gettoken(){
+   const users = window.localStorage.getItem('nome')
+     return users  
   }
 
   logout() {
-    if (this.users === undefined) {
-    } else {
-      localStorage.removeItem('authTokenkey'),
-        localStorage.removeItem('nome'),
-        this.router.navigate(["/"])
-    }
-    return this.users == undefined
+    localStorage.removeItem('authTokenkey'),
+      localStorage.removeItem('nome'),
+      this.router.navigate(["/"])
   }
 
   gettokem() {
