@@ -27,10 +27,11 @@ export class DetalhesComponent implements OnInit {
 
   ]
   pagamento: RadioOption[] = [
-    { label: 'dinheiro', value: 'mon' },
     { label: 'cartão', value: 'debcre' },
     { label: 'pix', value: 'pix' },
+    { label: 'dinheiro', value: this.itemsvalue() }
   ];
+
 
   constructor(
     private router: Router,
@@ -61,7 +62,7 @@ export class DetalhesComponent implements OnInit {
       .cestoitems()
       .map(
         (item: Cesto) =>
-          new DetalheItem(item.quantity, item.menu.produto, item.menu.price)
+          new DetalheItem(item.quantity, item.menu.produto, item.menu.price, item.menu.add, item.menu.diferenciado)
       );
     console.log(_detalhe, 'endipoit ');
     this.detalhesitemservice

@@ -3,6 +3,7 @@
   <tr>
     <th scope="col">Quantidade</th>
     <th scope="col">Itens</th>
+    <th scope="col">adicional</th>
     <th scope="col">Observação</th>
     <th scope="col">Subtotal</th>
   </tr>
@@ -11,9 +12,22 @@
   <tr *ngFor="let item of items">
     <th scope="row">{{item.quantity}}</th>
     <td>{{item.menu.produto}} </td>
-    <td> </td>
+    <td> 
+      <form>
+        <label for="exampleFormControlTextarea1" class="form-label">Adicional</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" [(ngModel)]="item.menu.add"
+          name="diferenciado"></textarea>
+      </form>
+    </td>
+    <td>
+      <form>
+        <label for="exampleFormControlTextarea1" class="form-label">Diferenciado</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" [(ngModel)]="item.menu.diferenciado"
+          name="diferenciado"></textarea>
+      </form>
+    </td>
     <td>{{item.value() | currency: "BRL":"symbol"}}</td>
-  </tr>
+  </tr>   
   </tbody>
 </table>
 

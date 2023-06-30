@@ -19,15 +19,12 @@
             <tbody>
               <tr *ngFor="let item of listarPedidoPorCliente(ordem.id)">
                 <td class="col-md-11">{{item.produto}}
+                  <p class="add"><strong>{{item.add}}</strong></p>
+                  <p class="diferenciado"><strong>{{item.diferenciado}}</strong></p>
                 </td >
                 <td class="col-md-1">({{item.quantity}}x)</td>
               </tr>
               <tr>
-                <td>
-                  <div class="alert alert-danger" *ngIf="ordem.obs.length" role="alert">
-                    {{ordem.obs}}
-                  </div>
-                </td>
               </tr>
             </tbody>
           </table>
@@ -46,4 +43,4 @@
     </ul>
   </nav>
 </div>
-  <!-- <p>{{pedidos| json}}</p> -->  
+<!-- <p>{{pedidos| json}}</p>  -->

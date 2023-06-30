@@ -3,4 +3,6 @@ export interface Menu {
   price: number;
   imageUrl: string;
   id: number;
+  add?:string;
+  diferenciado?:string
 }

@@ -16,6 +16,9 @@ class  Ordem {
     public pedido_id?: string,
     public itens_id?: string,
     public id?: any,
+    public add?: string,
+    public diferenciado?: string,
+    public dataihora?: string,
 
   ) {
   }
@@ -26,6 +29,7 @@ class DetalheItem {
     public quantity: number,
     public menuid: number,
     public value: number
+ 
   ) {
   }
 }

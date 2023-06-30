@@ -1,11 +1,13 @@
 <div class="container-fluid">
   <div class="card">
+    {{ form.valid }}
+    {{ form.value | json }}
     <div class="card-header">
       <i aria-hidden="true" class="fa fa-shopping-basket"></i>
       Finalizar Pedido
     </div>
     <div class="card-body">
-      <form [formGroup]="orderForm" class="row g-3 needs-validation" novalidate>
+      <form #form="ngForm" [formGroup]="orderForm" class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
           <app-inputs errormessage label="Endereço De Entrega:">
             <input class="form-control" minlength="10" formControlName="address" placeholder="Endereço" required />
@@ -28,7 +30,7 @@
         <div class="col-md-4">
           <p class="lead">Formas de Pagamento:</p>
           <div class="form-group">
-            <app-radio [options]="pagamento"  formControlName="pagamento" ></app-radio>
+            <app-radio  [options]="pagamento"  formControlName='valorcaixa' for formControlName="pagamento" ></app-radio>
           </div>
         </div>
         <div class="card-text col-sm-6 col-md-3">

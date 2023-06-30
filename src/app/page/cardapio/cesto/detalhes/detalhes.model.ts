@@ -8,7 +8,8 @@ class Detalhe {
     public itemsvalues: number,
     public total: number,
     public obs:string,
-    public statusId:string
+    public statusId:string,
+    public valorcaixa:string
 
     
   ) {
@@ -20,7 +21,7 @@ class DetalheItem {
     throw new Error('Method not implemented.');
   }
 
-  constructor(public quantity: number, public produto: string, public value: number) {
+  constructor(public quantity: number, public produto: string, public value: number, public add: any, public diferenciado: any) {
   }
 }
 

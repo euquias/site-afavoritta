@@ -20,7 +20,7 @@
           <button type="button" class=" btn btn-primary position-relative" [style]="'background-color:' + ordem?.color">
             {{ ordem.statu }}
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" [style]="'background-color:' + ordem?.color">
-              {{ ordem.created_at }}
+              {{ ordem.dataihora}}
             </span>
           </button>
         </td>
@@ -34,7 +34,8 @@
         <td class="col-md-3 col-sm-1">
           <ul class="list-group " *ngFor="let item of listarPedidoPorCliente(ordem.id)">
             <li class="list-group-item d-flex justify-content-between align-items-center ">
-              ({{item.quantity}}x){{item.produto}}
+              ({{item.quantity}}x){{item.produto}}<p class="diferencial"><strong>{{item.diferenciado}}</strong></p>
+              <p class="diferencial"><strong>{{item.add}}</strong></p>
               <span class="badge bg-primary rounded-pill ">{{ item.value | currency: "BRL":"symbol" }}</span>
             </li>
           </ul>
