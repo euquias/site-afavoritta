@@ -19,6 +19,7 @@ class  Ordem {
     public add?: string,
     public diferenciado?: string,
     public dataihora?: string,
+    public troco?: string,
 
   ) {
   }

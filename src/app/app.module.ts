@@ -58,7 +58,8 @@ import { UsersDetailComponent } from './sistema/sistema-login/users-detail/users
 import { FooterComponent } from './page/footer/footer.component';
 import { Kvs1Component } from './page/cardapio/administracao/kvs1/kvs1.component';
 import { SnackbarComponent } from './snackbar/snackbar.component'
-import {SnackbarService} from '../app/snackbar/snackbar.service'
+import {SnackbarService} from '../app/snackbar/snackbar.service';
+import { DetalhesTrocoComponent } from './page/cardapio/cesto/detalhes/detalhes-troco/detalhes-troco.component'
 
 @NgModule({
   declarations: [
@@ -111,6 +112,7 @@ import {SnackbarService} from '../app/snackbar/snackbar.service'
     FooterComponent,
     Kvs1Component,
     SnackbarComponent,
+    DetalhesTrocoComponent,
 
 
   ],

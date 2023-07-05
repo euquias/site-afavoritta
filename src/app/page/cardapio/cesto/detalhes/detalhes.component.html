@@ -13,44 +13,55 @@
             <input class="form-control" minlength="10" formControlName="address" placeholder="Endereço" required />
           </app-inputs>
         </div>
-        <div class="col-md-2"> 
+        <div class="col-md-2">
           <app-inputs label="Numero">
-            <input class="form-control" errormessage label="Endereço" minlength="4" formControlName="number" 
+            <input class="form-control" errormessage label="Endereço" minlength="4" formControlName="number"
               placeholder="Numero" required type="text" />
           </app-inputs>
         </div>
-        <div class="col-md-3">  
-          <app-inputs> 
-            <input class="form-control" formControlName="name"  placeholder="Nome" type="text" />
+        <div class="col-md-3">
+          <app-inputs>
+            <input class="form-control" formControlName="name" placeholder="Nome" type="text" />
           </app-inputs>
         </div>
-        <div class="col-md-12"> 
+        <div class="col-md-12">
           <app-detalhes-item [items]="detalhesitem()"></app-detalhes-item>
-        </div>   
-        <div class="col-md-4">
+        </div>
+        <div class="col-md-2">
           <p class="lead">Formas de Pagamento:</p>
           <div class="form-group">
-            <app-radio  [options]="pagamento"  formControlName='valorcaixa' for formControlName="pagamento" ></app-radio>
+            <app-radio [options]="pagamento" formControlName='valorcaixa' for formControlName="pagamento"></app-radio>
           </div>
+          
+            <app-inputs>
+              <p class="troco">Troco:</p>
+              <input class="form-control " minlength="1" formControlName="troco" placeholder="Troco" required />
+            </app-inputs>
+         
         </div>
         <div class="card-text col-sm-6 col-md-3">
-          <app-inputs errormessage label="Observaçao">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="obs" 
+          <p class="lead">Observaçao:</p>
+          <app-inputs errormessage >
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" formControlName="obs"
               placeholder="troco pra/, metade dinheiro/cartao..."></textarea>
-          </app-inputs>
+          </app-inputs>          
         </div>
-        <div class="card-text col-sm-6 col-md-5">
+          <div class="col-md-3">
+            <p class="lead">Frete:</p>
+            <app-detalhes-frete></app-detalhes-frete>
+          </div>
+        <div class="card-text col-sm-6 col-md-4">
           <app-detalhes-total [itemsvalue]="itemsvalue()">
           </app-detalhes-total>
-          <app-detalhes-status [status]="testes" name="status" ></app-detalhes-status>
+          <app-detalhes-status [status]="testes" name="status"></app-detalhes-status>
         </div>
         <div class="row">
-          <div class="col-md-7">
-            <a class="btn btn-danger espaco" (click)="cancel()">
+          <div class="col-md-7 button">
+            <a class="btn btn-danger espaco m-1" (click)="cancel()">
               <i aria-hidden="true" class="fa fa-trash m-1"></i>Cancelar
               Pedido</a>
-            <a (click)="finalizarpedido(orderForm.value)" class="btn btn-success">
-              <i  aria-hidden="true" class="fa fa-money m-1 "></i>finalizar
+            <a (click)="finalizarpedido(orderForm.value)" class="btn btn-success m-1">
+              <i aria-hidden="true" class="fa fa-money m-1 "></i>finalizar
               Pedido</a>
           </div>
         </div>

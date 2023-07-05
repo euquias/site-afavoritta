@@ -16,6 +16,10 @@
   color: greenyellow;
 }
 
+.button{
+  margin-top: 10px;
+}
+
 .fa-ban {
   font-size: 50px;
   color: rgb(255, 47, 47);
@@ -25,3 +29,6 @@
   color: black;
 }
 
+.troco{
+  margin: 0%;
+}

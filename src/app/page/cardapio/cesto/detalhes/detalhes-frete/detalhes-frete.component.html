@@ -1,4 +1,4 @@
- <strong>Observaçao</strong>
+
 <!-- <select aria-label="Default select example" class="form-select">
   <option (click)="setvalue(delivery.price)"
           *ngFor="let delivery of deliverys" [class.selected]="delivery.price === price">{{delivery.local}} </option>
@@ -14,8 +14,11 @@
   </div>
 
 </div>  -->
-<div class="form-group">
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="number" ngModel  placeholder="troco pra/, metade dinheiro/cartao..."></textarea>
- 
-</div>
 
+
+<select class="form-select" aria-label="Default select example">
+  <option selected>Bairro</option>
+  <option value="1">Mesquita</option>
+  <option value="2">Jardin Edite</option>
+  <option value="3">Fazenda</option>
+</select>

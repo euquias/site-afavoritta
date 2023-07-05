@@ -29,7 +29,7 @@ export class DetalhesComponent implements OnInit {
   pagamento: RadioOption[] = [
     { label: 'cartão', value: 'debcre' },
     { label: 'pix', value: 'pix' },
-    { label: 'dinheiro', value: this.itemsvalue() }
+    { label: 'dinheiro', value: 'Dinheiro' }
   ];
 
 
@@ -50,6 +50,7 @@ export class DetalhesComponent implements OnInit {
       pagamento: this.formBuilder.control(''),
       total: this.formBuilder.control(''),
       obs: this.formBuilder.control(''),
+      troco: this.formBuilder.control(''),
       statusId: this.formBuilder.control('1')
     })
 
