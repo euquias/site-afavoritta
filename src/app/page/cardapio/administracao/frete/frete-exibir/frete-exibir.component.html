@@ -1,0 +1,24 @@
+<div class="card-body">
+    <h5 class="card-title">fretes</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Price</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let frete of fretes">
+                <th scope="row">{{frete.id}}</th>
+                <td>{{frete.bairro}}</td>
+                <td>{{frete.price | currency: "BRL":"symbol"}}</td>
+                <td>
+                    <i class="fa fa-pencil m-2" (click)="onedit(frete.id)" aria-hidden="true"></i>
+                    <i class="fa fa-trash m-2" (click)="oneremove(frete.id)" aria-hidden="true"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>   

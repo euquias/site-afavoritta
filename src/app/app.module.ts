@@ -59,7 +59,10 @@ import { FooterComponent } from './page/footer/footer.component';
 import { Kvs1Component } from './page/cardapio/administracao/kvs1/kvs1.component';
 import { SnackbarComponent } from './snackbar/snackbar.component'
 import {SnackbarService} from '../app/snackbar/snackbar.service';
-import { DetalhesTrocoComponent } from './page/cardapio/cesto/detalhes/detalhes-troco/detalhes-troco.component'
+import { DetalhesTrocoComponent } from './page/cardapio/cesto/detalhes/detalhes-troco/detalhes-troco.component';
+import { FreteExibirComponent } from './page/cardapio/administracao/frete/frete-exibir/frete-exibir.component';
+import { FreteUpdateComponent } from './page/cardapio/administracao/frete/frete-update/frete-update.component';
+import { FreteRemoverComponent } from './page/cardapio/administracao/frete/frete-remover/frete-remover.component'
 
 @NgModule({
   declarations: [
@@ -113,6 +116,9 @@ import { DetalhesTrocoComponent } from './page/cardapio/cesto/detalhes/detalhes-
     Kvs1Component,
     SnackbarComponent,
     DetalhesTrocoComponent,
+    FreteExibirComponent,
+    FreteUpdateComponent,
+    FreteRemoverComponent,
 
 
   ],

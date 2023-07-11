@@ -1,24 +1,15 @@
-
-<!-- <select aria-label="Default select example" class="form-select">
-  <option (click)="setvalue(delivery.price)"
-          *ngFor="let delivery of deliverys" [class.selected]="delivery.price === price">{{delivery.local}} </option>
-</select>  --> 
-
-<!--  <div *ngFor="let delivery of deliverys">
-  <div class="form-check">
-    <input (click)="setvalue(delivery.price)" [class.checked]="delivery.price === price" class="form-check-input"
-      id="flexRadioDefault2" name="flexRadioDefault" type="radio">
-    <label class="form-check-label" for="flexRadioDefault2">
-      {{delivery.local}}
-    </label>
+<!-- <div class="col-md-3 position-relative"> 
+  <div ng-controller="ExampleController">
+    <label for="validationTooltip01" class="form-label"><strong>Selecione categoryId</strong></label>
+    <select class="form-select" aria-label="Default select example" [(ngModel)]="categories.parentId" name="categoryId"
+      ng-model="categorias.name">
+      <option *ngFor="let categoria of categorias" value="{{fretes.price}}">{{fretes.bairro}}</option>
+    </select>
   </div>
-
-</div>  -->
+</div> -->
 
 
 <select class="form-select" aria-label="Default select example">
   <option selected>Bairro</option>
-  <option value="1">Mesquita</option>
-  <option value="2">Jardin Edite</option>
-  <option value="3">Fazenda</option>
+  <option *ngFor="let frete of fretes" value="{{frete.price}}">{{frete.bairro}}</option>
 </select>

@@ -1,54 +1,32 @@
-import {Component, Input, OnInit, forwardRef} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Delivery} from './detalhe-delivery.model';
-import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
+import { FreteService } from '../../../administracao/frete/frete.service';
+import { Frete } from '../../../administracao/frete/frete.Model';
+
 
 @Component({
   selector: 'app-detalhes-frete',
   templateUrl: './detalhes-frete.component.html',
   styleUrls: ['./detalhes-frete.component.css'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DetalhesFreteComponent),
-      multi: true
-    }
-  ]
- 
+    
 }) 
-export class DetalhesFreteComponent implements OnInit, ControlValueAccessor {
+export class DetalhesFreteComponent {
 
+
+  fretes!: Frete[]
 
   @Input() deliverys!: Delivery[]
-  price: any
+  
+  constructor(
+    private freteservice: FreteService
+  ) { }
 
-  /*    OnChange: any  */
-
-  constructor() {
-  }
-  registerOnTouched(fn: any): void {
-
-  }
-
-  setDisabledState?(isDisabled: boolean): void {
-
-  }
   ngOnInit(): void {
+    this.freteservice.read().subscribe(fretes => {
+      this.fretes = fretes
+    })
   }
 
 
-
-  setvalue(price: any) {
-    this.price = price
-    this.registerOnChange(this.price)
-    console.log(price)
-  }
-
-  writeValue(obj: any): void {
-    this.price = obj
-  }
-
-  registerOnChange(fn: any): void {
-    this.registerOnChange = fn
-  }
 
 }

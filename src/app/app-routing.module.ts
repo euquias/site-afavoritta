@@ -30,6 +30,8 @@ import { CategoriaRemoverComponent } from './page/cardapio/administracao/categor
 import { UsuarioUpdateComponent } from './page/cardapio/administracao/usuario/usuario-update/usuario-update.component';
 import { UsuarioRemoverComponent } from './page/cardapio/administracao/usuario/usuario-remover/usuario-remover.component';
 import { Kvs1Component } from './page/cardapio/administracao/kvs1/kvs1.component';
+import { FreteUpdateComponent } from './page/cardapio/administracao/frete/frete-update/frete-update.component';
+import { FreteRemoverComponent } from './page/cardapio/administracao/frete/frete-remover/frete-remover.component';
 
 
 const routes: Routes = [
@@ -169,8 +171,17 @@ const routes: Routes = [
     path: 'deletess/:id',
     component:UsuarioRemoverComponent,
     canActivate: [AuthGuard] 
+  },
+  {
+    path: 'freteupdate/:id',
+    component: FreteUpdateComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'fretedelite/:id',
+    component: FreteRemoverComponent,
+    canActivate: [AuthGuard]
   }
-
 ];
 
 @NgModule({
